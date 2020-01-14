@@ -1,0 +1,60 @@
+*,
+*:after,
+*:before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    color: #777;
+    line-height: 1.7;
+}
+
+.parent{
+    margin: 0 auto;
+}
+
+.item{
+    display: flex;
+    width: 80%;
+    margin: 1rem auto;
+    background-color: #ccc;
+    position: relative;
+}
+
+.item-img-carrot{
+    width: 20%;
+    background: url('../images/images.jfif');
+    background-size: cover;
+}
+
+.item-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 2.4rem;
+    width: 60%;
+    align-items: center;
+}
+
+.item--banner{
+    font-size: 2rem;
+    color: coral;
+    position: absolute;
+    right: -3rem;
+    top: 3rem;
+    background-color: cyan;
+    padding: 0 1rem;
+}
+
+.item-img-cauliflower{
+    width: 20%;
+    background: url('../images/p7_Broccoli_HH1812_gi905351392.jpg');
+    background-size: cover;
+}
