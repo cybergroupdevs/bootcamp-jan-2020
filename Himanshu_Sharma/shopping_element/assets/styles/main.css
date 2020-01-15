@@ -28,8 +28,11 @@ body{
     position: relative;
 }
 
-.item-img-carrot{
+.item-img{
     width: 12%;
+}
+
+.item-img-carrot{
     background: url('../images/images.jfif');
     background-size: cover;
 }
@@ -54,7 +57,6 @@ body{
 }
 
 .item-img-cauliflower{
-    width: 12%;
     background: url('../images/p7_Broccoli_HH1812_gi905351392.jpg');
     background-size: cover;
 }
