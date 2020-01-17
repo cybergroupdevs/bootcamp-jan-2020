@@ -12,10 +12,65 @@ html{
 
 body{
     font-family: 'Courier New', Courier, monospace, sans-serif;
-    font-size: 4rem;
     font-weight: 400;
     line-height: 1.7;
+    color: #FEFFEA;
+    background-color: #6DD3CE;
+}
+
+@keyframes moveInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(3rem); }
+    100% {
+      opacity: 1;
+      transform: translate(0); } }
+
+.wrapper{
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.nav{
+    font-size: 2.6rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+}
+
+.nav--elements{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn--restart{
+    padding: 1.2rem;
+    border: none;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.btn--restart:hover{
+    background-color: #FCDE9C;
     color: #777;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+.btn--restart:active{
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    transform: translateY(0); 
 }
 
 .blocks_parent{
@@ -23,12 +78,42 @@ body{
     height: 40rem;
     display: flex;
     flex-wrap: wrap;
+    flex-shrink: 0;
 }
 
 .block{
-    width: 13rem;
+    width: 13.3rem;
     height: 13.3rem;
-    background-color: antiquewhite;
-    border: 1px solid black;
+    background-color: #AA4465;
+    border: 0.5px solid #6DD3CE;
     flex: 1 0 auto;
+    text-align: center;
+    font-size: 7rem;
+}
+
+.block:hover{
+    background-color: rgba(170, 68, 162, 0.6);
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.msg{
+    position: absolute;
+    bottom: 0;
+    height: 8rem;
+    width: 100%;
+    color: #DB9D47;
+    font-size: 3.2rem;
+}
+
+@media screen and (max-width: 460px)  {
+    .blocks_parent{
+        width: 30rem;
+        height: 30rem;
+    }
+
+    .block{
+        width: 10rem;
+        height: 10rem;
+    }
 }

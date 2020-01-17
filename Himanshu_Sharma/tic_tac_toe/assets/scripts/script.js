@@ -14,7 +14,6 @@ var turn = false;
 
             //Initializing state of each block in the global 'blocks' object 
             blocks[`block-${row}${column}`] = 0;
-            console.log(blocks);
         }
     }
 })();
@@ -24,22 +23,35 @@ var turn = false;
     var player1 = 'X';
     var player2 = 'O';
 
+    document.querySelector('.btn--restart').addEventListener('click', init);
+
     document.addEventListener('click', (e)=>{
         const clickedClass = `${e.toElement.classList[1]}`;
+        console.log(clickedClass);
 
-        if(blocks[clickedClass] === 0){
+        if(clickedClass && blocks[clickedClass] === 0){
             //Adding event listener to each block
             document.querySelector(`.${clickedClass}`).textContent = ((turn === false)? player1 : player2);
             blocks[`${clickedClass}`] = ((turn === false)? 1 : -1);
             turn = !turn;
             console.log(clickedClass);
+
+            //Finding the winner
             if(this.findWinner()){
+                this.removeListeners();
                 this.printWinner(this.findWinner());
             }
-            console.log(this.findWinner());
         }
     });
 })();
+
+removeListeners = () => {
+    for(let row = 0; row < 3; row++){
+        for(let column = 0; column < 3; column++){
+            document.querySelector(`.block-${row}${column}`).removeEventListener('click', ()=>{});
+        }
+    }
+}
 
 findWinner = () => {
     if(turn === false){
@@ -84,11 +96,19 @@ findWinner = () => {
 }
 
 printWinner = (winner) => {
-    alert(`Winner: ${winner}`);
+    document.querySelector('.msg').textContent = `${winner} is the winner!!! Press Reset to play again...`;
+    setTimeout(()=>{
+        document.querySelector('.msg').textContent = ``;
+    }, 3000);
 }
 
-// function init(){
+function init(){
+    turn = false;
 
-// }
-
-// init();
+    for(let row = 0; row < 3; row++){
+        for(let column = 0; column < 3; column++){
+            document.querySelector(`.block-${row}${column}`).textContent = '';
+            blocks[`block-${row}${column}`] = 0;
+        }
+    }
+}
