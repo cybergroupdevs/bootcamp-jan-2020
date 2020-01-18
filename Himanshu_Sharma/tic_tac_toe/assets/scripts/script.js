@@ -30,7 +30,7 @@ var turn = false;
         if(clickedClass && blocks[clickedClass] === 0){
             //Adding event listener to each block
             this.togglePlayer(); 
-            this.manageTurnAndBlocksObj();
+            this.manageTurnAndBlocksObj(clickedClass);
 
             //Finding the winner
             if(this.findWinner()){
@@ -49,7 +49,7 @@ togglePlayer = () => {
     document.querySelector('.player-2').classList.toggle('current-player');
 }
 
-manageTurnAndBlocksObj = () => {
+manageTurnAndBlocksObj = (clickedClass) => {
     var player1 = 'X';
     var player2 = 'O';
 
