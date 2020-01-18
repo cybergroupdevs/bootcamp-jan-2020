@@ -112,15 +112,7 @@ findWinner = () => {
                     "style", "background-color: black; height: 85%; width: 1rem; position: absolute; top: 8%; left: 82%; transition: all 2s");
                 return 'Player2';
             }
-
-            // background-color: black;
-            // height: 108%;
-            // width: 1rem;
-            // position: absolute;
-            // top: -5%;
-            // left: 49%;
-            // transition: all 2s;
-            // transform: rotate(45deg);
+            
             case blocks[`block-00`]+blocks[`block-11`]+blocks[`block-22`]: {
                 document.querySelector('.strike_through').setAttribute(
                     "style", "background-color: black; height: 108%; width: 1rem; position: absolute; top: -5%; left: 49%; transition: all 2s; transform: rotate(-45deg)");
