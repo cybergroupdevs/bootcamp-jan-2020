@@ -104,7 +104,7 @@ body{
 } */
 
 .block:hover{
-    background-color: rgba(170, 68, 162, 0.6);
+    background-color: rgba(170, 68, 162);
     cursor: pointer;
     transition: all .4s;
 }

@@ -184,13 +184,12 @@ printWinner = (winner) => {
         document.querySelector('.msg').textContent = `No Result!!! Press Reset to play again...`;   
     }else{
         document.querySelector('.msg').textContent = `${winner} is the winner!!! Press Reset to play again...`;
-    }
+        let allBlocks = document.querySelectorAll('.block');
     
-    let allBlocks = document.querySelectorAll('.block');
-    
-    allBlocks.forEach(function(block) {
+        allBlocks.forEach(function(block) {
         block.style.zIndex = -1;
     });
+    }
     // setTimeout(()=>{
     //     document.querySelector('.msg').textContent = ``;
     // }, 3000);
