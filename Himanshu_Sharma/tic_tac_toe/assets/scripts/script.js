@@ -79,49 +79,49 @@ findWinner = () => {
         switch(-3){
             case blocks[`block-00`]+blocks[`block-01`]+blocks[`block-02`]: {
                 document.querySelector('.strike_through').setAttribute(
-                    "style", "background-color: black; height: 1rem; width: 85%; position: absolute; top: 14%; left: 7%; transition: all 2s");
+                    "style", "background-color: black; height: 1rem; width: 85%; position: absolute; top: 14%; left: 7%; transition: all .5s");
                 return 'Player2';
             }
             
             case blocks[`block-10`]+blocks[`block-11`]+blocks[`block-12`]: {
                 document.querySelector('.strike_through').setAttribute(
-                    "style", "background-color: black; height: 1rem; width: 85%; position: absolute; top: 47%; left: 7%; transition: all 2s");
+                    "style", "background-color: black; height: 1rem; width: 85%; position: absolute; top: 47%; left: 7%; transition: all .5s");
                 return 'Player2';
             }
             
             case blocks[`block-20`]+blocks[`block-21`]+blocks[`block-22`]: {
                 document.querySelector('.strike_through').setAttribute(
-                    "style", "background-color: black; height: 1rem; width: 85%; position: absolute; top: 80%; left: 7%; transition: all 2s");
+                    "style", "background-color: black; height: 1rem; width: 85%; position: absolute; top: 80%; left: 7%; transition: all .5s");
                 return 'Player2';
             }
             
             case blocks[`block-00`]+blocks[`block-10`]+blocks[`block-20`]: {
                 document.querySelector('.strike_through').setAttribute(
-                    "style", "background-color: black; height: 85%; width: 1rem; position: absolute; top: 8%; left: 16%; transition: all 2s");
+                    "style", "background-color: black; height: 85%; width: 1rem; position: absolute; top: 8%; left: 16%; transition: all .5s");
                 return 'Player2';
             }
             
             case blocks[`block-01`]+blocks[`block-11`]+blocks[`block-21`]: {
                 document.querySelector('.strike_through').setAttribute(
-                    "style", "background-color: black; height: 85%; width: 1rem; position: absolute; top: 8%; left: 49%; transition: all 2s");
+                    "style", "background-color: black; height: 85%; width: 1rem; position: absolute; top: 8%; left: 49%; transition: all .5s");
                 return 'Player2';
             }
             
             case blocks[`block-02`]+blocks[`block-12`]+blocks[`block-22`]: {
                 document.querySelector('.strike_through').setAttribute(
-                    "style", "background-color: black; height: 85%; width: 1rem; position: absolute; top: 8%; left: 82%; transition: all 2s");
+                    "style", "background-color: black; height: 85%; width: 1rem; position: absolute; top: 8%; left: 82%; transition: all .5s");
                 return 'Player2';
             }
             
             case blocks[`block-00`]+blocks[`block-11`]+blocks[`block-22`]: {
                 document.querySelector('.strike_through').setAttribute(
-                    "style", "background-color: black; height: 108%; width: 1rem; position: absolute; top: -5%; left: 49%; transition: all 2s; transform: rotate(-45deg)");
+                    "style", "background-color: black; height: 108%; width: 1rem; position: absolute; top: -5%; left: 49%; transition: all .5s; transform: rotate(-45deg)");
                 return 'Player2';
             }
             
             case blocks[`block-02`]+blocks[`block-11`]+blocks[`block-20`]: case blocks[`block-00`]+blocks[`block-11`]+blocks[`block-22`]: {
                 document.querySelector('.strike_through').setAttribute(
-                    "style", "background-color: black; height: 108%; width: 1rem; position: absolute; top: -5%; left: 49%; transition: all 2s; transform: rotate(45deg)");
+                    "style", "background-color: black; height: 108%; width: 1rem; position: absolute; top: -5%; left: 49%; transition: all .5s; transform: rotate(45deg)");
                 return 'Player2';
             }
             
@@ -130,49 +130,49 @@ findWinner = () => {
         switch(3){
             case blocks[`block-00`]+blocks[`block-01`]+blocks[`block-02`]: {
                 document.querySelector('.strike_through').setAttribute(
-                    "style", "background-color: black; height: 1rem; width: 85%; position: absolute; top: 14%; left: 7%; transition: all 2s");
+                    "style", "background-color: black; height: 1rem; width: 85%; position: absolute; top: 14%; left: 7%; transition: all .5s");
                 return 'Player1';
             }
             
             case blocks[`block-10`]+blocks[`block-11`]+blocks[`block-12`]: {
                 document.querySelector('.strike_through').setAttribute(
-                    "style", "background-color: black; height: 1rem; width: 85%; position: absolute; top: 47%; left: 7%; transition: all 2s");
+                    "style", "background-color: black; height: 1rem; width: 85%; position: absolute; top: 47%; left: 7%; transition: all .5s");
                 return 'Player1';
             }
             
             case blocks[`block-20`]+blocks[`block-21`]+blocks[`block-22`]: {
                 document.querySelector('.strike_through').setAttribute(
-                    "style", "background-color: black; height: 1rem; width: 85%; position: absolute; top: 80%; left: 7%; transition: all 2s");
+                    "style", "background-color: black; height: 1rem; width: 85%; position: absolute; top: 80%; left: 7%; transition: all .5s");
                 return 'Player1';
             }
 
             case blocks[`block-00`]+blocks[`block-10`]+blocks[`block-20`]: {
                 document.querySelector('.strike_through').setAttribute(
-                    "style", "background-color: black; height: 85%; width: 1rem; position: absolute; top: 8%; left: 16%; transition: all 2s");
+                    "style", "background-color: black; height: 85%; width: 1rem; position: absolute; top: 8%; left: 16%; transition: all .5s");
                 return 'Player1';
             }
             
             case blocks[`block-01`]+blocks[`block-11`]+blocks[`block-21`]: {
                 document.querySelector('.strike_through').setAttribute(
-                    "style", "background-color: black; height: 85%; width: 1rem; position: absolute; top: 8%; left: 49%; transition: all 2s");
+                    "style", "background-color: black; height: 85%; width: 1rem; position: absolute; top: 8%; left: 49%; transition: all .5s");
                 return 'Player1';
             }
             
             case blocks[`block-02`]+blocks[`block-12`]+blocks[`block-22`]: {
                 document.querySelector('.strike_through').setAttribute(
-                    "style", "background-color: black; height: 85%; width: 1rem; position: absolute; top: 8%; left: 82%; transition: all 2s");
+                    "style", "background-color: black; height: 85%; width: 1rem; position: absolute; top: 8%; left: 82%; transition: all .5s");
                 return 'Player1';
             }
             
             case blocks[`block-00`]+blocks[`block-11`]+blocks[`block-22`]: {
                 document.querySelector('.strike_through').setAttribute(
-                    "style", "background-color: black; height: 108%; width: 1rem; position: absolute; top: -5%; left: 49%; transition: all 2s; transform: rotate(-45deg)");
+                    "style", "background-color: black; height: 108%; width: 1rem; position: absolute; top: -5%; left: 49%; transition: all .5s; transform: rotate(-45deg)");
                 return 'Player1';
             }
             
             case blocks[`block-02`]+blocks[`block-11`]+blocks[`block-20`]: case blocks[`block-00`]+blocks[`block-11`]+blocks[`block-22`]: {
                 document.querySelector('.strike_through').setAttribute(
-                    "style", "background-color: black; height: 108%; width: 1rem; position: absolute; top: -5%; left: 49%; transition: all 2s; transform: rotate(45deg)");
+                    "style", "background-color: black; height: 108%; width: 1rem; position: absolute; top: -5%; left: 49%; transition: all .5s; transform: rotate(45deg)");
                 return 'Player1';
             }    
         }
