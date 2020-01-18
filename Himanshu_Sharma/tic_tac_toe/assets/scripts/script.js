@@ -23,6 +23,8 @@ var turn = false;
     var player1 = 'X';
     var player2 = 'O';
 
+    document.querySelector('.player-1').classList.add('current-player');
+
     document.querySelector('.btn--restart').addEventListener('click', init);
 
     document.addEventListener('click', (e)=>{
@@ -31,6 +33,10 @@ var turn = false;
 
         if(clickedClass && blocks[clickedClass] === 0){
             //Adding event listener to each block
+            document.querySelector('.player-1').classList.toggle('current-player');
+            document.querySelector('.player-2').classList.toggle('current-player');
+           
+
             document.querySelector(`.${clickedClass}`).textContent = ((turn === false)? player1 : player2);
             blocks[`${clickedClass}`] = ((turn === false)? 1 : -1);
             turn = !turn;
@@ -38,68 +44,93 @@ var turn = false;
 
             //Finding the winner
             if(this.findWinner()){
-                this.removeListeners();
+                // this.removeListeners();
                 this.printWinner(this.findWinner());
+                return;
             }
+            //Checking for No Result in case of draw
+            checkForNoResult();
         }
     });
 })();
 
-removeListeners = () => {
-    for(let row = 0; row < 3; row++){
-        for(let column = 0; column < 3; column++){
-            document.querySelector(`.block-${row}${column}`).removeEventListener('click', ()=>{});
+checkForNoResult = () => {
+    let countZeroes = 0;
+    for (const property in blocks) {
+        if(blocks[property] === 0){
+            countZeroes++;
         }
     }
+    if(countZeroes === 0){
+        this.printWinner();
+    }
 }
+
+// removeListeners = () => {
+//     for(let row = 0; row < 3; row++){
+//         for(let column = 0; column < 3; column++){
+//             document.querySelector(`.block-${row}${column}`).removeEventListener('click', ()=>{});
+//         }
+//     }
+// }
 
 findWinner = () => {
     if(turn === false){
         switch(-3){
             case blocks[`block-00`]+blocks[`block-01`]+blocks[`block-02`]: return 'Player2';
-            break;
+            
             case blocks[`block-10`]+blocks[`block-11`]+blocks[`block-12`]: return 'Player2';
-            break;
+            
             case blocks[`block-20`]+blocks[`block-21`]+blocks[`block-22`]: return 'Player2';
-            break;
+            
             case blocks[`block-00`]+blocks[`block-10`]+blocks[`block-20`]: return 'Player2';
-            break;
+            
             case blocks[`block-01`]+blocks[`block-11`]+blocks[`block-21`]: return 'Player2';
-            break;
+            
             case blocks[`block-02`]+blocks[`block-12`]+blocks[`block-22`]: return 'Player2';
-            break;
+            
             case blocks[`block-00`]+blocks[`block-11`]+blocks[`block-22`]: return 'Player2';
-            break;
+            
             case blocks[`block-02`]+blocks[`block-11`]+blocks[`block-20`]: return 'Player2';
-            break;
+            
         }
-    }else{
+    }else if(turn === true){
         switch(3){
             case blocks[`block-00`]+blocks[`block-01`]+blocks[`block-02`]: return 'Player1';
-            break;
+            
             case blocks[`block-10`]+blocks[`block-11`]+blocks[`block-12`]: return 'Player1';
-            break;
+            
             case blocks[`block-20`]+blocks[`block-21`]+blocks[`block-22`]: return 'Player1';
-            break;
+            
             case blocks[`block-00`]+blocks[`block-10`]+blocks[`block-20`]: return 'Player1';
-            break;
+            
             case blocks[`block-01`]+blocks[`block-11`]+blocks[`block-21`]: return 'Player1';
-            break;
+            
             case blocks[`block-02`]+blocks[`block-12`]+blocks[`block-22`]: return 'Player1';
-            break;
+            
             case blocks[`block-00`]+blocks[`block-11`]+blocks[`block-22`]: return 'Player1';
-            break;
+            
             case blocks[`block-02`]+blocks[`block-11`]+blocks[`block-20`]: return 'Player1';
-            break;
+            
         }
     }
 }
 
 printWinner = (winner) => {
-    document.querySelector('.msg').textContent = `${winner} is the winner!!! Press Reset to play again...`;
-    setTimeout(()=>{
-        document.querySelector('.msg').textContent = ``;
-    }, 3000);
+    if(!winner){
+        document.querySelector('.msg').textContent = `No Result!!! Press Reset to play again...`;   
+    }else{
+        document.querySelector('.msg').textContent = `${winner} is the winner!!! Press Reset to play again...`;
+    }
+    
+    let allBlocks = document.querySelectorAll('.block');
+    
+    allBlocks.forEach(function(block) {
+        block.style.zIndex = -1;
+    });
+    // setTimeout(()=>{
+    //     document.querySelector('.msg').textContent = ``;
+    // }, 3000);
 }
 
 function init(){
@@ -111,4 +142,12 @@ function init(){
             blocks[`block-${row}${column}`] = 0;
         }
     }
+
+    let allBlocks = document.querySelectorAll('.block');
+    
+    allBlocks.forEach(function(block) {
+        block.style.zIndex = 0;
+    });
+
+    document.querySelector('.msg').textContent = ``;
 }

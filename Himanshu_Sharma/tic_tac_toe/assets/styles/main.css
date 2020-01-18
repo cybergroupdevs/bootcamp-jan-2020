@@ -89,7 +89,15 @@ body{
     flex: 1 0 auto;
     text-align: center;
     font-size: 7rem;
+    user-select: none;
 }
+
+
+/*
+//Learning that it will not apply because element is not currently in HTML
+.block--underlay{
+    z-index: -1 !important;
+} */
 
 .block:hover{
     background-color: rgba(170, 68, 162, 0.6);
@@ -102,8 +110,14 @@ body{
     bottom: 0;
     height: 8rem;
     width: 100%;
-    color: #DB9D47;
+    color: #AA4465;
     font-size: 3.2rem;
+    text-align: center;
+}
+
+.current-player{
+    color: #343434;
+    font-weight: 800;
 }
 
 @media screen and (max-width: 460px)  {
