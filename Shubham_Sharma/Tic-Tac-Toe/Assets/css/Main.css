@@ -1,0 +1,17 @@
+button{
+    width: 100%;
+    height: 100%;
+}
+td{
+    height: 33.33%;
+    width: 33.33%;
+    text-align: center;
+}
+table{
+    height: 50vh;
+}
+button{
+    background-color: brown;
+    font-size: 3rem;
+    color: white;
+}
