@@ -3,10 +3,17 @@ function display(val){
 }
 function compute(){
     let x = document.getElementById("result").value;
+    if( ){
+
+    }
+    else{
     x = x.replace(/sin/g, "Math.sin");
     x = x.replace(/cos/g, "Math.cos");
     x = x.replace(/tan/g, "Math.tan");
-    x = x.replace(/&#x221A;/g, "Math.sqrt")
+    x = x.replace(/√/g, "Math.sqrt")
+    x = x.replace(/x/g, "*")
+}
+
 
     let y = eval(x) 
     document.getElementById("result").value = y 
@@ -16,5 +23,8 @@ function cscreen()
          { 
              document.getElementById("result").value = "" 
          } 
+function cescreen(){
+    
+}
 
         
