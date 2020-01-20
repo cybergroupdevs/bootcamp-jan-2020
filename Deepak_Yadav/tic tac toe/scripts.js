@@ -1,5 +1,5 @@
 var options = "X";
-
+//background color will change once any perfect combination occurs
 function highLight(cell1, cell2, cell3, symbol){
     btnDisable();
     document.getElementById(cell1).style.backgroundColor = 'red';
@@ -7,7 +7,7 @@ function highLight(cell1, cell2, cell3, symbol){
     document.getElementById(cell3).style.backgroundColor = 'red';
 }
 
-//Resets every button's text and color
+//game will start from starting with a new different background color
 function reset(){
     var b1 = document.getElementById("b1");
     var b2 = document.getElementById("b2");
@@ -18,7 +18,7 @@ function reset(){
     var b7 = document.getElementById("b7");
     var b8 = document.getElementById("b8");
     var b9 = document.getElementById("b9");
-
+//initializing buttons with # value
     b1.innerHTML = "#";
     b2.innerHTML = "#";
     b3.innerHTML = "#";
@@ -50,8 +50,9 @@ function reset(){
     b9.disabled = false;
 }
 
-//Checks for any WINNING pattern, and will call a method for highlighting those button's color
+//Winning combination
 function checker(){
+    //storing values in variables
     var b1 = document.getElementById("b1").innerHTML;
     var b2 = document.getElementById("b2").innerHTML;
     var b3 = document.getElementById("b3").innerHTML;
@@ -64,28 +65,28 @@ function checker(){
     
 
     if(((b1=="X") || (b1=="O")) && ((b1 == b2) && (b2 == b3))){
-        highLight("b1", "b2", "b3", b1);
+        highLight("b1", "b2", "b3");
     }
     else if(((b1=="X") || (b1=="O")) && ((b1 == b4) && (b4 == b7))){
-        highLight("b1", "b4", "b7", b1);
+        highLight("b1", "b4", "b7");
     }
     else if(((b1=="X") || (b1=="O")) && ((b1 == b5) && (b5 == b9))){
-        highLight("b1", "b5", "b9", b1);
+        highLight("b1", "b5", "b9");
     }
     else if(((b2=="X") || (b2=="O")) && ((b2 == b5) && (b5 == b8))){
-        highLight("b2", "b5", "b8", b2);
+        highLight("b2", "b5", "b8");
     }
     else if(((b3=="X") || (b3=="O")) && ((b3 == b6) && (b6 == b9))){
-        highLight("b3", "b6", "b9", b3);
+        highLight("b3", "b6", "b9");
     }
     else if(((b3=="X") || (b3=="O")) && ((b3 == b5) && (b5 == b7))){
-        highLight("b3", "b5", "b7", b3);
+        highLight("b3", "b5", "b7");
     }
     else if(((b4=="X") || (b4=="O")) && ((b4 == b5) && (b5 == b6))){
-        highLight("b4", "b5", "b6", b4);
+        highLight("b4", "b5", "b6");
     }
     else if(((b7=="X") || (b7=="O")) && ((b7 == b8) && (b8 == b9))){
-        highLight("b7", "b8", "b9", b7);
+        highLight("b7", "b8", "b9");
     }
 }
 
@@ -144,7 +145,7 @@ function setButton(button, options){
     checker();
 }
 
-//Checks which symbol is next going to appear, like if last symbol was X, then O will be printed next 
+//for alternate inputs 
 function clicker(button){
     if(options == "X"){
         options = "O";

@@ -15,3 +15,9 @@ button{
     font-size: 3rem;
     color: bisque;
 }
+.btn{
+    color: black;
+    font-weight: 1000;
+    width: 200px;
+    border-radius: 20px;
+}
