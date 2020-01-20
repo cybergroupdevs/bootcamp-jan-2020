@@ -96,7 +96,7 @@ function Factorial(n) {
 // }
 
 function cleanByEntry(){
+    txt = document.getElementById("display").value;
     l = txt.length;
-    txt =  document.getElementById("display").value;
     document.getElementById("display").value = txt.replace(txt[l-1] , "");
 }
