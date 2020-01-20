@@ -33,7 +33,8 @@ width: 5rem;
     margin: auto;
     padding: 1rem;
     border: 1px solid black;
-    box-shadow: 10px 10px 5px grey;
+    box-shadow: 6px 7px 5px 10px black;
+    min-width: 500px;
 }
 
 button{
