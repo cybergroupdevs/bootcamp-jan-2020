@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+<!--<script src="./script.js" ></script> -->
+
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="scrn"><form name="calc"><input type="text" name="display" id="scn" size="20" readonly></form></div>
+
+        <div class="calc_btns">
+            <p>
+                <input type="button" value="x!" class="other_opr" onclick=fact();>
+                <input type="button" value="C" class="other_opr">
+                <input type="button" value="CE" class="other_opr" id="ce_btn" onclick="calc.display.value=''">
+                <button class="major_opr" onclick="calc.display.value+='/'"><i class='fa fa-divide '></i></button>
+                
+                
+            </p>
+
+            <p>
+                <button class="other_opr" onclick="calc.display.value=Math.sqrt(calc.display.value)"><i class='fa fa-square-root-alt'></i></button>
+                <input type="button" value="7" class="num" onclick="calc.display.value+='7'">
+                <input type="button" value="8" class="num" onclick="calc.display.value+='8'">
+                <input type="button" value="9" class="num" onclick="calc.display.value+='9'">
+                <button class="major_opr" onclick="calc.display.value+='*'"><i class='fa fa-times'></i></button>
+            </p> 
+
+            <p>
+                <input type="button" value="sin" class="other_opr" onclick="calc.display.value=Math.sin(calc.display.value)">
+                <input type="button" value="4" class="num" onclick="calc.display.value+='4'">
+                <input type="button" value="5" class="num" onclick="calc.display.value+='5'">
+                <input type="button" value="6" class="num" onclick="calc.display.value+='6'">
+                <button class="major_opr" onclick="calc.display.value+='-'"><i class='fa fa-minus'></i></button>
+                
+            </p>
+
+            <p>
+                <input type="button" value="cos" class="other_opr" onclick="calc.display.value=Math.cos(calc.display.value)">
+                <input type="button" value="1" class="num" onclick="calc.display.value+='1'">
+                <input type="button" value="2" class="num" onclick="calc.display.value+='2'">
+                <input type="button" value="3" class="num" onclick="calc.display.value+='3'">
+                <button class="major_opr" onclick="calc.display.value+='+'"><i class='fa fa-plus '></i></button>
+            </p>
+            
+            <p>
+                <input type="button" value="tan" class="other_opr" onclick="calc.display.value=Math.tan(calc.display.value)">
+                <input type="button" value="0" class="num" id="zero" onclick="calc.display.value+='0'"> 
+                <input type="button" value="." class="num" onclick="calc.display.value+='.'">
+                <button class="major_opr" id="equal_btn" onclick="calc.display.value=eval(calc.display.value)"><i class='fa fa-equals'></i></button>
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
