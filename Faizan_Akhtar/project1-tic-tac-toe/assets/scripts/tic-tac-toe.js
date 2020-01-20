@@ -71,3 +71,92 @@ function setButton(button, gameSymbol){
     }
     checker();
 }
+
+
+function checker(){
+    var b1 = document.getElementById("btn1").innerHTML;
+    var b2 = document.getElementById("btn2").innerHTML;
+    var b3 = document.getElementById("btn3").innerHTML;
+    var b4 = document.getElementById("btn4").innerHTML;
+    var b5 = document.getElementById("btn5").innerHTML;
+    var b6 = document.getElementById("btn6").innerHTML;
+    var b7 = document.getElementById("btn7").innerHTML;
+    var b8 = document.getElementById("btn8").innerHTML;
+    var b9 = document.getElementById("btn9").innerHTML;
+    
+
+    if(((b1=="X") || (b1=="O")) && ((b1 == b2) && (b2 == b3))){
+        gameFinished("btn1", "btn2", "btn3");
+    }
+    else if(((b1=="X") || (b1=="O")) && ((b1 == b4) && (b4 == b7))){
+        gameFinished("btn1", "btn4", "btn7");
+    }
+    else if(((b1=="X") || (b1=="O")) && ((b1 == b5) && (b5 == b9))){
+        gameFinished("btn1", "btn5", "btn9");
+    }
+    else if(((b2=="X") || (b2=="O")) && ((b2 == b5) && (b5 == b8))){
+        gameFinished("btn2", "btn5", "btn8");
+    }
+    else if(((b3=="X") || (b3=="O")) && ((b3 == b6) && (b6 == b9))){
+        gameFinished("btn3", "btn6", "btn9");
+    }
+    else if(((b3=="X") || (b3=="O")) && ((b3 == b5) && (b5 == b7))){
+        gameFinished("btn3", "btn5", "btn7");
+    }
+    else if(((b4=="X") || (b4=="O")) && ((b4 == b5) && (b5 == b6))){
+        gameFinished("btn4", "btn5", "btn6");
+    }
+    else if(((b7=="X") || (b7=="O")) && ((b7 == b8) && (b8 == b9))){
+        gameFinished("btn7", "btn8", "btn9");
+    }
+}
+
+function gameFinished(box1, box2, box3){
+    btnDisable();
+    document.getElementById(box1).style.backgroundColor = '#ff4757';
+    document.getElementById(box2).style.backgroundColor = '#ff4757';
+    document.getElementById(box3).style.backgroundColor = '#ff4757';
+    alert("Game Finished");
+}
+
+function resetBtn(){
+    var b1 = document.getElementById("btn1");
+    var b2 = document.getElementById("btn2");
+    var b3 = document.getElementById("btn3");
+    var b4 = document.getElementById("btn4");
+    var b5 = document.getElementById("btn5");
+    var b6 = document.getElementById("btn6");
+    var b7 = document.getElementById("btn7");
+    var b8 = document.getElementById("btn8");
+    var b9 = document.getElementById("btn9");
+
+    b1.innerHTML = "";
+    b2.innerHTML = "";
+    b3.innerHTML = "";
+    b4.innerHTML = "";
+    b5.innerHTML = "";
+    b6.innerHTML = "";
+    b7.innerHTML = "";
+    b8.innerHTML = "";
+    b9.innerHTML = "";
+
+    b1.style.backgroundColor = "#5352ed";
+    b2.style.backgroundColor = "#5352ed";
+    b3.style.backgroundColor = "#5352ed";
+    b4.style.backgroundColor = "#5352ed";
+    b5.style.backgroundColor = "#5352ed";
+    b6.style.backgroundColor = "#5352ed";
+    b7.style.backgroundColor = "#5352ed";
+    b8.style.backgroundColor = "#5352ed";
+    b9.style.backgroundColor = "#5352ed";
+
+    b1.disabled = false;
+    b2.disabled = false;
+    b3.disabled = false;
+    b4.disabled = false;
+    b5.disabled = false;
+    b6.disabled = false;
+    b7.disabled = false;
+    b8.disabled = false;
+    b9.disabled = false;
+}
