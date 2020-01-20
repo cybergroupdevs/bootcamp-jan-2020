@@ -1,6 +1,6 @@
 body{
     height: 100vh;
-    background-image: url('./Assets/images/jumbo-bg.jfif');
+    background-image: url("../images/jumbo-bg.jfif");
     background-size: cover;
 }
 button{
