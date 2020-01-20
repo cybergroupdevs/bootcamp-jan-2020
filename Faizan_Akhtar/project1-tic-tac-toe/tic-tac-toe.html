@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/styles/tic-tac-toe.css">
+    <script type="text/javascript" src="./assets/scripts/tic-tac-toe.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div">
+            <h1 class="text-center">Tic Tac Toe Game</h1>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <button style="height: 4rem; width: 20rem;" class="btn btn-danger" onclick="resetBtn()">Reset</button>
+    </div>
+    <br><br>
+    <div class="container" id="playBoard">
+        <table class="w-100">
+            <tr>
+                <td><button id="btn1" onclick="clicker(1)" ></button></td>
+                <td><button id="btn2" onclick="clicker(2)" ></button></td>
+                <td><button id="btn3" onclick="clicker(3)" ></button></td>
+            </tr>
+            <tr class="w-100">
+                <td><button id="btn4" onclick="clicker(4)" ></button></td>
+                <td><button id="btn5" onclick="clicker(5)" ></button></td>
+                <td><button id="btn6" onclick="clicker(6)" ></button></td>
+            </tr>
+            <tr class="w-100">
+                <td><button id="btn7" onclick="clicker(7)" ></button></td>
+                <td><button id="btn8" onclick="clicker(8)" ></button></td>
+                <td><button id="btn9" onclick="clicker(9)" ></button></td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>
