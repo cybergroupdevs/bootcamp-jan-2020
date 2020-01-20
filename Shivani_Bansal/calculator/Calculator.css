@@ -58,7 +58,7 @@ button{
     text-align:right ;
     background-image: linear-gradient(black, grey);
     color: white;
-    box-shadow: 10px 10px 5px grey;
+    box-shadow: 6px 7px 5px 10px black;
 }
 
 h1{
