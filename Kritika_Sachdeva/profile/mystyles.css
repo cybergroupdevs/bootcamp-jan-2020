@@ -57,7 +57,7 @@ body{
 }
 
 .profile-img{
-    height: 400px;
+    height: 420px;
     width: 350px;
 }
 
@@ -75,7 +75,17 @@ body{
     height: 50px;
 }
 
-button.navbar-toggler{
-    color:black;
-    background-color: green;
+.nav-bar .fa-bars{
+    font-size: 30px;
+    color: white;
+}
+
+.navbar-nav{
+    float: right;
+    text-align: right;
+}
+
+.skills p{
+    margin-top: 6px;
+    font-weight: bold;
 }
