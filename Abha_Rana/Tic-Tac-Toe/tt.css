@@ -30,3 +30,22 @@
     border-collapse: collapse;
     margin: auto;
   }
+  td {
+    background-color: #666;
+    border: 5px solid white;
+    font-size: 80px;
+    color: #fff;
+    border-radius: 10%;
+  }
+  
+  #player {
+    padding: 1rem;
+  }
+  
+  body {
+    display: flex;
+    background:  linear-gradient(rgba(107, 231, 90, 0.4), rgba(106, 250, 219, 0.4));
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
