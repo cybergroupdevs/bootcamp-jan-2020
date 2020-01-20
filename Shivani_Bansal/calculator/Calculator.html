@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Calculator.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="Calculator.js"></script>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div class="main" >
+        <div class="inputArea"><input id="display" type="text" name="display" readonly></div>
+        <div class="keypad" >
+            <!-- <div class="row1" > -->
+                <div><button  onclick= "insert('Sin(')" type="button" name="sine" class="btn btn-outline-secondary">Sin</button></div>
+                <div><button onclick= clean() type="button" name="clear" class="btn btn-outline-secondary">C</button></div>
+                <div><button onclick="insert(')')"    type="button" name="closing bracket"        class="btn btn-outline-secondary">)</button></div>
+                <div><button onclick=cleanByEntry()            type="button" name="clear entry" class="btn btn-outline-secondary">CE</button></div>
+                <div><button onclick="insertOperator('÷')" type="button" name="divide" class="btn btn-outline-secondary">÷</button></div>
+            <!-- </div> -->
+            <!-- <div class="row1" >  -->
+                <div> <button onclick="insert('Cos(')" type="button" name="Cosine" class="btn btn-outline-secondary">Cos</button></div>
+                <div><button onclick=insert(7) type="button" name="seven" class="btn btn-outline-secondary">7</button></div>
+                <div><button onclick=insert(8) type="button" name="eight" class="btn btn-outline-secondary">8</button></div>
+                <div><button onclick=insert(9) type="button" name="nine" class="btn btn-outline-secondary">9</button></div>
+                <div><button onclick="insertOperator('X')" type="button" name=multiply class="btn btn-outline-secondary">X</button></div>
+            <!-- </div>
+            <div class="row1" > -->
+                <div><button onclick="insert('Tan(')" type="button" name="Tan" class="btn btn-outline-secondary">Tan</button></div>
+                <div><button onclick=insert(4) type="button" name="four" class="btn btn-outline-secondary">4</button></div>
+                <div><button onclick=insert(5) type="button" name="five" class="btn btn-outline-secondary">5</button></div>
+                <div><button onclick=insert(6) type="button" name="six" class="btn btn-outline-secondary">6</button></div>
+                <div><button onclick="insertOperator('-')" type="button" name="minus" class="btn btn-outline-secondary">-</button></div>
+            <!-- </div>
+            <div class="row1" > -->
+                <div><button onclick="insertOperator('√(')" type="button" name="square root" class="btn btn-outline-secondary">&Sqrt;</i></button></div>
+                <div><button onclick=insert(1) type="button" name="one" class="btn btn-outline-secondary">1</button></div>
+                <div><button onclick=insert(2) type="button" name="two" class="btn btn-outline-secondary">2</button></div>
+                <div><button onclick=insert(3) type="button" name="three" class="btn btn-outline-secondary">3</button></div>
+                <div><button onclick="insertOperator('+')" type="button" name="plus" class="btn btn-outline-secondary">+</button></div>
+            <!-- </div>
+            <div class="row1" > -->
+                <div><button onclick="insertOperator('!')" type="button" name="factorial" class="btn btn-outline-secondary">x!</button></div>
+                <div><button onclick="insert('00')" type="button" name="double zero" class="btn btn-outline-secondary">00</button></div>
+                <div><button onclick=insert(0) type="button" name="zero" class="btn btn-outline-secondary">0</button></div>
+                <div><button onclick="insertOperator('.')" type="button" name="decimal" class="btn btn-outline-secondary">.</button></div>
+                <div><button onclick=solve() type="button" name="equal to" class="btn btn-outline-secondary">=</button></div>
+            <!-- </div> -->
+            
+        </div>
+    </div>
+</body>
+</html>
