@@ -1,0 +1,41 @@
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin { margin-bottom:10px;
+           margin-top:15px;
+           padding-top: 2%;
+           font-family: 'Shadows Into Light', cursive;
+        }
+        .container-fluid {
+            padding-top: 25px;
+            padding-bottom: 60px;
+        
+          }
+          .navbar{
+            position:sticky;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            font-size: 12px;
+            letter-spacing: 5px;
+              top: 0;
+              width:100%;
+              z-index: 100;
+          }
+        
+          .navbar-nav  li a:hover {
+            color: #1abc9c !important;
+          }
+          .navbar-brand {
+            font-family: 'Gloria Hallelujah', cursive;
+            
+          }
+          .nav
+        {
+            font-family: 'Pacifico', cursive;
+        }
