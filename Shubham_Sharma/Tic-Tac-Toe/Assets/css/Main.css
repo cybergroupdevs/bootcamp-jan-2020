@@ -1,3 +1,8 @@
+body{
+    height: 100vh;
+    background-image: url('./Assets/images/jumbo-bg.jfif');
+    background-size: cover;
+}
 button{
     width: 100%;
     height: 100%;
