@@ -33,17 +33,20 @@ width: 5rem;
     margin: auto;
     padding: 1rem;
     border: 1px solid black;
+    box-shadow: 10px 10px 5px grey;
 }
 
 button{
     width: 100%;
     padding: 1rem;
     font-size: 2rem!important;
+    box-shadow: 10px 10px 5px grey;
 }
 
 
 .keypad{
     display: grid;
+    grid-gap: 11px 8px;
     grid-template-columns: auto auto auto auto auto;
     padding-top: 2rem;
 }
@@ -53,6 +56,9 @@ button{
     font-size: 3rem;
     padding: 1rem;
     text-align:right ;
+    background-image: linear-gradient(black, grey);
+    color: white;
+    box-shadow: 10px 10px 5px grey;
 }
 
 h1{
@@ -66,5 +72,10 @@ body{
     background-color: aqua;
 }
 
+
+
+/* .numberClass{
+    
+} */
 
 
