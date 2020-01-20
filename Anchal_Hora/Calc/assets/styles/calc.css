@@ -1,0 +1,88 @@
+.container-grid{
+    background-color: gray;
+    height: 450px;
+    width: 330px;
+    border-radius: 8px;
+    position: relative;
+    top: 20%;
+    left: 40%;
+}
+
+.body{
+    padding:2rem;
+    margin:1rem;
+    background: linear-gradient(to right, #00AAFF, #00FF6C);
+    position: relative;
+}
+
+.output{
+    position: relative;
+    background-color:beige;
+    height: 55px;
+    width: 266px;
+    margin: 2rem;
+    top: 25px;
+    border-radius: 4px;
+}
+
+.output input{
+    position: relative;
+    left: 2px;
+    top: 3px;
+    text-align: right;
+    width: 248px;
+    height: 45px;
+    font-size: large;
+    color:white;
+    background-color:black;
+    padding-right: 10px;
+    
+}
+
+
+.buttons{
+    position: relative;
+    margin: 4rem 1.8rem 2rem 2rem;
+    border-style: groove;
+    padding: 10px;
+    
+
+}
+
+.num{
+    background-color: black;
+    color: white;
+    
+}
+
+.major_opr{
+    color:white;
+    background-color: gold;
+    font-weight: lighter;
+    
+}
+
+.other_opr{
+    color: white;
+    background-color:darkseagreen;
+    
+}
+
+#equal_btn{
+    background-color:mediumorchid;
+    color: white;
+}
+
+p>*{
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    width: 41.4px;
+    height: 30px;
+}  
+
+#zero, #ce_btn{
+    width: 90px;
+}
