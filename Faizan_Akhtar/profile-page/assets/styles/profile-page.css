@@ -1,0 +1,10 @@
+.jumbotron{
+    background-image: linear-gradient(to right, #1d53b1, #55cff8);  ;
+    /* colors - #2a2a72 #009ffd  */
+}
+h1{
+    color:white !important;
+}
+p{
+    color: white;
+}
