@@ -1,0 +1,25 @@
+.scaling-image{
+    border-top: black solid;
+    border-radius: 5%;
+}
+.scaling-image:hover{
+    position:relative;
+    top:-10px;
+    left:-15px;
+    transition-delay: 1s;
+    transition-duration: 5s;
+    transform:scaleX(1.05); 
+    height:auto;
+    display:block;
+    z-index:999;
+}
+.list1-design{
+    padding-top: 1rem;
+    border-top: forestgreen solid;
+}
+.list2-design{
+    margin-top: 5rem;
+    margin-left: 3rem;
+    border-top:purple solid;
+    padding-top: 1rem;
+}

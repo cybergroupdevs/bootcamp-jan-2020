@@ -1,0 +1,9 @@
+.background-about{
+    background: url(../images/about1.jpg) no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
