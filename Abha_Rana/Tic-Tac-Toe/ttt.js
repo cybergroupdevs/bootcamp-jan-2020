@@ -1,4 +1,4 @@
-  var N_SIZE = 3,
+ var N_SIZE = 3,
   EMPTY = "&nbsp;",
   boxes = [],
   turn = "X",

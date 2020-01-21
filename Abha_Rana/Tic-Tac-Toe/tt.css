@@ -9,8 +9,8 @@
   align-content: center;
   justify-content: center;
   flex-direction: column;
-  min-width: 700px;
-  min-height: 500px;
+  min-width: 50%;
+  min-height: 85%;
   border-radius: 5%;
   margin: auto;
   position: relative;
@@ -31,10 +31,10 @@ table {
 }
 td {
   background-color: #666;
-  border: 5px solid white;
+  border: 0.5rem solid white;
   font-size: 80px;
   color: #fff;
-  border-radius: 10%;
+  border-radius:20%;
 }
 
 #player {
