@@ -5,10 +5,10 @@
 }
 .container {
   display: flex;
-  background: #fff;
+  flex-flow: column;
   align-content: center;
   justify-content: center;
-  flex-direction: column;
+  background: #fff;
   min-width: 50%;
   min-height: 85%;
   border-radius: 5%;
@@ -44,9 +44,8 @@ td {
 body {
   display: flex;
   background: linear-gradient(
-    rgba(107, 231, 90, 0.4),
-    rgba(106, 250, 219, 0.4)
-  );
+ rgba(107, 231, 90, 0.4),
+ rgba(106, 250, 219, 0.4));
   height: 100vh;
   width: 100%;
   overflow: hidden;
