@@ -89,51 +89,11 @@ function highLight(cell1, cell2, cell3){
 
 //The button pressed will be disabled and symbol 'X' or 'O' will appear on it
 function setButton(button, options){
-    if(button == 1){
-        var btn = document.getElementById("b1");
-        btn.innerHTML = options;
-        btn.disabled = true;
-    }
-    else if(button == 2){
-        var btn = document.getElementById("b2");
-        btn.innerHTML = options;
-        btn.disabled = true;
-    }
-    else if(button == 3){
-        var btn = document.getElementById("b3");
-        btn.innerHTML = options;
-        btn.disabled = true;
-    }
-    else if(button == 4){
-        var btn = document.getElementById("b4");
-        btn.innerHTML = options;
-        btn.disabled = true;
-    }
-    else if(button == 5){
-        var btn = document.getElementById("b5");
-        btn.innerHTML = options;
-        btn.disabled = true;
-    }
-    else if(button == 6){
-        var btn = document.getElementById("b6");
-        btn.innerHTML = options;
-        btn.disabled = true;
-    }
-    else if(button == 7){
-        var btn = document.getElementById("b7");
-        btn.innerHTML = options;
-        btn.disabled = true;
-    }
-    else if(button == 8){
-        var btn = document.getElementById("b8");
-        btn.innerHTML = options;
-        btn.disabled = true;
-    }
-    else if(button == 9){
-        var btn = document.getElementById("b9");
-        btn.innerHTML = options;
-        btn.disabled = true;
-    }
+    var btnId = "b" + button;
+    console.log(btnId);
+    var btn = document.getElementById(btnId);
+    btn.innerHTML = options;
+    btn.disabled = true;
     //Checks if a WINNING pattern is made
     checker();
 }
