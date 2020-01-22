@@ -3,6 +3,10 @@ body {
     line-height: 1.8;
     color: #f5f6f7;
   }
+  .container{
+    padding-left: 2.5rem;
+    
+  }
   p {font-size: 15px;}
   .margin {margin-bottom: 35px;}
 
@@ -50,10 +54,12 @@ body {
   .container-fluid {
     padding-top: 30px;
     padding-bottom: 30px;
+    
   }
 
   .margin {
     font-weight: bold;
+    margin-left: 1rem;
   }
   .navbar {
     padding-top: 10px;
@@ -68,11 +74,11 @@ body {
     color: #ffffff !important;
     background-color: #ffffff;
   }
-  .navbar-brand a:{
+  .navbar-brand a:hover {
     color: #ffffff;
   }
   .hero {
     color: #ffffff;
     font-weight: bold;
   }
-  </style>
+  
