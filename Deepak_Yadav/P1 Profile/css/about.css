@@ -3,7 +3,8 @@
     background-size: cover;
     min-height: 500px;
     display: flex;
+    flex-flow :row wrap;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
