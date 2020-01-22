@@ -96,13 +96,6 @@ body{
     user-select: none;
 }
 
-
-/*
-//Learning that it will not apply because element is not currently in HTML
-.block--underlay{
-    z-index: -1 !important;
-} */
-
 .block:hover{
     background-color: rgba(170, 68, 162);
     cursor: pointer;

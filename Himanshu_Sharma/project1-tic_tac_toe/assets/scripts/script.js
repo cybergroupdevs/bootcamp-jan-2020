@@ -5,15 +5,17 @@ var blocks = {};
 var turn = false;
 
 (function blocksCreation(){
-    for(let row = 0; row < 3; row++){
-        for(let column = 0; column < 3; column++){
+    const numberOfRows = numberOfColumns = 3;
+    const initialValue = 0;
+    for(let row = 0; row < numberOfRows; row++){
+        for(let column = 0; column < numberOfColumns; column++){
             //Creation of blocks within view
             const block = document.createElement('div');
             block.classList.add('block', `block-${row}${column}`);
             document.querySelector('.blocks_parent').appendChild(block);
 
             //Initializing state of each block in the global 'blocks' object 
-            blocks[`block-${row}${column}`] = 0;
+            blocks[`block-${row}${column}`] = initialValue;
         }
     }
 })();
@@ -34,7 +36,6 @@ var turn = false;
 
             //Finding the winner
             if(this.findWinner()){
-                // this.removeListeners();
                 this.printWinner(this.findWinner());
                 return;
             }
@@ -60,25 +61,18 @@ manageTurnAndBlocksObj = (clickedClass) => {
 
 checkForNoResult = () => {
     let countZeroes = 0;
-    for (const property in blocks) {
-        if(blocks[property] === 0){
+    let valuesOfKeys = Object.values(blocks);
+    
+    for(let i = 0; i<9; i++){
+        if(valuesOfKeys[i] === 0){
             countZeroes++;
         }
     }
+
     if(countZeroes === 0){
         this.printWinner();
     }
 }
-
-// removeListeners = () => {
-//     for(let row = 0; row < 3; row++){
-//         for(let column = 0; column < 3; column++){
-//             document.querySelector(`.block-${row}${column}`).removeEventListener('click', ()=>{});
-//         }
-//     }
-// }
-
-//why alert is popping while running but not at the time of debugging
 
 findWinner = () => {
     var styleStringForStrikeThrough = "background-color: black; position: absolute; transition: all .2s";
@@ -200,9 +194,6 @@ printWinner = (winner) => {
         document.querySelector('.msg').textContent = `${winner} is the winner!!! Press Reset to play again...`;
         this.manageNonClicking();
     }
-    // setTimeout(()=>{
-    //     document.querySelector('.msg').textContent = ``;
-    // }, 3000);
 }
 
 function init(){
@@ -220,7 +211,7 @@ function init(){
 
     let allBlocks = document.querySelectorAll('.block');
     
-    //Manage of the ZIndex of blocks back to normal,-> This has to be done because of Remove Listeners Overhead
+    //Manage of the ZIndex of blocks back to normal
     allBlocks.forEach(function(block) {
         block.style.zIndex = 0;
     });
