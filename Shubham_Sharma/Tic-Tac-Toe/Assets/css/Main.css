@@ -13,6 +13,13 @@ td{
     width: 33.33%;
     text-align: center;
 }
+.table-container{
+    display: flex;
+    justify-content: space-around;
+    max-width: 370px;
+    margin-left: auto;
+    margin-right: auto;
+}
 table{
     width: 50vh;
     height: 50vh;
