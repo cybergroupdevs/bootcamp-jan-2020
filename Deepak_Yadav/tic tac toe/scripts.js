@@ -66,15 +66,27 @@ function checker(){
 
 //The button pressed will be disabled and symbol 'X' or 'O' will appear on it
 function setButton(button, options){
-    
     for(let i=1; i<=9; i++){
-        if(button === i){
+        if(button == i){
             var btn = document.getElementById("b"+i);
             btn.innerHTML = options;
             btn.disabled = true;
         }
     }
+    //Checks if a WINNING pattern is made
     checker();
+}
+
+//for alternate inputs 
+function clicker(button){
+    if(options == "X"){
+        options = "O";
+        setButton(button, options);
+    }
+    else if(options == "O"){
+        options = "X";
+        setButton(button, options);
+    }
 }
 
 function btnDisable(){
