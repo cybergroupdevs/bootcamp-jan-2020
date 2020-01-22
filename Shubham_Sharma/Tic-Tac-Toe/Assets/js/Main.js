@@ -55,31 +55,15 @@ function checker(){
     var b8 = document.getElementById("b8").innerHTML;
     var b9 = document.getElementById("b9").innerHTML;
     
-
-    if(((b1=="X") || (b1=="O")) && ((b1 == b2) && (b2 == b3))){
-        highLight("b1", "b2", "b3", b1);
-    }
-    else if(((b1=="X") || (b1=="O")) && ((b1 == b4) && (b4 == b7))){
-        highLight("b1", "b4", "b7", b1);
-    }
-    else if(((b1=="X") || (b1=="O")) && ((b1 == b5) && (b5 == b9))){
-        highLight("b1", "b5", "b9", b1);
-    }
-    else if(((b2=="X") || (b2=="O")) && ((b2 == b5) && (b5 == b8))){
-        highLight("b2", "b5", "b8", b2);
-    }
-    else if(((b3=="X") || (b3=="O")) && ((b3 == b6) && (b6 == b9))){
-        highLight("b3", "b6", "b9", b3);
-    }
-    else if(((b3=="X") || (b3=="O")) && ((b3 == b5) && (b5 == b7))){
-        highLight("b3", "b5", "b7", b3);
-    }
-    else if(((b4=="X") || (b4=="O")) && ((b4 == b5) && (b5 == b6))){
-        highLight("b4", "b5", "b6", b4);
-    }
-    else if(((b7=="X") || (b7=="O")) && ((b7 == b8) && (b8 == b9))){
-        highLight("b7", "b8", "b9", b7);
-    }
+    (((b1=="X") || (b1=="O")) && ((b1 == b2) && (b2 == b3))) ? highLight("b1", "b2", "b3")
+    : (((b1=="X") || (b1=="O")) && ((b1 == b4) && (b4 == b7))) ? highLight("b1", "b4", "b7")
+    : (((b1=="X") || (b1=="O")) && ((b1 == b5) && (b5 == b9))) ? highLight("b1", "b5", "b9")
+    : (((b2=="X") || (b2=="O")) && ((b2 == b5) && (b5 == b8))) ? highLight("b2", "b5", "b8")
+    : (((b3=="X") || (b3=="O")) && ((b3 == b6) && (b6 == b9))) ? highLight("b3", "b6", "b9")
+    : (((b3=="X") || (b3=="O")) && ((b3 == b5) && (b5 == b7))) ? highLight("b3", "b5", "b7")
+    : (((b4=="X") || (b4=="O")) && ((b4 == b5) && (b5 == b6))) ? highLight("b4", "b5", "b6")
+    : (((b7=="X") || (b7=="O")) && ((b7 == b8) && (b8 == b9))) ? highLight("b7", "b8", "b9")
+    : "Hy";
 }
 
 function btnDisable(){
@@ -96,7 +80,7 @@ function btnDisable(){
 
 //Disables the buttons, and paints the button's ORANGE, which are in WINNING pattern.
 //It takes buttons id's as the three arguments and symbol=X or O as another argument, but the symbol īs currently not in use.
-function highLight(cell1, cell2, cell3, symbol){
+function highLight(cell1, cell2, cell3){
     btnDisable();
     document.getElementById(cell1).style.backgroundColor = '#FFA500';
     document.getElementById(cell2).style.backgroundColor = '#FFA500';
