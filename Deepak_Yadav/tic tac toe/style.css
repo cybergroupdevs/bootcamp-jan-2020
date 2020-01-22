@@ -8,7 +8,8 @@ td{
     text-align: center;
 }
 table{
-    height: 50%;
+    width: 50vh;
+    height: 50vh;
 }
 button{
     background:black;

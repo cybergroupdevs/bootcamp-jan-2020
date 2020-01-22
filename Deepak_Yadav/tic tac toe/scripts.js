@@ -66,13 +66,9 @@ function checker(){
 
 //The button pressed will be disabled and symbol 'X' or 'O' will appear on it
 function setButton(button, options){
-    for(let i=1; i<=9; i++){
-        if(button == i){
-            var btn = document.getElementById("b"+i);
-            btn.innerHTML = options;
-            btn.disabled = true;
-        }
-    }
+        var btn = document.getElementById("b"+button);
+        btn.innerHTML = options;
+        btn.disabled = true;
     //Checks if a WINNING pattern is made
     checker();
 }
@@ -89,14 +85,10 @@ function clicker(button){
     }
 }
 
-function btnDisable(){
-    document.getElementById("b1").disabled = true;
-    document.getElementById("b2").disabled = true;
-    document.getElementById("b3").disabled = true;
-    document.getElementById("b4").disabled = true;
-    document.getElementById("b5").disabled = true;
-    document.getElementById("b6").disabled = true;
-    document.getElementById("b7").disabled = true;
-    document.getElementById("b8").disabled = true;
-    document.getElementById("b9").disabled = true;
-}
+function btnDisable()
+{
+    for(let i=1;i<=9;i++)
+    {
+        document.getElementById("b"+i).disabled = true;
+    }
+ }
