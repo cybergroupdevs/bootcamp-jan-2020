@@ -1,46 +1,23 @@
 var options = "X";
 
+var b1 = document.getElementById("b1");
+var b2 = document.getElementById("b2");
+var b3 = document.getElementById("b3");
+var b4 = document.getElementById("b4");
+var b5 = document.getElementById("b5");
+var b6 = document.getElementById("b6");
+var b7 = document.getElementById("b7");
+var b8 = document.getElementById("b8");
+var b9 = document.getElementById("b9");
+var btns = [b1, b2, b3, b4, b5, b6, b7, b8, b9];
+
 //Resets every button's text and color
 function reset(){
-    var b1 = document.getElementById("b1");
-    var b2 = document.getElementById("b2");
-    var b3 = document.getElementById("b3");
-    var b4 = document.getElementById("b4");
-    var b5 = document.getElementById("b5");
-    var b6 = document.getElementById("b6");
-    var b7 = document.getElementById("b7");
-    var b8 = document.getElementById("b8");
-    var b9 = document.getElementById("b9");
-
-    b1.innerHTML = "";
-    b2.innerHTML = "";
-    b3.innerHTML = "";
-    b4.innerHTML = "";
-    b5.innerHTML = "";
-    b6.innerHTML = "";
-    b7.innerHTML = "";
-    b8.innerHTML = "";
-    b9.innerHTML = "";
-
-    b1.style.backgroundColor = "#a52a2a";
-    b2.style.backgroundColor = "#a52a2a";
-    b3.style.backgroundColor = "#a52a2a";
-    b4.style.backgroundColor = "#a52a2a";
-    b5.style.backgroundColor = "#a52a2a";
-    b6.style.backgroundColor = "#a52a2a";
-    b7.style.backgroundColor = "#a52a2a";
-    b8.style.backgroundColor = "#a52a2a";
-    b9.style.backgroundColor = "#a52a2a";
-
-    b1.disabled = false;
-    b2.disabled = false;
-    b3.disabled = false;
-    b4.disabled = false;
-    b5.disabled = false;
-    b6.disabled = false;
-    b7.disabled = false;
-    b8.disabled = false;
-    b9.disabled = false;
+    for(let i=0; i<9; i++){
+        btns[i].innerHTML = "";
+        btns[i].style.backgroundColor = "#a52a2a"
+        btns[i].disabled = false;
+    }
 }
 
 //Checks for any WINNING pattern, and will call a method for highlighting those button's color
@@ -67,15 +44,9 @@ function checker(){
 }
 
 function btnDisable(){
-    document.getElementById("b1").disabled = true;
-    document.getElementById("b2").disabled = true;
-    document.getElementById("b3").disabled = true;
-    document.getElementById("b4").disabled = true;
-    document.getElementById("b5").disabled = true;
-    document.getElementById("b6").disabled = true;
-    document.getElementById("b7").disabled = true;
-    document.getElementById("b8").disabled = true;
-    document.getElementById("b9").disabled = true;
+    for(let i=0; i<9; i++){
+        btns[i].disabled = true;
+    }
 }
 
 //Disables the buttons, and paints the button's ORANGE, which are in WINNING pattern.
@@ -90,7 +61,6 @@ function highLight(cell1, cell2, cell3){
 //The button pressed will be disabled and symbol 'X' or 'O' will appear on it
 function setButton(button, options){
     var btnId = "b" + button;
-    console.log(btnId);
     var btn = document.getElementById(btnId);
     btn.innerHTML = options;
     btn.disabled = true;
