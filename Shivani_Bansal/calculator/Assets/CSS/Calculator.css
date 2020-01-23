@@ -7,26 +7,6 @@
     
 }
 
-/* .div1{ */
-    /* display: flex; */
-    /* align-items: center;
-    justify-content: center; */
-    /* margin: auto;  */
-    /* padding: 0px 34rem; */
-    
-    
-
-/* } */
-
-
-/* .inputArea{
-width: 5rem;
-} */
-
-/* .keypad{
-    display: flex;
-    width: 5rem;
-}  */
 
 .main{
     width: 50%;
@@ -34,13 +14,13 @@ width: 5rem;
     padding: 1rem;
     border: 1px solid black;
     box-shadow: 6px 7px 5px 10px black;
-    min-width: 500px;
+    min-width: 575px;
 }
 
-button{
+.keypad button{
     width: 100%;
     padding: 1rem;
-    font-size: 2rem!important;
+    font-size: 1.7rem ;
     box-shadow: 10px 10px 5px grey;
 }
 
@@ -72,11 +52,5 @@ h1{
 body{
     background-color: aqua;
 }
-
-
-
-/* .numberClass{
-    
-} */
 
 
