@@ -1,43 +1,48 @@
 body{
     background-image: linear-gradient(to right, black, lightblue);
     margin: 0;
-
+    background-size: 100vh;
+    background-position: center;
 }
 
 .container{
     background-color: rgba(0, 0, 0, 0.842);
-    height: 450px;
-    width: 330px;
-    border-radius: 8px;
-    position: relative;
-    top: 20%;
-    left: 40%;
-    box-shadow: 4px 7px gainsboro;
+    height: 35%;
+    width: 25%;
+    border-radius: 0.7em;
+    box-shadow: 0.25em 0.5em gainsboro;
+    min-width: fit-content;
+    min-height: fit-content;
+    white-space: nowrap;
+    margin: auto;
+    margin-top: 25%;
+    padding-bottom: 4px;
+
 }
 
 
 .scrn{
     position: relative;
     background-color: lightslategray;
-    height: 55px;
-    width: 266px;
+    height: 3.5rem;
+    width: 16.5rem;
     margin: 2rem;
-    top: 25px;
-    border-radius: 4px;
+    top: 1.5rem;
+    border-radius: 0.25rem;
     
 }
 
 .scrn input{
     position: relative;
-    left: 2px;
-    top: 3px;
+    left: 0.15rem;
+    top: 0.25rem;
     text-align: right;
-    width: 249.5px;
-    height: 45px;
+    width: 15.5rem;
+    height: 2.8rem;
     font-size: large;
     color: black;
     background-color: lightslategray;
-    padding-right: 10px;
+    padding-right: 0.6rem;
     
 }
 
@@ -46,26 +51,19 @@ body{
     position: relative;
     margin: 4rem 1.8rem 2rem 2rem;
     border-style: groove;
-    padding: 10px;
-    
-
+    padding: 0.6rem;
 }
 
-.num{
-    background-color: black;
-    color: white;
-}
 
 .num:hover{
     background-color: darkslategrey;
 }
 
 .num:active{
-    background-color: darkslategrey;
-    box-shadow: 0 3px;
-    transform: translateY(3px);
+    background-color: lightgray;
+    box-shadow: 0 0.25rem;
+    transform: translateY(0.25rem);
 }
-
 
 .major_opr{
     color:white;
@@ -78,7 +76,7 @@ body{
 }
 
 .major_opr:active{
-    background-color: brown;
+    background-color:lightsalmon;
     box-shadow: 0 3px;
     transform: translateY(3px);
 }
@@ -93,13 +91,23 @@ body{
 }
 
 .other_opr:active{
-    background-color: darkslategray;
+    background-color: lightgray;
     box-shadow: 0 3px;
     transform: translateY(3px);
 }
 #equal_btn{
     background-color:orangered;
     color: white;
+}
+
+#equal_btn:hover{
+    background-color: brown;
+}
+
+#equal_btn:active{
+    background-color:lightsalmon;
+    box-shadow: 0 3px;
+    transform: translateY(3px);
 }
 
 p>*{
@@ -119,4 +127,3 @@ p>*{
     width: 90px;
 }
 
-s
