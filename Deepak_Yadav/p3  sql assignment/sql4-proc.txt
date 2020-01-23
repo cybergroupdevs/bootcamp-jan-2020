@@ -1,0 +1,46 @@
+CREATE TABLE dbo.assign1(
+emp_ID INT NOt NULL,
+Description varchar(30),
+Path varchar(100),
+CONSTRAINT dt_id PRIMARY KEY(emp_id))
+
+SELECT * from dbo.assign1
+
+
+
+INSERT into dbo.assign1 values(1, 'Date', '22-01-2020')
+INSERT into dbo.assign1 values (2, 'Eval 1', 'C:/Program Files/22-01-2020/Projects1')
+INSERT into dbo.assign1 values (3, 'Eval 2', 'C:/Program Files/22-01-2020/CProjects2')
+INSERT into dbo.assign1 values (4, 'Eval 3', 'C:/Program Files/22-01-2020/PProjects3')
+INSERT into dbo.assign1 values (5, 'Eval 4', 'C:/Program Files/22-01-2020/FLProjects4')
+INSERT into dbo.assign1 values (6, 'Eval 5', 'C:/Program Files/22-01-2020/FProjects5')
+
+UPDATE dbo.assign1 SET Path = 'C:/Program Files/22-01-2020/FProjects2' WHERE emp_ID = 2
+UPDATE dbo.assign1 SET Path = 'C:/Program Files/22-01-2020/FProjects3' WHERE emp_ID = 3
+UPDATE dbo.assign1 SET Path = 'C:/Program Files/22-01-2020/FProjects4' WHERE emp_ID = 4
+UPDATE dbo.assign1 SET Path = 'C:/Program Files/22-01-2020/FProjects5' WHERE emp_ID = 5
+UPDATE dbo.assign1 SET Path = 'C:/Program Files/22-01-2020/FProjects6' WHERE emp_ID =6
+create PROCEDURE dbo.updatedate
+@Date varchar(30)
+As
+BEGIN
+--temporary variable for storing path
+DECLARE @tempPath varchar(100)
+DECLARE @tempo varchar(50)
+DECLARE @tempId int
+--code for CURSOR
+DECLARE Cursor_date CURSOR
+FOR
+SELECT emp_id,Path FROM dbo.assign1 WHERE emp_ID > 1
+OPEN cursor_date
+FETCH Next from cursor_date into @tempId, @tempPath
+WHILE (@@FETCH_STATUS = 0)
+BEGIN
+--SET @Date = (SELECT Path from dbo.dummy_config WHERE ID = 1)
+SET @tempo = SUBSTRING(@tempPath, 18,10)
+UPDATE dbo.assign1 SET Path = REPLACE(Path,@tempo, @Date) WHERE emp_ID>1
+FETCH Next from cursor_date into @tempId, @tempPath
+END
+CLOSE cursor_date
+DEALLOCATE cursor_date
+END
