@@ -63,7 +63,7 @@ function startNewGame() {
 function win(clicked) {
   // Get all cell classes
   var memberOf = clicked.className.split(/\s+/);
-  for (var i = 0; i < memberOf.length; i++) {
+  for (var i =0; i < memberOf.length; i++) {
     var testClass = "." + memberOf[i];
     var items = contains("#tictactoe " + testClass, turn);
     // winning condition: turn == N_SIZE
@@ -77,7 +77,7 @@ function win(clicked) {
 /**
  * Helper function to check if NodeList from selector has a particular text
  */
-function contains(selector, text) {
+function contains(selector, text)
   var elements = document.querySelectorAll(selector);
   return [].filter.call(elements, function(element) {
     return RegExp(text).test(element.textContent);
@@ -95,12 +95,15 @@ function set() {
   moves += 1;
   score[turn] += this.identifier;
   if (win(this)) {
-    alert("Winner: Player " + turn);
+  alert("Winner: Player " + turn);
     startNewGame();
-  } else if (moves === N_SIZE * N_SIZE) {
+  } 
+  else if (moves === N_SIZE * N_SIZE) {
+
     alert("Draw");
     startNewGame();
-  } else {
+  } 
+  else {
     turn = turn === "X" ? "O" : "X";
     document.getElementById("turn").textContent = "Player " + turn;
   }
