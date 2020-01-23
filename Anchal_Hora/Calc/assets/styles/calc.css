@@ -8,7 +8,7 @@
     left: 40%;
 }
 
-.body{
+body{
     padding:2rem;
     margin:1rem;
     background: linear-gradient(to right, #00AAFF, #00FF6C);
@@ -34,7 +34,7 @@
     height: 45px;
     font-size: large;
     color:white;
-    background-color:black;
+    background-color: black;
     padding-right: 10px;
     
 }
@@ -57,8 +57,8 @@
 
 .major_opr{
     color:white;
-    background-color: gold;
-    font-weight: lighter;
+    background-color: yellow;
+
     
 }
 
@@ -66,6 +66,13 @@
     color: white;
     background-color:darkseagreen;
     
+
+    
+}
+
+.span-two{
+     column-span: 6rem;
+
 }
 
 #equal_btn{
@@ -86,3 +93,4 @@ p>*{
 #zero, #ce_btn{
     width: 90px;
 }
+
