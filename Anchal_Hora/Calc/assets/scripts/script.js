@@ -4,9 +4,18 @@ function insert(num){
 
 function fact (n){
     var ans=1;
-    for(var i=2;i<=n;i++)
+    for(var i=2;i<=n;i++){
     ans=ans*i;
-    return ans;
+}
+    document.calc.display.value= ans;
+}
+
+
+function clearbyentry(){
+text= document.calc.display.value;
+len=text.length;
+document.calc.display.value= text.replace(text[len-1], "")
+
 }
 
 function insertOperator(op){

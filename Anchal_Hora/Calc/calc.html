@@ -20,9 +20,9 @@
 
         <div class="buttons">
             <p>
-                <input type="button" value="x!" class="other_opr" onclick="insertOperator('!')">
-                <input type="button" value="C" class="other_opr">
-                <input type="button" value="CE" class="other_opr" id="ce_btn" onclick="calc.display.value=''">
+                <input type="button" value="x!" class="other_opr" onclick="fact(document.calc.display.value)">
+                <input type="button" value="CE" class="other_opr" onclick="clearbyentry()">
+                <input type="button" value="C" class="other_opr" id="ce_btn" onclick="calc.display.value=''">
                 <button class="major_opr" onclick="calc.display.value+='/'"><i class='fa fa-divide '></i></button>
                 
                 
