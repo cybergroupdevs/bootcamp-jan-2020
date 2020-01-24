@@ -1,2 +1,0 @@
-./Shubham_Sharma/Practice/Practice/bin
-./Shubham_Sharma/Practice/Practice/obj
