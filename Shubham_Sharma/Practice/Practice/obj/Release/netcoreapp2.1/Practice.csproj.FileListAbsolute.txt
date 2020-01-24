@@ -1,0 +1,11 @@
+C:\Users\shubham.sharma\source\repos\Practice\Practice\bin\Release\netcoreapp2.1\Practice.deps.json
+C:\Users\shubham.sharma\source\repos\Practice\Practice\bin\Release\netcoreapp2.1\Practice.runtimeconfig.json
+C:\Users\shubham.sharma\source\repos\Practice\Practice\bin\Release\netcoreapp2.1\Practice.runtimeconfig.dev.json
+C:\Users\shubham.sharma\source\repos\Practice\Practice\bin\Release\netcoreapp2.1\Practice.dll
+C:\Users\shubham.sharma\source\repos\Practice\Practice\bin\Release\netcoreapp2.1\Practice.pdb
+C:\Users\shubham.sharma\source\repos\Practice\Practice\obj\Release\netcoreapp2.1\Practice.csprojAssemblyReference.cache
+C:\Users\shubham.sharma\source\repos\Practice\Practice\obj\Release\netcoreapp2.1\Practice.csproj.CoreCompileInputs.cache
+C:\Users\shubham.sharma\source\repos\Practice\Practice\obj\Release\netcoreapp2.1\Practice.AssemblyInfoInputs.cache
+C:\Users\shubham.sharma\source\repos\Practice\Practice\obj\Release\netcoreapp2.1\Practice.AssemblyInfo.cs
+C:\Users\shubham.sharma\source\repos\Practice\Practice\obj\Release\netcoreapp2.1\Practice.dll
+C:\Users\shubham.sharma\source\repos\Practice\Practice\obj\Release\netcoreapp2.1\Practice.pdb
