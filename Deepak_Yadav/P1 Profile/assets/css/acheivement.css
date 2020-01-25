@@ -2,6 +2,7 @@
     border-top: black solid;
     border-radius: 5%;
 }
+/* on hover image will be zoomed in*/
 .scaling-image:hover{
     position:relative;
     top:-10px;
