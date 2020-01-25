@@ -1,84 +1,81 @@
 body {
-    font: 20px Montserrat, sans-serif;
-    line-height: 1.8;
-    color: #f5f6f7;
-  }
-  .container{
-    padding-left: 2.5rem;
-    
-  }
-  p {font-size: 15px;}
-  .margin {margin-bottom: 35px;}
+  font: 20px Montserrat, sans-serif;
+  line-height: 1.8;
+  color: #f5f6f7;
+}
+p {font-size: 15px;}
+.margin {margin-bottom: 35px;}
 
-  .carousel-inner img {
-  width: 100%; /* Set width to 100% */
-  margin: auto;
-  }
 
- .carousel-caption h3 {
-  color: #00061a !important;
-  }
-  .carousel-caption p {
-  color: #00061a !important;
-  }
 
-  .bg-2 { 
-    background-color: #F5F5F5; /* Green */
-    color: #000000;
-    
-  }
-  .bg-3 { 
-    background-color: #D3D3D3; /* Dark Blue */
-    color: #000000;
-   
-    
-  }
-  .bg-4 { 
-    background-color: #F5F5F5; /* White */
-    color: #000000;
-    
-  }
+.carousel-inner img {
+width: 100%; /* Set width to 100% */
+margin: auto;
+}
 
-  .bg-5 { 
-    background-color: #D3D3D3; /* Dark Blue */
-    color: #000000;
-    
-  }
+.carousel-caption h3 {
+color: #00061a !important;
+}
+.carousel-caption p {
+color: #00061a !important;
+}
 
-  .bg-6 { 
-    background-color: #484848; /* Black Gray */
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 10px;
-  }
-  .container-fluid {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    
-  }
-
-  .margin {
-    font-weight: bold;
-    margin-left: 1rem;
-  }
-  .navbar {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: 0;
-    border-radius: 0;
-    margin-bottom: 0;
-    font-size: 15px;
-    background-color: #404040;
-  }
-  .navbar-nav  li a:hover {
-    color: #ffffff !important;
-    background-color: #ffffff;
-  }
-  .navbar-brand a:hover {
-    color: #ffffff;
-  }
-  .hero {
-    color: #ffffff;
-    font-weight: bold;
-  }
+.bg-2 { 
+  background-color: #F5F5F5;
+  color: #000000;
   
+}
+.bg-3 { 
+  background-color: #D3D3D3;
+  color: #000000;
+ 
+  
+}
+.bg-4 { 
+  background-color: #F5F5F5;
+  color: #000000;
+  
+}
+
+.bg-5 { 
+  background-color: #D3D3D3; 
+  color: #000000;
+  
+}
+
+.bg-6 { 
+  background-color: #484848;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 10px;
+}
+.container-fluid {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+}
+
+.margin {
+  font-weight: bold;
+}
+.navbar {
+  padding-left:2rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 15px;
+  background-color: #404040;
+}
+.navbar-nav  li a:hover {
+  color: #ffffff !important;
+  background-color: #ffffff;
+}
+.navbar-brand a:hover {
+  color: #ffffff;
+}
+.hero {
+  color: #ffffff;
+  font-weight: bold;
+}
