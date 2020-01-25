@@ -1,6 +1,9 @@
 button{
     width: 100%;
     height: 100%;
+    background:black;
+    font-size: 3rem;
+    color: bisque;
 }
 td{
     height: 33.33%;
@@ -8,13 +11,9 @@ td{
     text-align: center;
 }
 table{
+    margin-top: 2rem;
     width: 50vh;
     height: 50vh;
-}
-button{
-    background:black;
-    font-size: 3rem;
-    color: bisque;
 }
 /*for reset button*/
 .btn{
