@@ -48,3 +48,7 @@ body {
       
       flex: 0 1 33%
   }
+
+  img{
+    width:100%
+  }
