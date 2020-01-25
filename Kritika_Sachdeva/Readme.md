@@ -1,1 +1,0 @@
-# Kritika Sachdeva
