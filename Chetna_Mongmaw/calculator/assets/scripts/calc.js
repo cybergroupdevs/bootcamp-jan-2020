@@ -7,8 +7,8 @@ function compute(){
     let x = document.getElementById("result").value;    
     len = x.length;
     if (x.charAt(l-1)=="!") {
-        ans = Factorial(txt.slice(0, l-1));
-        document.getElementById("display").value = ans
+        ans = Factorial(x.slice(0, l-1));
+        document.getElementById("display").value = ans;
         }
 
     else{
