@@ -1,10 +1,8 @@
 .jumbotron{
     background-image: linear-gradient(to right, #fe5858, #ee9617);  
-    /* colors - #2a2a72 #009ffd  */
-    /* #ee9617 , #fe5858  */
 }
-h1{
-    color:white !important;
+#nameTitle{
+    color:white;
 }
 p{
     color: white;
