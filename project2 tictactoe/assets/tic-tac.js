@@ -1,12 +1,14 @@
 
-var N_SIZE = 3,
-  EMPTY = '&nbsp;',
-  boxes = [],
-  turn = 'X',
-  score,
-  moves;
+const N_SIZE = 3;
+const EMPTY = '&nbsp;';
+ var boxes = [];
+var turn = 'X';
+var  score;
+var  moves;
 
-/*initialization of tic-tac-toe board*/
+/**
+ * Initializes the Tic Tac Toe board and starts the game.
+ */
 function init() {
   var board = document.createElement('table');
   board.setAttribute('border', 1);
