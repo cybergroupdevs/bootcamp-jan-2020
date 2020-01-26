@@ -6,20 +6,19 @@ body{
 }
 
 .container{
+    position: relative;
     background-color: rgba(0, 0, 0, 0.842);
     height: 35%;
-    width: 25%;
+    width: fit-content;
     border-radius: 0.7em;
     box-shadow: 0.25em 0.5em gainsboro;
     min-width: fit-content;
     min-height: fit-content;
     white-space: nowrap;
     margin: auto;
-    margin-top: 25%;
+    margin-top: 10%;
     padding-bottom: 4px;
-
 }
-
 
 .scrn{
     position: relative;
@@ -29,7 +28,6 @@ body{
     margin: 2rem;
     top: 1.5rem;
     border-radius: 0.25rem;
-    
 }
 
 .scrn input{
@@ -43,7 +41,6 @@ body{
     color: black;
     background-color: lightslategray;
     padding-right: 0.6rem;
-    
 }
 
 
@@ -83,7 +80,6 @@ body{
 .other_opr{
     color: white;
     background-color: gray;
-    
 }
 
 .other_opr:hover{
