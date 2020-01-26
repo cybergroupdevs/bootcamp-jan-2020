@@ -28,9 +28,9 @@ function cscreen(){
 
 //function for clearing screen by entry
 function cescreen(){
-    x = document.getElementById("result").value;
-    lastVal = x[x.length -1];
-    document.getElementById("result").value = x.replace("lastVal","");
+    var str = document.getElementById("result").value;
+    var res = str.slice(-1);
+    document.getElementById("result").innerHTML = str.replace("res","");
 }
 
 //for factorial
