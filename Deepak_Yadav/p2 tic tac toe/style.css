@@ -1,22 +1,25 @@
-button{
+button {
     width: 100%;
     height: 100%;
-    background:black;
+    background: black;
     font-size: 3rem;
     color: bisque;
+    border: double red;
 }
-td{
+
+td {
     height: 33.33%;
     width: 33.33%;
     text-align: center;
 }
-table{
+
+table {
     margin-top: 2rem;
     width: 50vh;
     height: 50vh;
 }
 /*for reset button*/
-.btn{
+.btn {
     color: black;
     font-weight: 1000;
     width: 200px;
