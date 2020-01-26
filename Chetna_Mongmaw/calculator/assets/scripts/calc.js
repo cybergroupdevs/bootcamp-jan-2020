@@ -7,8 +7,8 @@ function compute(){
     let x = document.getElementById("result").value;    
     len = x.length;
     if (x.charAt(l-1)=="!") {
-        ans = Factorial(x.slice(0, l-1));
-        document.getElementById("display").value = ans;
+        fact = factorial(x.slice(0, l-1));
+        document.getElementById("display").value = fact;
         }
 
     else{
@@ -43,7 +43,7 @@ function factorial(n) {
     var fact=1; 
     for (var i = 2; i <= n; i++) 
         fact = fact * i; 
-    return ans; 
+    return fact; 
 } 
     
 
