@@ -1,12 +1,23 @@
 body{
     height: 100vh;
-    background-image: url("../images/jumbo-bg.jfif");
+    background-image: url("../images/bg.jfif");
     background-size: cover;
+}
+input{
+    border: 0;
+    padding: 0.5rem;
+}
+input[type="text"]{
+    outline: none;
+    width: 60%;    
 }
 button{
     border-radius: 5%;
     width: 100%;
     height: 100%;
+    background-color: brown;
+    font-size: 150%;
+    color: white;
 }
 td{
     height: 33.33%;
@@ -14,9 +25,10 @@ td{
     text-align: center;
 }
 .table-container{
-    display: flex;
+    display: none;
     justify-content: space-around;
-    max-width: 370px;
+    max-width: 200px;
+    min-width: 370px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -24,8 +36,9 @@ table{
     width: 50vh;
     height: 50vh;
 }
-button{
-    background-color: brown;
-    font-size: 150%;
-    color: white;
+#resetBtn{
+    display: none;
+}
+#scoreBoard{
+    display: none;
 }

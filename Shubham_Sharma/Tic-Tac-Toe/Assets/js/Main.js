@@ -1,5 +1,12 @@
 var options = "X";
+//Score references
+var p1s = document.getElementById("pl1s");
+var p2s = document.getElementById("pl2s");
+//counters for increasing scores
+var count1 = 0;
+var count2 = 0;
 
+//Getting game button's reference
 var b1 = document.getElementById("b1");
 var b2 = document.getElementById("b2");
 var b3 = document.getElementById("b3");
@@ -32,14 +39,14 @@ function checker(){
     var b8 = document.getElementById("b8").innerHTML;
     var b9 = document.getElementById("b9").innerHTML;
     
-    (((b1=="X") || (b1=="O")) && ((b1 == b2) && (b2 == b3))) ? highLight("b1", "b2", "b3")
-    : (((b1=="X") || (b1=="O")) && ((b1 == b4) && (b4 == b7))) ? highLight("b1", "b4", "b7")
-    : (((b1=="X") || (b1=="O")) && ((b1 == b5) && (b5 == b9))) ? highLight("b1", "b5", "b9")
-    : (((b2=="X") || (b2=="O")) && ((b2 == b5) && (b5 == b8))) ? highLight("b2", "b5", "b8")
-    : (((b3=="X") || (b3=="O")) && ((b3 == b6) && (b6 == b9))) ? highLight("b3", "b6", "b9")
-    : (((b3=="X") || (b3=="O")) && ((b3 == b5) && (b5 == b7))) ? highLight("b3", "b5", "b7")
-    : (((b4=="X") || (b4=="O")) && ((b4 == b5) && (b5 == b6))) ? highLight("b4", "b5", "b6")
-    : (((b7=="X") || (b7=="O")) && ((b7 == b8) && (b8 == b9))) ? highLight("b7", "b8", "b9")
+    (((b1=="X") || (b1=="O")) && ((b1 == b2) && (b2 == b3))) ? highLight("b1", "b2", "b3", b1)
+    : (((b1=="X") || (b1=="O")) && ((b1 == b4) && (b4 == b7))) ? highLight("b1", "b4", "b7", b1)
+    : (((b1=="X") || (b1=="O")) && ((b1 == b5) && (b5 == b9))) ? highLight("b1", "b5", "b9", b1)
+    : (((b2=="X") || (b2=="O")) && ((b2 == b5) && (b5 == b8))) ? highLight("b2", "b5", "b8", b2)
+    : (((b3=="X") || (b3=="O")) && ((b3 == b6) && (b6 == b9))) ? highLight("b3", "b6", "b9", b3)
+    : (((b3=="X") || (b3=="O")) && ((b3 == b5) && (b5 == b7))) ? highLight("b3", "b5", "b7", b3)
+    : (((b4=="X") || (b4=="O")) && ((b4 == b5) && (b5 == b6))) ? highLight("b4", "b5", "b6", b4)
+    : (((b7=="X") || (b7=="O")) && ((b7 == b8) && (b8 == b9))) ? highLight("b7", "b8", "b9", b7)
     : "Hy";
 }
 
@@ -51,11 +58,19 @@ function btnDisable(){
 
 //Disables the buttons, and paints the button's ORANGE, which are in WINNING pattern.
 //It takes buttons id's as the three arguments and symbol=X or O as another argument, but the symbol īs currently not in use.
-function highLight(cell1, cell2, cell3){
+function highLight(cell1, cell2, cell3, win){
     btnDisable();
     document.getElementById(cell1).style.backgroundColor = '#FFA500';
     document.getElementById(cell2).style.backgroundColor = '#FFA500';
     document.getElementById(cell3).style.backgroundColor = '#FFA500';
+    if(win == "O"){
+        count1 = count1 + 1;
+        p1s.innerHTML = ""+count1;
+    }
+    if(win == "X"){
+        count2++;
+        p2s.innerHTML = ""+count2;
+    }
 }
 
 //The button pressed will be disabled and symbol 'X' or 'O' will appear on it
@@ -78,4 +93,25 @@ function clicker(button){
         options = "X";
         setButton(button, options);
     }
+}
+
+function getUser(){
+    //getting user info elements reference-- p1->participant-1
+    if(document.getElementById("p1").value == ""){document.getElementById("pl1").innerHTML = "Player 1";}
+    else{document.getElementById("pl1").innerHTML = document.getElementById("p1").value;}
+    if(document.getElementById("p2").value == ""){document.getElementById("pl2").innerHTML = "Player 2";}
+    else{document.getElementById("pl2").innerHTML = document.getElementById("p2").value;}
+    
+    p1s.innerHTML = "0";
+    p2s.innerHTML = "0";
+
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("scoreBoard").style.display = "unset";
+    document.getElementById("resetBtn").style.display = "flex";
+    document.getElementById("resetBtn").style.justifyContent = "space-around";
+    document.getElementById("gameButtons").style.display = "flex";
+}
+
+function refreshPage(){
+    location.reload();
 }
