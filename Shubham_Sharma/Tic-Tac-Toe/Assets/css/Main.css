@@ -3,6 +3,9 @@ body{
     background-image: url("../images/bg.jfif");
     background-size: cover;
 }
+.heading{
+    font-family: 'Zhi Mang Xing', cursive;
+}
 input{
     border: 0;
     padding: 0.5rem;
@@ -13,6 +16,7 @@ input[type="text"]{
 }
 button{
     border-radius: 5%;
+    outline: none;
     width: 100%;
     height: 100%;
     background-color: brown;
