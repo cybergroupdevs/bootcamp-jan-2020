@@ -1,3 +1,7 @@
+body {
+    background: #2f235d2b;
+}
+
 button {
     width: 100%;
     height: 100%;
@@ -5,6 +9,7 @@ button {
     font-size: 3rem;
     color: bisque;
     border: double red;
+    border-radius: 15px;
 }
 
 td {
@@ -18,6 +23,7 @@ table {
     width: 50vh;
     height: 50vh;
 }
+
 /*for reset button*/
 .btn {
     color: black;

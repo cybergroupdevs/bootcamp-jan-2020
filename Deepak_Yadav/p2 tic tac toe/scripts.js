@@ -19,40 +19,67 @@ function setButton(button, options) {
 }
 //function for checking any perfect combinations
 function checker() {
-  var b1 = document.getElementById("b1").innerHTML;
-  var b2 = document.getElementById("b2").innerHTML;
-  var b3 = document.getElementById("b3").innerHTML;
-  var b4 = document.getElementById("b4").innerHTML;
-  var b5 = document.getElementById("b5").innerHTML;
-  var b6 = document.getElementById("b6").innerHTML;
-  var b7 = document.getElementById("b7").innerHTML;
-  var b8 = document.getElementById("b8").innerHTML;
-  var b9 = document.getElementById("b9").innerHTML;
+  var ids = ["b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8", "b9"];
+  for (let i = 0; i < ids.length; i++) {
+    ids[i] = document.getElementById(ids[i]).innerHTML;
+  }
   //conditions required for winning
-  if ((b1 == "X" || b1 == "O") && b1 == b2 && b2 == b3) {
+  if (
+    (ids[0] == "X" || ids[0] == "O") &&
+    ids[0] == ids[1] &&
+    ids[1] == ids[2]
+  ) {
     highLight("b1", "b2", "b3");
-  } else if ((b1 == "X" || b1 == "O") && b1 == b4 && b4 == b7) {
+  } else if (
+    (ids[0] == "X" || ids[0] == "O") &&
+    ids[0] == ids[3] &&
+    ids[3] == ids[6]
+  ) {
     highLight("b1", "b4", "b7");
-  } else if ((b1 == "X" || b1 == "O") && b1 == b5 && b5 == b9) {
+  } else if (
+    (ids[0] == "X" || ids[0] == "O") &&
+    ids[0] == ids[4] &&
+    ids[4] == ids[8]
+  ) {
     highLight("b1", "b5", "b9");
-  } else if ((b2 == "X" || b2 == "O") && b2 == b5 && b5 == b8) {
+  } else if (
+    (ids[1] == "X" || ids[1] == "O") &&
+    ids[1] == ids[4] &&
+    ids[4] == ids[7]
+  ) {
     highLight("b2", "b5", "b8");
-  } else if ((b3 == "X" || b3 == "O") && b3 == b6 && b6 == b9) {
+  } else if (
+    (ids[2] == "X" || ids[2] == "O") &&
+    ids[2] == ids[5] &&
+    ids[5] == ids[8]
+  ) {
     highLight("b3", "b6", "b9");
-  } else if ((b3 == "X" || b3 == "O") && b3 == b5 && b5 == b7) {
+  } else if (
+    (ids[2] == "X" || ids[2] == "O") &&
+    ids[2] == ids[4] &&
+    ids[4] == ids[6]
+  ) {
     highLight("b3", "b5", "b7");
-  } else if ((b4 == "X" || b4 == "O") && b4 == b5 && b5 == b6) {
+  } else if (
+    (ids[3] == "X" || ids[3] == "O") &&
+    ids[3] == ids[4] &&
+    ids[4] == ids[5]
+  ) {
     highLight("b4", "b5", "b6");
-  } else if ((b7 == "X" || b7 == "O") && b7 == b8 && b8 == b9) {
+  } else if (
+    (ids[6] == "X" || ids[6] == "O") &&
+    ids[6] == ids[7] &&
+    ids[7] == ids[8]
+  ) {
     highLight("b7", "b8", "b9");
   }
 }
 //background color will change once any perfect combination occurs
-function highLight(cell1, cell2, cell3) {
+function highLight(elem1, elem2, elem3) {
   btnDisable(); //after winning all the buttons will get disabled
-  document.getElementById(cell1).style.backgroundColor = "red";
-  document.getElementById(cell2).style.backgroundColor = "red";
-  document.getElementById(cell3).style.backgroundColor = "red";
+  document.getElementById(elem1).style.backgroundColor = "red";
+  document.getElementById(elem2).style.backgroundColor = "red";
+  document.getElementById(elem3).style.backgroundColor = "red";
   //function to show the congratulations message
   setTimeout(function() {
     //using timeout function to hold the execution of alert
