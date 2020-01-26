@@ -36,7 +36,7 @@ function cscreen(){
 function cescreen(){
     text = document.getElementById("result").value;
     lastVal = text[text.length -1];
-    document.getElementById("result").value = id.replace("lastVal","");
+    document.getElementById("result").value = text.replace("lastVal","");
 }
 
 function factorial(n) { 
