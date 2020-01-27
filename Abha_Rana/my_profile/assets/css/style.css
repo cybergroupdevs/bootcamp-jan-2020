@@ -63,10 +63,7 @@ body{
 }
 .col-sm-4
 {
-    border-style:dotted;
-    border-radius: 12px;
-    border-width: thin;
-    border-color:black;
+    border:dotted 12px thin black;
 }
 .zoom
  { 
