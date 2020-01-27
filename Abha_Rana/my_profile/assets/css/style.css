@@ -1,69 +1,111 @@
-body {
-    font: 20px Montserrat, sans-serif;
-    line-height: 1.8;
-    color: #f5f6f7;
-  }
+body{
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #f5f6f7;
+    }
   p {font-size: 16px;}
-.margin { margin-bottom:10px;
+.margin {  margin-bottom:10px;
            margin-top:15px;
            padding-top: 2%;
            font-family: 'Shadows Into Light', cursive;
         }
-.bg-1 { 
+.bg-1{ 
       background-color: #1abc9c; /* Green */
       color: #ffffff;
-    }
-    .bg-2 { 
+     }
+.bg-2 { 
       background-color: #474e5d; /* Dark Blue */
       color: #ffffff;
-    }
-    .bg-3 { 
+      }
+.bg-3 { 
       background-color: #ffffff; /* White */
       color: #555555;
-    }
-    .bg-4 { 
+      }
+.bg-4 { 
       background-color: #2f2f2f; /* Black Gray */
       color: #fff;
-    }
-.container-fluid {
-            padding-top: 25px;
-            padding-bottom: 60px;
+      }
+.container-fluid
+ {
+    padding-top: 25px;
+    padding-bottom: 60px;
         
-          }
- .navbar{
+}
+ .navbar
+ {
             position:sticky;
-            padding-top: 5px;
-            padding-bottom: 5px;
+            padding: 5px;
             border: 0;
             border-radius: 0;
-            margin-bottom: 0;
+            margin: 0;
             font-size: 12px;
             letter-spacing: 5px;
               top: 0;
               width:100%;
               z-index: 100;
-          }
+ }
+#nav-bar
+{
+  position: fixed;
+}
         
-.navbar-nav  li a:hover {
-            color: #1abc9c !important;
-          }
-.navbar-brand {
-            font-family: 'Gloria Hallelujah', cursive;
-            
-          }
+.navbar-nav  li a:hover 
+{
+   color: #1abc9c !important;
+}
+.navbar-brand 
+{
+    font-family: 'Gloria Hallelujah', cursive;
+}
 .nav
-        {
-            font-family: 'Pacifico', cursive;
-        }
+{
+    font-family: 'Pacifico', cursive;
+}
 .col-sm-4
-        {
-            border-style:dotted;
-            border-radius: 12px;
-            border-width: thin;
-            border-color:black;
-        }
-.zoom {  transition: all .2s ease-in-out; }
-.zoom:hover {
-           transform: scale(1.1);
-          }
-        
+{
+    border-style:dotted;
+    border-radius: 12px;
+    border-width: thin;
+    border-color:black;
+}
+.zoom
+ { 
+   transition: all .2s ease-in-out;
+ }
+.zoom:hover 
+{
+    transform: scale(1.1);
+}
+.socials
+{
+   height: 60%;
+   width:60%;
+}
+.one
+{
+  width:399% ;
+  height: 399%;
+}
+.two
+{
+  width:57%;
+ height:57%;
+ margin: 0 auto;
+}
+.three
+{
+  width:400%;
+  height:400%;
+}
+.bgg
+{
+  background-color: palevioletred;
+}
+.bgg1
+{
+  background-color:rgb(21, 206, 206);
+}
+.zoom > h3
+{
+  font-family:cursive;
+}
