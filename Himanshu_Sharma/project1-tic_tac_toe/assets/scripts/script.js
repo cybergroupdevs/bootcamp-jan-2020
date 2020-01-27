@@ -74,107 +74,66 @@ checkForNoResult = () => {
     }
 }
 
+helpingForFindWinner = (otherStyles) => {
+    var customStyleStringForStrikeThrough = "background-color: black; position: absolute; transition: all .2s";
+    let winningPlayer = (turn === false) ? 'Player2' : 'Player1';
+
+    document.querySelector('.strike_through').setAttribute(
+    "style", `${customStyleStringForStrikeThrough}; ${otherStyles};`);
+
+    return {
+        winningPlayer
+    }
+}
+
 findWinner = () => {
-    var styleStringForStrikeThrough = "background-color: black; position: absolute; transition: all .2s";
-    if(turn === false){
-        switch(-3){
-            case blocks[`block-00`]+blocks[`block-01`]+blocks[`block-02`]: {
-                document.querySelector('.strike_through').setAttribute(
-                    "style", `${styleStringForStrikeThrough}; top: 14%; left: 7%; height: 1rem; width: 85%; `);
-                return 'Player2';
-            }
-            
-            case blocks[`block-10`]+blocks[`block-11`]+blocks[`block-12`]: {
-                document.querySelector('.strike_through').setAttribute(
-                    "style", `${styleStringForStrikeThrough}; height: 1rem; width: 85%; top: 47%; left: 7%;`);
-                return 'Player2';
-            }
-            
-            case blocks[`block-20`]+blocks[`block-21`]+blocks[`block-22`]: {
-                document.querySelector('.strike_through').setAttribute(
-                    "style", `${styleStringForStrikeThrough}; height: 1rem; width: 85%; top: 80%; left: 7%;`);
-                return 'Player2';
-            }
-            
-            case blocks[`block-00`]+blocks[`block-10`]+blocks[`block-20`]: {
-                document.querySelector('.strike_through').setAttribute(
-                    "style", `${styleStringForStrikeThrough}; height: 85%; width: 1rem; top: 8%; left: 16%;`);
-                return 'Player2';
-            }
-            
-            case blocks[`block-01`]+blocks[`block-11`]+blocks[`block-21`]: {
-                document.querySelector('.strike_through').setAttribute(
-                    "style", `${styleStringForStrikeThrough}; height: 85%; width: 1rem; top: 8%; left: 49%;`);
-                return 'Player2';
-            }
-            
-            case blocks[`block-02`]+blocks[`block-12`]+blocks[`block-22`]: {
-                document.querySelector('.strike_through').setAttribute(
-                    "style", `${styleStringForStrikeThrough}; height: 85%; width: 1rem; top: 8%; left: 82%;`);
-                return 'Player2';
-            }
-            
-            case blocks[`block-00`]+blocks[`block-11`]+blocks[`block-22`]: {
-                document.querySelector('.strike_through').setAttribute(
-                    "style", `${styleStringForStrikeThrough}; height: 108%; width: 1rem; top: -5%; left: 49%; transform: rotate(-45deg)`);
-                return 'Player2';
-            }
-            
-            case blocks[`block-02`]+blocks[`block-11`]+blocks[`block-20`]: case blocks[`block-00`]+blocks[`block-11`]+blocks[`block-22`]: {
-                document.querySelector('.strike_through').setAttribute(
-                    "style", `${styleStringForStrikeThrough}; height: 108%; width: 1rem; top: -5%; left: 49%; transform: rotate(45deg)`);
-                return 'Player2';
-            }
+    switch((turn === false) ? -3 : 3){
+        case blocks[`block-00`]+blocks[`block-01`]+blocks[`block-02`]: {
+            return this.helpingForFindWinner(
+                `top: 14%; left: 7%; height: 1rem; width: 85%; `
+            ).winningPlayer;
         }
-    }else if(turn === true){
-        switch(3){
-            case blocks[`block-00`]+blocks[`block-01`]+blocks[`block-02`]: {
-                document.querySelector('.strike_through').setAttribute(
-                    "style", `${styleStringForStrikeThrough}; top: 14%; left: 7%; height: 1rem; width: 85%; `);
-                return 'Player1';
-            }
-            
-            case blocks[`block-10`]+blocks[`block-11`]+blocks[`block-12`]: {
-                document.querySelector('.strike_through').setAttribute(
-                    "style", `${styleStringForStrikeThrough}; height: 1rem; width: 85%; top: 47%; left: 7%;`);
-                return 'Player1';
-            }
-            
-            case blocks[`block-20`]+blocks[`block-21`]+blocks[`block-22`]: {
-                document.querySelector('.strike_through').setAttribute(
-                    "style", `${styleStringForStrikeThrough}; height: 1rem; width: 85%; top: 80%; left: 7%;`);
-                return 'Player1';
-            }
-            
-            case blocks[`block-00`]+blocks[`block-10`]+blocks[`block-20`]: {
-                document.querySelector('.strike_through').setAttribute(
-                    "style", `${styleStringForStrikeThrough}; height: 85%; width: 1rem; top: 8%; left: 16%;`);
-                return 'Player1';
-            }
-            
-            case blocks[`block-01`]+blocks[`block-11`]+blocks[`block-21`]: {
-                document.querySelector('.strike_through').setAttribute(
-                    "style", `${styleStringForStrikeThrough}; height: 85%; width: 1rem; top: 8%; left: 49%;`);
-                return 'Player1';
-            }
-            
-            case blocks[`block-02`]+blocks[`block-12`]+blocks[`block-22`]: {
-                document.querySelector('.strike_through').setAttribute(
-                    "style", `${styleStringForStrikeThrough}; height: 85%; width: 1rem; top: 8%; left: 82%;`);
-                return 'Player1';
-            }
-            
-            case blocks[`block-00`]+blocks[`block-11`]+blocks[`block-22`]: {
-                document.querySelector('.strike_through').setAttribute(
-                    "style", `${styleStringForStrikeThrough}; height: 108%; width: 1rem; top: -5%; left: 49%; transform: rotate(-45deg)`);
-                return 'Player1';
-            }
-            
-            case blocks[`block-02`]+blocks[`block-11`]+blocks[`block-20`]: case blocks[`block-00`]+blocks[`block-11`]+blocks[`block-22`]: {
-                document.querySelector('.strike_through').setAttribute(
-                    "style", `${styleStringForStrikeThrough}; height: 108%; width: 1rem; top: -5%; left: 49%; transform: rotate(45deg)`);
-                return 'Player1';
-            }    
+        
+        case blocks[`block-10`]+blocks[`block-11`]+blocks[`block-12`]: {
+            return this.helpingForFindWinner(
+                `height: 1rem; width: 85%; top: 47%; left: 7%;`
+            ).winningPlayer;
+        }
+        
+        case blocks[`block-20`]+blocks[`block-21`]+blocks[`block-22`]: {
+            return this.helpingForFindWinner(
+                `height: 1rem; width: 85%; top: 80%; left: 7%;`
+            ).winningPlayer;
+        }
+        
+        case blocks[`block-00`]+blocks[`block-10`]+blocks[`block-20`]: {
+            return this.helpingForFindWinner(
+                `height: 85%; width: 1rem; top: 8%; left: 16%;`
+            ).winningPlayer;
+        }
+        
+        case blocks[`block-01`]+blocks[`block-11`]+blocks[`block-21`]: {
+            return this.helpingForFindWinner(
+                `height: 85%; width: 1rem; top: 8%; left: 49%;`
+            ).winningPlayer;
+        }
+        
+        case blocks[`block-02`]+blocks[`block-12`]+blocks[`block-22`]: {
+            return this.helpingForFindWinner(
+                `height: 85%; width: 1rem; top: 8%; left: 82%;`
+            ).winningPlayer;
+        }
+        
+        case blocks[`block-00`]+blocks[`block-11`]+blocks[`block-22`]: {
+            return this.helpingForFindWinner(
+                `height: 108%; width: 1rem; top: -5%; left: 49%; transform: rotate(-45deg)`
+            ).winningPlayer;
+        }
+        
+        case blocks[`block-02`]+blocks[`block-11`]+blocks[`block-20`]: case blocks[`block-00`]+blocks[`block-11`]+blocks[`block-22`]: {
+            return this.helpingForFindWinner(
+                `height: 108%; width: 1rem; top: -5%; left: 49%; transform: rotate(45deg)`
+            ).winningPlayer;
         }
     }
 }
