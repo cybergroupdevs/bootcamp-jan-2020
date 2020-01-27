@@ -130,7 +130,7 @@ findWinner = () => {
             ).winningPlayer;
         }
         
-        case blocks[`block-02`]+blocks[`block-11`]+blocks[`block-20`]: case blocks[`block-00`]+blocks[`block-11`]+blocks[`block-22`]: {
+        case blocks[`block-02`]+blocks[`block-11`]+blocks[`block-20`]: {
             return this.helpingForFindWinner(
                 `height: 108%; width: 1rem; top: -5%; left: 49%; transform: rotate(45deg)`
             ).winningPlayer;
