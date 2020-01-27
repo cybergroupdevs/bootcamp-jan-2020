@@ -6,6 +6,10 @@ body{
 .heading{
     font-family: 'Zhi Mang Xing', cursive;
 }
+.row{
+    margin-left: 0;
+    margin-right: 0;
+}
 input{
     border: 0;
     padding: 0.5rem;
