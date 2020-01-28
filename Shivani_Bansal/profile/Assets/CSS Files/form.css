@@ -1,0 +1,28 @@
+td{
+    padding:0.5em 1em;
+    
+}
+
+input{
+    border:1px solid black;
+    padding :0.1em 1em
+}
+
+table{
+    margin: auto;
+}
+
+h2{
+    text-align:center
+}
+
+.submitButton{
+    width:100% ;
+    background-color:slategray; 
+    border:none
+}
+
+.message{
+    height: 100%;
+}
+

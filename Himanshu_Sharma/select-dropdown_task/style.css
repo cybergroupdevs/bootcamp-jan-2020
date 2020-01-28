@@ -1,0 +1,124 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ol{
+    list-style: square;
+    color: #000;
+}
+.full-screen{
+    width: 100vw;
+    height: 100vh;
+    background-color: green;
+}
+
+.child-screen{
+    background-color: pink;
+    width: 50vw;
+    height: 50vh;
+}
+
+/* .sec-item{
+    color: peru;
+}
+
+.third-item{
+    color: rebeccapurple;
+} */
+
+.first-list :nth-child(2){
+    color: rebeccapurple;
+}
+
+.second-list :nth-last-child(1){
+    color: red;
+}
+
+.child-screen{
+    display: flex;
+    justify-content: space-between;
+}
+
+.first-list ::before{
+    content: "->";
+}
+
+.first-list ::after{
+    content: "<-";
+}
+
+
+/* --------------------------------------------------------------------------- */
+/* .city-list{
+    padding: 1rem 2rem;
+}
+
+.city-list > [class = 'city']::before{
+    content: '->';
+} */
+
+
+.city-list{
+    display: none;
+}
+
+/* .hover-box:hover .city-list{
+    display: inline-block;
+} */
+
+
+
+.hover-box{
+    position: relative;
+}
+
+.hidden-hover{
+    width: 6rem;
+    height: 6rem;
+    cursor: pointer;
+    opacity: 0;
+    display: block;
+}
+
+.click{
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: -1;
+}
+
+.hidden-hover:checked ~ .city-list{
+    display: inline-block;
+}
+
+ul{
+    list-style: none;
+}
+
+.city-list{
+    background-color: #ccc;
+}
+
+.city-parent{
+    background-color: #999;
+}
+
+.city{
+    width: 6rem;
+    position: relative;
+}
+
+.city-parent{
+    display: none;
+}
+
+.parent-check:checked + .city-parent{
+    display: block;
+    position: relative;
+    left: 0rem;
+    width: 6rem;
+    top: 0;
+}
