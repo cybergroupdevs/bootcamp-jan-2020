@@ -5,7 +5,7 @@ const calculator = {
   operator: null,
 };
 
-function fact(val){
+function fact(val){   // function to calculate factorial
   let v=1;
   for(let i=1; i<=val; i++){
     v=v*i;
