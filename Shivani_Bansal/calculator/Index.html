@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <link rel="stylesheet" href=".\Assets\CSS\Calculator.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src=".\Assets\Scripts\Calculator.js"></script>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div class="main" id="mainId">
+        <div class="inputArea"><input id="display" type="text" name="display" readonly></div>
+        <div class="keypad" id="keypadID">
+            
+                <div><button  onclick= "insert('Sin(')" type="button" name="sine" class="btn btn-light">Sin</button></div>
+                <div><button onclick= clean() type="button" name="clear" class="btn btn-warning">C</button></div>
+                <div><button onclick="insert(')')" type="button" name="closing bracket" class="btn btn-light">)</button></div>
+                <div><button onclick= "cleanByEntry()" type="button" name="clear entry" class="btn btn-warning">CE</button></div>
+                <div><button onclick="insertOperator('÷')" type="button" name="divide" class="btn btn-light">÷</button></div>
+            
+                <div> <button onclick="insert('Cos(')" type="button" name="Cosine" class="btn btn-light">Cos</button></div>
+                <div><button onclick=insert(7) type="button" name="seven" class="btn btn-info numberClass">7</button></div>
+                <div><button onclick=insert(8) type="button" name="eight" class="btn btn-info numberClass">8</button></div>
+                <div><button onclick=insert(9) type="button" name="nine" class="btn btn-info numberClass">9</button></div>
+                <div><button onclick="insertOperator('X')" type="button" name=multiply class="btn btn-light">X</button></div>
+            
+                <div><button onclick="insert('Tan(')" type="button" name="Tan" class="btn btn-light">Tan</button></div>
+                <div><button onclick=insert(4) type="button" name="four" class="btn btn-info numberClass">4</button></div>
+                <div><button onclick=insert(5) type="button" name="five" class="btn btn-info numberClass">5</button></div>
+                <div><button onclick=insert(6) type="button" name="six" class="btn btn-info numberClass">6</button></div>
+                <div><button onclick="insertOperator('-')" type="button" name="minus" class="btn btn-light">-</button></div>
+            
+                <div><button onclick="insert('√(')" type="button" name="square root" class="btn btn-light">&Sqrt;</i></button></div>
+                <div><button onclick=insert(1) type="button" name="one" class="btn btn-info numberClass">1</button></div>
+                <div><button onclick=insert(2) type="button" name="two" class="btn btn-info numberClass">2</button></div>
+                <div><button onclick=insert(3) type="button" name="three" class="btn btn-info numberClass">3</button></div>
+                <div><button onclick="insertOperator('+')" type="button" name="plus" class="btn btn-light">+</button></div>
+            
+                <div><button onclick="insertOperator('!')" type="button" name="factorial" class="btn btn-light">x!</button></div>
+                <div><button onclick="insert('(')" type="button" name="double zero" class="btn btn-light">(</button></div>
+                <div><button onclick=insert(0) type="button" name="zero" class="btn btn-info numberClass">0</button></div>
+                <div><button onclick="insertOperator('.')" type="button" name="decimal" class="btn btn-light">.</button></div>
+                <div><button onclick=solve() type="button" name="equal to" class="btn btn-light">=</button></div>
+            
+        </div>
+    </div>
+</body>
+</html>
