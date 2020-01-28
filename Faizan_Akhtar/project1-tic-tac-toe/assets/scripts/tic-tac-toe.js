@@ -16,9 +16,9 @@ function btnDisable(){
     }
 }
 function setButton(button, gameSymbol){
-            var btn = document.getElementById("btn"+button);
-            btn.innerHTML = gameSymbol;
-            btn.disabled = true;
+    var btn = document.getElementById("btn"+button);
+    btn.innerHTML = gameSymbol;
+    btn.disabled = true;
     checker();
 }
 function gameFinished(box1, box2, box3){
