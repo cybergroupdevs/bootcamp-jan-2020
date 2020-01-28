@@ -34,7 +34,7 @@ body{
  .navbar
  {
             position:sticky;
-            padding: 5px;
+            padding: 1px;
             border: 0;
             border-radius: 0;
             margin: 0;
@@ -63,7 +63,10 @@ body{
 }
 .col-sm-4
 {
-    border:dotted 12px thin black;
+    border-style:dotted ;
+    border-radius: 12px;
+    border-width:thin;
+    border-color: black;
 }
 .zoom
  { 

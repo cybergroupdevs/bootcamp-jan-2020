@@ -96,13 +96,22 @@ function set() {
   moves += 1;
   score[turn] += this.identifier;
   if (win(this)) {
-  alert("Winner: Player " + turn);
-    startNewGame();
+   
+    setTimeout(() => {
+      alert("Winner: Player " + turn);
+      startNewGame();
+    }, 1000);
+    
+    
   } 
   else if (moves === N_SIZE * N_SIZE) {
 
-    alert("Draw");
-    startNewGame();
+    
+    setTimeout(() => {
+      alert("Draw");
+      startNewGame();
+    }, 1000);
+    
   } 
   else {
     turn = turn === "X" ? "O" : "X";
