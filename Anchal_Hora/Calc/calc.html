@@ -20,44 +20,44 @@
 
         <div class="buttons">
             <p>
-                <input type="button" value="x!" class="other_opr" onclick="fact(document.calc.display.value)">
+                <input type="button" value="x!" class="other_opr" onclick="fact()">
                 <input type="button" value="CE" class="other_opr" onclick="clearbyentry()">
-                <input type="button" value="C" class="other_opr" id="ce_btn" onclick="calc.display.value=''">
-                <button class="major_opr" onclick="calc.display.value+='/'"><i class='fa fa-divide '></i></button>
+                <input type="button" value="C" class="other_opr" id="ce_btn" onclick="clearEntry()">
+                <button class="major_opr" onclick="insert('/')"><i class='fa fa-divide '></i></button>
                 
                 
             </p>
 
             <p>
-                <button class="other_opr" onclick="calc.display.value=Math.sqrt(calc.display.value)"><i class='fa fa-square-root-alt'></i></button>
-                <input type="button" value="7" class="num" onclick="calc.display.value+='7'">
-                <input type="button" value="8" class="num" onclick="calc.display.value+='8'">
-                <input type="button" value="9" class="num" onclick="calc.display.value+='9'">
-                <button class="major_opr" onclick="calc.display.value+='*'"><i class='fa fa-times'></i></button>
+                <button class="other_opr" onclick="operation('sqrt')"><i class='fa fa-square-root-alt'></i></button>
+                <input type="button" value="7" class="num" onclick="insert(7)">
+                <input type="button" value="8" class="num" onclick="insert(8)">
+                <input type="button" value="9" class="num" onclick="insert(9)">
+                <button class="major_opr" onclick="insert('*')"><i class='fa fa-times'></i></button>
             </p> 
 
             <p>
-                <input type="button" value="sin" class="other_opr" onclick="calc.display.value=Math.sin(calc.display.value)">
-                <input type="button" value="4" class="num" onclick="calc.display.value+='4'">
-                <input type="button" value="5" class="num" onclick="calc.display.value+='5'">
-                <input type="button" value="6" class="num" onclick="calc.display.value+='6'">
-                <button class="major_opr" onclick="calc.display.value+='-'"><i class='fa fa-minus'></i></button>
+                <input type="button" value="sin" class="other_opr" onclick="operation('sin')">
+                <input type="button" value="4" class="num" onclick="insert(4)">
+                <input type="button" value="5" class="num" onclick="insert(5)">
+                <input type="button" value="6" class="num" onclick="insert(6)">
+                <button class="major_opr" onclick="insert('-')"><i class='fa fa-minus'></i></button>
                 
             </p>
 
             <p>
-                <input type="button" value="cos" class="other_opr" onclick="calc.display.value=Math.cos(calc.display.value)">
-                <input type="button" value="1" class="num" onclick="calc.display.value+='1'">
-                <input type="button" value="2" class="num" onclick="calc.display.value+='2'">
-                <input type="button" value="3" class="num" onclick="calc.display.value+='3'">
-                <button class="major_opr" onclick="calc.display.value+='+'"><i class='fa fa-plus '></i></button>
+                <input type="button" value="cos" class="other_opr" onclick="operation('cos')">
+                <input type="button" value="1" class="num" onclick="insert(1)">
+                <input type="button" value="2" class="num" onclick="insert(2)">
+                <input type="button" value="3" class="num" onclick="insert(3)">
+                <button class="major_opr" onclick="insert('+')"><i class='fa fa-plus '></i></button>
             </p>
             
             <p>
-                <input type="button" value="tan" class="other_opr" onclick="calc.display.value=Math.tan(calc.display.value)">
-                <input type="button" value="0" class="num" id="zero" onclick="calc.display.value+='0'"> 
-                <input type="button" value="." class="num" onclick="calc.display.value+='.'">
-                <button class="major_opr" id="equal_btn" onclick="calc.display.value=eval(calc.display.value)"><i class='fa fa-equals'></i></button>
+                <input type="button" value="tan" class="other_opr" onclick="operation('tan')">
+                <input type="button" value="0" class="num" id="zero" onclick="insert(0)"> 
+                <input type="button" value="." class="num" onclick="insert('.')">
+                <button class="major_opr" id="equal_btn" onclick="calc_equal()"><i class='fa fa-equals'></i></button>
             </p>
         </div>
 
