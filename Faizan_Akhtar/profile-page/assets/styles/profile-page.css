@@ -1,8 +1,9 @@
 .jumbotron{
     background-image: linear-gradient(to right, #fe5858, #ee9617);  
+  
 }
-#nameTitle{
-    color:white;
+h1{
+    color:white !important;
 }
 p{
     color: white;
@@ -20,9 +21,11 @@ p{
     border-radius: 1rem;
     background-image: linear-gradient(to right, #fe5858, #ee9617); 
   }
+  
   .thumbnail:hover .overlay {
     opacity: 1;
   }
+
   .text {
     color: white;
     font-size: 20px;
@@ -34,3 +37,4 @@ p{
     transform: translate(-50%, -50%);
     text-align: center;
   }
+
