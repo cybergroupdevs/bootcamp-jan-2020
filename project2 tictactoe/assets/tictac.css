@@ -8,7 +8,7 @@ font-family: Georgia, 'Times New Roman', Times, serif;
 font-size: 70px;
 cursor:pointer;
 }
-.container {
+.contain {
     display: flex;
     
     align-content: center;
