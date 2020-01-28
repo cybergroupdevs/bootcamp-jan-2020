@@ -47,7 +47,7 @@ function checker(){
         }
     }
 }
-
+//returns true if any winning pattern matches
 function getCase(no1, no2, no3){
     if(((no1=="X") || (no1=="O")) && ((no1 == no2) && (no2 == no3))){
         return true;
@@ -56,7 +56,7 @@ function getCase(no1, no2, no3){
         return false;
     }
 }
-
+//disable all buttons
 function btnDisable(){
     for(let i=0; i<9; i++){
         btns[i].disabled = true;
@@ -101,7 +101,7 @@ function clicker(button){
         setButton(button, options);
     }
 }
-
+//retrieving user's name from the text fields and storing them in Score Board
 function getUser(){
     //getting user info elements reference-- p1->participant-1
     if(document.getElementById("p1").value == ""){document.getElementById("pl1").innerHTML = "Player 1";}
@@ -118,7 +118,7 @@ function getUser(){
     document.getElementById("resetBtn").style.justifyContent = "space-around";
     document.getElementById("gameButtons").style.display = "flex";
 }
-
+//Refreshes the page in order to start new tournament
 function refreshPage(){
     location.reload();
 }
