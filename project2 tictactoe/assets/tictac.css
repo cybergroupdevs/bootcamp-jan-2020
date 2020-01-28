@@ -43,5 +43,6 @@ table{
     opacity:0.7;
     font-size: x-large;
     font-weight:bold;
-    
+    display:flex;
+    flex-flow:column;
   }
