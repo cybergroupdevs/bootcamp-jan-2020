@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title> 
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/css/cal_css.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="cal-div card">
+    <div class="input-container">
+      <input type="text" class="cal-input" value="" disabled />
+    </div>
+
+    <div class="cal-btns">
+     
+      <!-- If you use the <button> element in an HTML form, Internet Explorer,
+      prior version 8, will submit the text between the <button> and </button>
+      tags, while the other browsers will submit the content of the value attribute. -->
+      <button type="button" value="+" class="operator btn btn-secondary">+</button>
+      <button type="button" value="-" class="operator btn btn-secondary">-</button>
+      <button type="button" class="operator btn btn-secondary" value="*">&times;</button>
+      <button type="button" class="operator btn btn-secondary" value="/">&divide;</button>
+
+      <button type="button" class="btn btn-default" value="7">7</button>
+      <button type="button" class="btn btn-default" value="8">8</button>
+      <button type="button" class="btn btn-default" value="9">9</button>
+      <button type="button" class="operator btn btn-secondary" value="sin">sin</button>
+
+      <button type="button" value="4" class="btn btn-default">4</button>
+      <button type="button" value="5" class="btn btn-default ">5</button>
+      <button type="button" value="6" class="btn btn-default">6</button>
+      <button type="button" class="operator btn btn-secondary" value="cos">cos</button>
+
+      <button type="button" value="1" class="btn btn-default">1</button>
+      <button type="button" value="2" class="btn btn-default">2</button>
+      <button type="button" value="3" class="btn btn-default">3</button>
+      <button type="button" value="tan" class="operator btn btn-secondary">tan</button>
+
+      <button type="button" value="." class="decimal function btn btn-light">.</button>
+      <button type="button" value="0" class="btn btn-default">0</button>
+      <button type="button" value="=" class="equals-to operator btn btn-light">=</button>
+      <button type="button" value="root" class="operator btn btn-secondary">&#8730;</button>
+        
+      <button type="button" class="all-clear btn btn-info" value="AC">AC</button>
+      <button type="button" class="operator btn btn-secondary" value="sqr">x<sup>2</sup></button>
+      <button type="button" class="clear btn btn-info" value="CE">CE</button>
+      <button type="button" value="!" class="operator btn btn-secondary">!</button>
+      
+
+      
+      
+
+      
+      
+
+
+      
+      
+      
+
+      
+
+    </div>
+  </div>
+
+
+
+  <script src="assets/js/cal_js.js"></script>
+</body>
+</html>

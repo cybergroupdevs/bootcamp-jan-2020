@@ -1,0 +1,85 @@
+body,html{
+    height: 100%;
+}
+
+.main-profile{
+    background: rgba(0, 0, 0, 0.993) url("https://images.unsplash.com/photo-1472566316349-bce77aa2a778?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80") no-repeat center;
+    height: 100%;
+
+    
+}
+.profile-card{
+    border: 1px dotted white;
+    box-shadow: 2px 2px 25px rgba(128, 128, 128, 0.575);
+    background-color: rgba(255, 255, 255);
+    border-radius: 2%;
+    width: 30%;
+    height: 100%;
+    margin: 5rem auto;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    
+  
+}
+.profile-img{
+    width: 50%;
+    border-radius: 50%;
+    
+}
+
+.card-title{
+    color: rgba(76, 0, 130, 0.952);
+    
+}
+.card-subtitle{
+    color: rgba(165, 42, 42, 0.973);
+    
+}
+.card-text-heading{
+    color: black;
+    
+}
+.card-text{
+    letter-spacing:1.5px;
+    color: rgb(128, 128, 128);
+}
+
+
+
+.fa {
+    color: white;
+    border-radius:50%;
+    padding: 15px;
+    font-size: 20px;
+    height: 45px;
+    width: 45px;
+    text-decoration: none;
+    margin: 10px;;
+    
+  }
+  .fa:hover{
+      text-decoration: none;
+      color: white;
+      opacity: 0.7;
+  }
+  
+.fa-facebook {
+    background: #3B5998;
+    
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    
+  }
+  
+  .fa-google {
+    background: #dd4b39;
+    
+  }
+  
+  .fa-linkedin {
+    background: #007bb5;
+    
+  }
+  
