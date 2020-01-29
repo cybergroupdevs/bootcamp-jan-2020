@@ -1,0 +1,48 @@
+td{
+border:5px solid brown;
+height:100px;
+width:100px;
+text-align: center;
+vertical-align: middle;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 70px;
+cursor:pointer;
+}
+.contain {
+    display: flex;
+    
+    align-content: center;
+    justify-content: center;
+    flex-flow: column;
+    min-width: 700px;
+    min-height: 500px;
+    border-radius: 10%;
+    margin: auto;
+
+  }
+table{
+  border-collapse: collapse;
+  position: absolute;
+  left:50%;
+  margin-left:-155px;
+  top:50px;
+  background-color: azure;
+}
+#player {
+    padding: 1.4rem;
+  }
+  
+  body {
+    display: flex;
+    background:url('giphy.gif');
+    background-repeat:no-repeat;
+    background-size:cover;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    opacity:0.7;
+    font-size: x-large;
+    font-weight:bold;
+    display:flex;
+    flex-flow:column;
+  }
