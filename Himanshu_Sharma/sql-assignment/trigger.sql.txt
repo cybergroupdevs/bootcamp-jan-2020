@@ -1,0 +1,13 @@
+ALTER TRIGGER tr_tblOffice_ForDelete
+ON tblOffice
+AFTER UPDATE
+AS
+BEGIN
+	DECLARE @path varchar(20)
+	SET @path = (SELECT path from inserted)
+	EXECUTE spUpdateEntities @path
+END
+
+SELECT * FROM dbo.tblOffice
+
+UPDATE tblOffice SET path = '21-07-1998' WHERE id = 1;

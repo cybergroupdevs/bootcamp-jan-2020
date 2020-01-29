@@ -1,0 +1,138 @@
+*,
+*:after,
+*:before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #FEFFEA;
+    background-color: #6DD3CE;
+}
+
+@keyframes moveInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(3rem); }
+    100% {
+      opacity: 1;
+      transform: translate(0); } }
+
+.wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.nav{
+    font-size: 2.6rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+}
+
+.nav--elements{
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn--restart{
+    padding: 1.2rem;
+    border: none;
+    position: absolute;
+    top: 6rem;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.btn--restart:hover{
+    background-color: #FCDE9C;
+    color: #777;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    transform: translate(50%, -2px);
+    cursor: pointer;
+}
+
+.btn--restart:active{
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    transform: translate(50%, 0); 
+}
+
+.blocks_parent{
+    width: 40rem;
+    height: 40rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    position: relative;
+    top: 4rem;
+}
+
+.block{
+    width: 13.3rem;
+    height: 13.3rem;
+    background-color: #AA4465;
+    border: 0.5px solid #6DD3CE;
+    flex: 1 0 auto;
+    text-align: center;
+    font-size: 7rem;
+    user-select: none;
+}
+
+.block:hover{
+    background-color: rgba(170, 68, 162);
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.msg{
+    position: absolute;
+    bottom: 0;
+    height: 6rem;
+    width: 100%;
+    color: #AA4465;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.current-player{
+    color: #343434;
+    font-weight: 800;
+}
+
+@media screen and (max-width: 460px)  {
+    .nav{
+        font-size: 2rem;
+    }
+
+    .blocks_parent{
+        width: 30rem;
+        height: 30rem;
+    }
+
+    .block{
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .msg{
+        height: 10rem;
+    }
+}

@@ -1,0 +1,38 @@
+body{
+    height: 100vh;
+    background-size: cover;
+}
+h1{
+    margin: 4rem 0rem;
+    color: #009432;
+}
+button{
+    width: 100%;
+    height: 100%;
+}
+td{
+    height: 20%;
+    width: 20%;
+    text-align: center;
+}
+table{
+    height: 50vh;
+    max-width: 30vw;
+    align-items: center;
+    
+}
+button{
+    background-color: #5352ed;
+    font-size: 2rem;
+    color: yellow;
+}
+.playBoard{
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+.btn-danger {
+    height: 4rem; 
+    width: 20rem;
+}
