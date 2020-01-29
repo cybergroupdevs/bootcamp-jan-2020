@@ -1,0 +1,19 @@
+input[type="button"] 
+         { 
+         background-color:lightskyblue; 
+         color: black; 
+         border: solid black .2rem; 
+         width:100% 
+         } 
+  
+input[type="text"] 
+         { 
+         background-color:white; 
+         border: solid black .2rem; 
+         width:100% 
+         } 
+table{
+    margin: auto;
+    margin-top: 10rem;
+    
+}
