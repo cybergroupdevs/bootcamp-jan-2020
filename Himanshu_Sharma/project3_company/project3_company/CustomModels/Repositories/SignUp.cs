@@ -47,11 +47,14 @@ namespace project3_company.CustomModels.Repositories
             else
             {
                 Validation validation = new Validation();
-                var responseAfterValidation = validation.signUpValidation(this.employee);
+                employee = this.employee;
+                employee.EmployeeId = _companyContext.Employee.Count()+1;
+
+                var responseAfterValidation = validation.signUpValidation(employee);
                 
                 if (responseAfterValidation.status)
                 {
-                    _companyContext.Employee.Add(this.employee);
+                    _companyContext.Employee.Add(employee);
                     _companyContext.SaveChanges();
                 }
 

@@ -23,18 +23,11 @@ namespace project3_company.CustomModels.Repositories
             _companyContext = new companyContext();
         }
 
-        public string loginHandler()
+        public Employee loginHandler()
         {
             var employee = _companyContext.Employee.Where(emp => emp.Email == login.Email && emp.Password == login.Password).FirstOrDefault();
 
-            if (employee != null)
-            {
-                return "Login Successful";
-            }
-            else
-            {
-                return "User doesn't exist or wrong credentials";
-            }
+            return employee;
         }
     }
 }
