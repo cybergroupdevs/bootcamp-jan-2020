@@ -42,7 +42,7 @@ namespace project3_company.CustomModels.Repositories
 
             if (employee != null)
             {
-                return "Employee already exists";
+                return "Employee already exists with this email address";
             }
             else
             {
