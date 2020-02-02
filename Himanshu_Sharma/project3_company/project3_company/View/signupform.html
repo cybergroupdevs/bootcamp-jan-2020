@@ -12,6 +12,8 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+
+    <link rel="stylesheet" href="./assets/styles/main.css">
   </head>
   <body>
     <div class="wrapper">
@@ -19,7 +21,7 @@
         <a class="navbar-brand" href="#">
           <img src="./assets/images/icon.png" width="60" height="60" alt="#" />
         </a>
-        <form class="form-inline">
+        <!-- <form class="form-inline">
           <button type="button" class="btn btn-primary">Create</button>
 
           <button
@@ -28,19 +30,19 @@
           >
             Logout Himanshu Sharma
           </button>
-        </form>
+        </form> -->
       </nav>
 
       <p class="h2 bg-success text-center text-light">SignUp Form</p>
 
-      <form class="needs-validation ml-auto mr-auto w-75" novalidate>
+      <form class="needs-validation ml-auto mr-auto w-75">
         <div class="form-row">
           <div class="col-md-6 mb-3">
-            <label for="validationTooltip01">First name</label>
+            <label for="firstname">First name *</label>
             <input
               type="text"
               class="form-control"
-              id="validationTooltip01"
+              id="firstname"
               value=""
               required
             />
@@ -49,20 +51,19 @@
             </div>
           </div>
           <div class="col-md-6 mb-3">
-            <label for="validationTooltip02">Last name</label>
+            <label for="lastname">Last name</label>
             <input
               type="text"
               class="form-control"
-              id="validationTooltip02"
+              id="lastname"
               value=""
-              required
             />
             <div class="valid-tooltip">
               Looks good!
             </div>
           </div>
           <div class="col-md-12 mb-3">
-            <label for="validationTooltipUsername">Email</label>
+            <label for="email">Email *</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span
@@ -72,9 +73,9 @@
                 >
               </div>
               <input
-                type="text"
+                type="email"
                 class="form-control"
-                id="validationTooltipUsername"
+                id="email"
                 aria-describedby="validationTooltipUsernamePrepend"
                 required
               />
@@ -85,7 +86,7 @@
           </div>
 
           <div class="col-md-12 mb-3">
-            <label for="validationTooltipUsername">Password</label>
+            <label for="password">Password *</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span
@@ -97,7 +98,7 @@
               <input
                 type="password"
                 class="form-control"
-                id="validationTooltipUsername"
+                id="password"
                 aria-describedby="validationTooltipUsernamePrepend"
                 required
               />
@@ -110,7 +111,7 @@
         </div>
         <div class="form-row">
           <div class="col-md-6">
-            <label for="validationTooltip03">Mobile No.</label>
+            <label for="mobile">Mobile No.</label>
             <div class="input-group">
               <div class="input-group-prepend w-100">
                 <span
@@ -121,7 +122,7 @@
                 <input
                   type="number"
                   class="form-control"
-                  id="validationTooltip03"
+                  id="mobile"
                 />
               </div>
               <div class="invalid-tooltip">
@@ -130,8 +131,8 @@
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-success">SignUp</button>
-        <button type="submit" class="btn btn-secondary float-right">For SignIn</button>
+        <button id="signup-btn" class="btn btn-success">SignUp</button>
+        <button id="forsignin-btn" class="btn btn-secondary float-right">For SignIn</button>
       </form>
     </div>
 
@@ -150,5 +151,7 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+
+    <script src="assets/scripts/signupform.js"></script>
   </body>
 </html>

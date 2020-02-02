@@ -42,6 +42,15 @@ namespace project3_company
                 };
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                      .AllowAnyMethod()
+                      .AllowAnyHeader()
+                      .AllowCredentials()
+                .Build());
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -55,6 +64,7 @@ namespace project3_company
             }
 
             app.UseAuthentication();
+            app.UseCors("CorsPolicy");
 
             app.UseMvc();
         }

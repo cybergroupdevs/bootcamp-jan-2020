@@ -7,6 +7,24 @@ namespace project3_company.CustomModels.Repositories
 {
     public class Home
     {
+        public void Create()
+        {
 
+        }
+
+        public void Read()
+        {
+
+        }
+
+        public void Update()
+        {
+
+        }
+
+        public void Delete()
+        {
+
+        }
     }
 }
