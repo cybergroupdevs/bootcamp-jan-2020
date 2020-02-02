@@ -13,10 +13,10 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="./assets/styles/main.css">
+    <link rel="stylesheet" href="./assets/styles/main.css" />
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper" style="position: relative;">
       <nav class="navbar navbar-light bg-dark">
         <a class="navbar-brand" href="#">
           <img src="./assets/images/icon.png" width="60" height="60" alt="#" />
@@ -35,7 +35,7 @@
 
       <p class="h2 bg-success text-center text-light">SignUp Form</p>
 
-      <form class="needs-validation ml-auto mr-auto w-75">
+      <form class="needs-validation ml-auto mr-auto w-75" novalidate>
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="firstname">First name *</label>
@@ -52,12 +52,7 @@
           </div>
           <div class="col-md-6 mb-3">
             <label for="lastname">Last name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="lastname"
-              value=""
-            />
+            <input type="text" class="form-control" id="lastname" value="" />
             <div class="valid-tooltip">
               Looks good!
             </div>
@@ -107,7 +102,6 @@
               </div>
             </div>
           </div>
-
         </div>
         <div class="form-row">
           <div class="col-md-6">
@@ -119,11 +113,7 @@
                   id="validationTooltipUsernamePrepend"
                   >+91</span
                 >
-                <input
-                  type="number"
-                  class="form-control"
-                  id="mobile"
-                />
+                <input type="number" class="form-control" id="mobile" />
               </div>
               <div class="invalid-tooltip">
                 Please provide a valid mobile number.
@@ -132,8 +122,34 @@
           </div>
         </div>
         <button id="signup-btn" class="btn btn-success">SignUp</button>
-        <button id="forsignin-btn" class="btn btn-secondary float-right">For SignIn</button>
+        <a href="./loginform.html" id="forsignin-btn" class="btn btn-secondary float-right">
+          For SignIn
+        </a>
       </form>
+
+      <div style="position: absolute; top: 0; right: 0; width: 20%;">
+        <div
+          class="toast"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+          data-delay="10000"
+        >
+          <div class="toast-header">
+            <strong class="mr-auto">Message</strong>
+            <small class="text-muted">just now</small>
+            <button
+              type="button"
+              class="ml-2 mb-1 close"
+              data-dismiss="toast"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="toast-body"></div>
+        </div>
+      </div>
     </div>
 
     <script

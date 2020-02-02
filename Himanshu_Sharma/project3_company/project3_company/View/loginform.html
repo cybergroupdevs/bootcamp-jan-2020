@@ -14,32 +14,22 @@
     />
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper" style="position: relative;">
       <nav class="navbar navbar-light bg-dark">
         <a class="navbar-brand" href="#">
           <img src="./assets/images/icon.png" width="60" height="60" alt="#" />
         </a>
-        <form class="form-inline">
-          <button type="button" class="btn btn-primary">Create</button>
-
-          <button
-            class="btn btn-outline-warning my-2 my-sm-0 ml-2"
-            type="submit"
-          >
-            Logout Himanshu Sharma
-          </button>
-        </form>
       </nav>
 
       <p class="h2 bg-success text-center text-light">Login Form</p>
 
       <form class="w-75 ml-auto mr-auto">
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
+          <label for="email">Email address</label>
           <input
             type="email"
             class="form-control"
-            id="exampleInputEmail1"
+            id="email"
             aria-describedby="emailHelp"
           />
           <small id="emailHelp" class="form-text text-muted"
@@ -47,16 +37,38 @@
           >
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-          />
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" />
         </div>
-        <button type="submit" class="btn btn-success">SignIn</button>
-        <button type="submit" class="btn btn-secondary float-right">For SignUp</button>
+        <button class="btn btn-success login-btn">SignIn</button>
+        <a href="./signupform.html" class="btn btn-secondary float-right"
+          >For SignUp</a
+        >
       </form>
+
+      <div style="position: absolute; top: 0; right: 0; width: 20%;">
+        <div
+          class="toast"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+          data-delay="10000"
+        >
+          <div class="toast-header">
+            <strong class="mr-auto">Message</strong>
+            <small class="text-muted">just now</small>
+            <button
+              type="button"
+              class="ml-2 mb-1 close"
+              data-dismiss="toast"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="toast-body"></div>
+        </div>
+      </div>
     </div>
 
     <script
@@ -74,5 +86,7 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+
+    <script src="./assets/scripts/loginform.js"></script>
   </body>
 </html>

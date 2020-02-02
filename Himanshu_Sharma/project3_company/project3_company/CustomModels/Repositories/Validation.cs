@@ -38,7 +38,7 @@ namespace project3_company.CustomModels.Repositories
             }
 
             jsonResult.status = true;
-            jsonResult.resultString = "Proceed for generation";
+            jsonResult.resultString = "SignedUp Successfully! Login to View Dashboard";
             return jsonResult;
         }
     }

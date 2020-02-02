@@ -23,6 +23,11 @@ namespace project3_company.CustomModels.Repositories
 
         public SignUp(ISignUp details)
         {
+            if (details.Mobile == "")
+            {
+                details.Mobile = null;
+            }
+
             employee = new Employee()
             {
                 Email = details.Email,

@@ -29,12 +29,19 @@ requestToApi = () => {
     const url = "http://localhost:49228/api/signup";
 
     http.open("POST", url);
+    http.setRequestHeader('Content-type', 'application/json');
+
     console.log(JSON.stringify(singUpObj));
 
     http.send(JSON.stringify(singUpObj));
 
     http.onreadystatechange = e => {
       console.log(http.responseText);
+      document.querySelector('.toast-body').textContent = http.responseText;
+      $('.toast').toast('show');
     };
+  }else{
+    document.querySelector('.toast-body').textContent = 'Fill mandatory details correctly';
+    $('.toast').toast('show');
   }
 };
