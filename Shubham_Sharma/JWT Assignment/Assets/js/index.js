@@ -1,4 +1,5 @@
 var lgOutBtn = document.getElementById("logOut");
+var allBtn = document,getElementById("allEmp");
 var json = [
     {
         "Name": "Shubham Sharma",
@@ -30,10 +31,17 @@ function drawTable() {
         var c = document.createTextNode(x.Username);
         var d = document.createTextNode(x.Phone);
         var e = document.createTextNode(x.Address);
-        var f = document.getElementById("empRole");
+        var f = document.createElement("select");
+        var o1 = document.createElement("option");
+        o1.text = "PROJECT MANAGER"
+        var o2 = document.createElement("option");
+        o2.text = "ADMIN";
         var g = document.createTextNode(x.Project);
 
-        f.style.display = "flex";
+        f.appendChild(o1);
+        f.appendChild(o2);
+
+        //f.style.display = "flex";
 
         let indx = document.createElement("td");
         let nm = document.createElement("td");
@@ -74,12 +82,16 @@ const jsonDecoder = (token) => {
 };
 
 window.onload = () => {
+    document.getElementById("empRole").style.display = "none";
     if (typeof(Storage) !== "undefined") {
         // Code for localStorage/sessionStorage.
         const token = localStorage.getItem("JwtTOKEN");
+        //drawTable();
         if(token != null){
             var jsonPayload = jsonDecoder(token);
             document.getElementById("userName").innerHTML = jsonPayload.Username;
+            getAll();
+            drawTable();
         }
         else{
             console.log("There is no JwtToken present");
@@ -101,6 +113,39 @@ const lgout = () => {
     }
 }
 
+const sendHTTPReq = (method, url, data) => {
+    const promise = new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        console.log(JSON.stringify(data));
+        xhr.responseType = 'json';
+        if(data){
+            xhr.setRequestHeader('Content-Type', 'application/json');
+        }
+
+        xhr.onload = () => {
+            //resolve(xhr.status + "--Token--"+xhr.response.token);
+            resolve(xhr);
+        };
+        xhr.onerror = () => {
+            reject('Something went wrong');
+        }
+        xhr.send(JSON.stringify(data));
+    });
+    return promise;
+}
+
+
+const getAll = () => {
+    sendHTTPReq('GET', "https://localhost:44305/api/values")
+    .then((responseData) => {
+        console.log(responseData.response);
+    })
+    .catch(err => {
+        console.log(err);
+    });
+};
+
+allBtn.addEventListener('click', getAll);
 lgOutBtn.addEventListener('click', lgout);
 
-drawTable();
