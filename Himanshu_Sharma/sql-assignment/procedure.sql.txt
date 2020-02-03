@@ -1,0 +1,39 @@
+CREATE TABLE tblOffice(
+	id INT,
+	description VARCHAR(50),
+	path VARCHAR(200)
+);
+
+INSERT INTO tblOffice (id, description, path) VALUES (1, 'Date', CONVERT(VARCHAR, GETDATE(), 103))
+INSERT INTO tblOffice (id, description, path) VALUES (2, 'Project', '/home/himanshu/Desktop/'+CONVERT(VARCHAR, GETDATE(), 103)+'/Project.txt');
+INSERT INTO tblOffice (id, description, path) VALUES (3, 'Salary', '/home/himanshu/Desktop/'+CONVERT(VARCHAR, GETDATE(), 103)+'/Salary.txt');
+INSERT INTO tblOffice (id, description, path) VALUES (4, 'HR', '/home/himanshu/Desktop/'+CONVERT(VARCHAR, GETDATE(), 103)+'/HR.txt');
+INSERT INTO tblOffice (id, description, path) VALUES (5, 'Admin', '/home/himanshu/Desktop/'+CONVERT(VARCHAR, GETDATE(), 103)+'/Admin.txt'); 
+
+SELECT * FROM tblOffice;
+
+UPDATE tblOffice
+SET path = CONVERT(VARCHAR, GETDATE(), 103)
+WHERE id = 1;
+
+
+ALTER PROCEDURE spUpdateEntities
+@EnteredDate VARCHAR(20)
+AS
+BEGIN
+	DECLARE OfficeCursor CURSOR FOR
+	SELECT path FROM tblOffice	WHERE id>1;
+
+	OPEN OfficeCursor
+
+	FETCH NEXT FROM OfficeCursor into @CurDate
+
+	While(@@FETCH_STATUS = 0)
+	BEGIN
+		UPDATE tblOffice SET path = '/home/himanshu/Desktop/'+@EnteredDate+'/Project.txt' WHERE id > 1
+
+		FETCH NEXT FROM OfficeCursor into @CurDate
+	END
+	CLOSE OfficeCursor
+	DEALLOCATE OfficeCursor
+END
