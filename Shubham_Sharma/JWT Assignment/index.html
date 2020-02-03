@@ -10,7 +10,7 @@
 </head>
 <body>
     <!--Login Page-->
-    <div class="lgn-1">
+    <div class="lgn-1" id="lgn">
         <div class="lgn-2">
             <div class="text-center">
                 <img src="./Assets/images/lock.png" alt="Not Available" class="rounded-circle border border-secondary">
@@ -19,108 +19,48 @@
                 <input type="text" id="email" placeholder="Email" class="form-control">
             </div>
             <div>
-                <input type="password" id="pswd" placeholder="Password" class="form-control">
+                <input type="password" id="lgnpswd" placeholder="Password" class="form-control">
             </div>
             <div>
-                <input type="button" value="Login" class="btn btn-primary">
+                <input type="button" value="Login" id="loginButton" class="btn btn-primary">
             </div>
             <div class="text-center">
-                <a href="#"><small>New User ? Regiser Here</small></a>
+                <a id="toRegistration" href="#"><small>New User ? Regiser Here</small></a>
             </div>
         </div>
     </div>
 
     <!--Signup Page-->
-    <div class="sgn-up-1">
-        <div class="sgn-up-2">
+    <div class="sgn-up-1" id="sgnup1">
+        <form class="sgn-up-2">
             <div class="text-center">
                 <img src="./Assets/images/lock.png" alt="Not Available" class="rounded-circle border border-secondary">
             </div>
             <div>
-                <input type="text" id="name" placeholder="Name" class="form-control">
+                <input type="text" id="name" placeholder="Name" required pattern="[a-z,A-Z]{4,20}" class="form-control">
             </div>
             <div>
-                <input type="text" id="phn" placeholder="Phone Number" class="form-control">
+                <input type="email" id="usn" placeholder="username@cygrp.com" required pattern=".+@cygrp.com" class="form-control">
             </div>
             <div>
-                <input type="text" id="addrs" placeholder="Address" class="form-control">
+                <input type="text" id="phn" placeholder="Phone Number" required pattern="[0-9]{10,10}" class="form-control">
             </div>
             <div>
-                <input type="password" id="pswd" placeholder="Password" class="form-control">
+                <input type="text" id="addrs" placeholder="Address" required class="form-control">
             </div>
             <div>
-                <input type="button" value="SignUp" class="btn btn-primary">
+                <input type="password" id="pswd" placeholder="Password" required value="jgfjhg" class="form-control">
+            </div>
+            <div>
+                <input type="button" value="SignUp" id="signUpBtn" class="btn btn-primary">
             </div>
             <div class="text-center">
-                <a href="#"><small>Existing User ? Login</small></a>
+                <a id="toLogin" href="#"><small>Existing User ? Login</small></a>
             </div>
-        </div>
+        </form>
     </div>
 
-    <!--Admin Page-->
-    <div class="nav-Admin">
-        <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">ADMIN</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-      
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">All Employees <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pending Entries</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Find By
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Id</a>
-                            <a class="dropdown-item" href="#">Name</a>
-                            <a class="dropdown-item" href="#">Projects</a>
-                        </div>
-                    </li>
-                </ul>
-                </div>
-            </nav>
-        </div>
-        <div>
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>
-    </div>
+    <script src="./Assets/js/signup.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

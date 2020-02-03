@@ -7,7 +7,7 @@ input{
 
 /*For Login Page*/
 .lgn-1{
-    display: flex;   /*display: flex*/
+    display: flex;   /*display: none*/
     justify-content: center;
     height: 100%;
     align-items: center;
@@ -50,4 +50,10 @@ input{
 /*Navbar Admin*/
 .nav-Admin{
     display: none;
+}
+/* Removing arrows from input number fieldset */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
