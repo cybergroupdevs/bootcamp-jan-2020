@@ -4,7 +4,7 @@ var empLogin = {
 };
 
 function loginSubmit(){
-    var email = document.getElementById("email").value;
+    var email = document.getElementById("uname").value;
     var passwrd = document.getElementById("pwd").value;
 
     var empLogin = {
