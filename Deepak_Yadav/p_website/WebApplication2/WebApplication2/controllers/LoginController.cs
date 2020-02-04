@@ -19,7 +19,7 @@ namespace WebApplication2.controllers
     public class LoginController : ControllerBase
     {
         public IConfiguration _configuration;
-        public Modelscompanyinfocontext _cSharpTrainingContext;
+        public Models.companyinfoContext _cSharpTrainingContext;
         public LoginController(IConfiguration config, WebApplication2.Models.companyinfoContext context)
         {
             _configuration = config;
@@ -42,11 +42,7 @@ namespace WebApplication2.controllers
             return response;
         }
 
-        private object AuthenticateUser(tcompanycustom loginRequest)
-        {
-            throw new NotImplementedException();
-        }
-
+      
         private string GenerateJSONWebToken(WebApplication2.Custom_Models.tcompanycustom loginInfo)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
@@ -75,7 +71,7 @@ namespace WebApplication2.controllers
 
             //Validate the User Credentials  
             //Demo Purpose, I have Passed HardCoded User Information  
-            WebApplication2.Models.Tcompanydata employee = _cSharpTrainingContext.Tcompanydata.Where(x => x.Email == login.Email && x.Password == login.Password).FirstOrDefault();
+            Models.Tcompanydata employee = _cSharpTrainingContext.Tcompanydata.Where(x => x.Email == login.Email && x.Password == login.Password).FirstOrDefault();
             if (employee != null)
             {
                 user = new WebApplication2.Custom_Models.tcompanycustom { Name = employee.Name, Email = employee.Email, PhoneNo = employee.PhoneNo };

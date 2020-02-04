@@ -21,9 +21,8 @@ const sendData = json => {
   sendHTTPReq("POST", "https://localhost:44366//api/companyinfo", json)
     .then(responseData => {
       console.log(responseData);
-      if (responseData == 200) {
-        document.getElementById("sgnup1").style.display = "none";
-        document.getElementById("lgn").style.display = "flex";
+      if (responseData.status == 200) {
+         window.location.href="index.html";
       } else {
         window.alert(responseData.status);
       }
@@ -32,12 +31,26 @@ const sendData = json => {
       console.log(err);
     });
 };
+
+
+function parseJwt (tokenA) {
+  var base64Url = tokenA.split('.')[1];
+  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+
+  readabletoken(JSON.parse(jsonPayload));
+  return JSON.parse(jsonPayload);
+};
+
+
 //Sending HTTP REQUESTS, other methods can call me and pass me the required information and I'll do the rest
 const sendHTTPReq = (method, url, data) => {
   const promise = new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open(method, url);
-    console.log(JSON.stringify(data));
+    //console.log(JSON.stringify(data));
     xhr.responseType = "json";
     if (data) {
       xhr.setRequestHeader("Content-Type", "application/json");
@@ -46,10 +59,20 @@ const sendHTTPReq = (method, url, data) => {
     xhr.onload = () => {
       //resolve(xhr.status + "--Token--"+xhr.response.token);
       resolve(xhr);
+      // let  tokenA = {} ;
+      // tokenA = xhr.response;
+      //console.log(tokenA);
+      // debugger;
+      // parseJwt(tokenA);
+      if(xhr.status==401)
+      {
+        window.alert("Unauthorised");
+      }
     };
     xhr.onerror = () => {
       reject("Something went wrong");
     };
+   
     xhr.send(JSON.stringify(data));
   });
   return promise;
@@ -62,6 +85,20 @@ function showdata() {
     Email: usn,
     Password: psswd
   };
+  sendHTTPReq("post","https://localhost:44366/api/login",json)
+  .then((xhr) => {
+      console.log(xhr.response.token);
+      console.log(typeof(xhr.response));
+      console.log(typeof(xhr.response.token));
+      window.location.href="admindashboard.html";
+
+      ///let  tokenA = {} ;
+      let tokenA = xhr.response.token;
+      console.log(tokenA);
+      saveToken(tokenA)
+      parseJwt(tokenA);
+      
+  });
   //dummy for admin verification...hard coded..
   /*if(usn=="dy30152@gmail.com"&&psswd==1234)
   {
@@ -74,4 +111,17 @@ function showdata() {
 else{
   console.log("no");
 }*/
+}
+
+function saveToken(token){
+  if (typeof(Storage) !== "undefined") {
+    // Code for localStorage/sessionStorage.
+    localStorage.setItem("JwtToken", token);
+  } else {
+    // Sorry! No Web Storage support..
+  }
+}
+
+function readabletoken(jsonPayload){
+  console.log(jsonPayload);
 }

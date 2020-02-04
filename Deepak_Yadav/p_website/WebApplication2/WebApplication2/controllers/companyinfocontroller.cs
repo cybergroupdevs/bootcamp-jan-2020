@@ -19,9 +19,11 @@ namespace WebApplication2.controllers
 
         // GET: api/<controller>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ActionResult getStudent([FromBody]Custom_Models.tcompanycustom data)
         {
-            return new string[] { "value1", "value2" };
+            //DbModels.StudentInfo student = new DbModels.StudentInfo();
+            List<Models.Tcompanydata> employees = _context.Tcompanydata.ToList();
+            return Ok(employees);
         }
 
         // GET api/<controller>/5
@@ -55,10 +57,15 @@ namespace WebApplication2.controllers
         {
         }
 
-        // DELETE api/<controller>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete]
+        public ActionResult deleteStudent([FromBody]Custom_Models.tcompanycustom data)
         {
+
+            Models.Tcompanydata employees = _context.Tcompanydata.FirstOrDefault();
+            _context.Tcompanydata.Remove(employees);
+            _context.SaveChanges();
+            return Ok("Deleted");
+
         }
     }
 }
