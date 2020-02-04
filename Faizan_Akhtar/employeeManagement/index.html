@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Web App</title>
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body id="bodyID">
+    <div id="mainBox">
+        <form id="formID">
+            <div class="form-group">
+              <label for="email"> <span class="glyphicon glyphicon-user"></span> Username:</label>
+              <input type="email" class="form-control" id="uname">
+            </div>
+            <div class="form-group">
+              <label for="pwd"> <span class="glyphicon glyphicon-lock"></span> Password:</label>
+              <input type="password" class="form-control" id="pwd">
+            </div>
+            <br>
+            <button onclick="loginSubmit()" class="btn btn-success">Submit</button>
+            <br><br>
+            <a href="signup.html"> <span class="glyphicon glyphicon-fire"></span> Signup</a>
+        </form>
+    </div>
+</body>
+</html>
