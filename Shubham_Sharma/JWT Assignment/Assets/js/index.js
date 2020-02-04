@@ -1,42 +1,43 @@
 var lgOutBtn = document.getElementById("logOut");
-var allBtn = document,getElementById("allEmp");
-var json = [
-    {
-        "Name": "Shubham Sharma",
-        "Username": null,
-        "Phone": "9823435456",
-        "Address": "dmddmkdkamlkl kdkdm ksmd ksadsad smsd",
-        "Role": "Employee",
-        "Project": "P143"
-    },
-    {
-        "Name": "Deepak Yadav",
-        "Username": null,
-        "Phone": "9823438586",
-        "Address": "kdkdm ksmd ksadsad smsd",
-        "Role": "Employee",
-        "Project": "P987"
-    }
-];
+var allBtn = document.getElementById("allEmp");
+// var json = [
+//     {
+//         "Name": "Shubham Sharma",
+//         "Username": null,
+//         "Phone": "9823435456",
+//         "Address": "dmddmkdkamlkl kdkdm ksmd ksadsad smsd",
+//         "Role": "Employee",
+//         "Project": "P143"
+//     },
+//     {
+//         "Name": "Deepak Yadav",
+//         "Username": null,
+//         "Phone": "9823438586",
+//         "Address": "kdkdm ksmd ksadsad smsd",
+//         "Role": "Employee",
+//         "Project": "P987"
+//     }
+// ];
 var table = document.getElementById("adminTable");
 
-function drawTable() {
+function drawTable(json) {
     for(let i=0; i<json.length; i++){
         let tr = document.createElement("tr");
         
         var x = json[i];
         
         var a = document.createTextNode(i+1);
-        var b = document.createTextNode(x.Name);
-        var c = document.createTextNode(x.Username);
-        var d = document.createTextNode(x.Phone);
-        var e = document.createTextNode(x.Address);
-        var f = document.createElement("select");
-        var o1 = document.createElement("option");
-        o1.text = "PROJECT MANAGER"
-        var o2 = document.createElement("option");
-        o2.text = "ADMIN";
-        var g = document.createTextNode(x.Project);
+        var b = document.createTextNode(x.empName);
+        var c = document.createTextNode(x.username);
+        var d = document.createTextNode(x.empPhone);
+        var e = document.createTextNode(x.empRole);
+        var f = document.createTextNode();
+        // var f = document.createElement("select");
+        // var o1 = document.createElement("option");
+        // o1.text = "PROJECT MANAGER"
+        // var o2 = document.createElement("option");
+        // o2.text = "ADMIN";
+        var g = document.createTextNode(x.empProjectId);
 
         f.appendChild(o1);
         f.appendChild(o2);
@@ -91,7 +92,7 @@ window.onload = () => {
             var jsonPayload = jsonDecoder(token);
             document.getElementById("userName").innerHTML = jsonPayload.Username;
             getAll();
-            drawTable();
+            //drawTable();
         }
         else{
             console.log("There is no JwtToken present");
@@ -137,9 +138,10 @@ const sendHTTPReq = (method, url, data) => {
 
 
 const getAll = () => {
-    sendHTTPReq('GET', "https://localhost:44305/api/values")
+    sendHTTPReq('GET', "https://localhost:44305/api/Admin")
     .then((responseData) => {
-        console.log(responseData.response);
+        json = responseData.response();
+        drawTable(json);
     })
     .catch(err => {
         console.log(err);
