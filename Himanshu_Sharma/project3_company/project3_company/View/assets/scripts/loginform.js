@@ -36,6 +36,10 @@ requestToApi = () => {
       } else {
         document.querySelector(".toast-body").textContent =
           "Signed In Successfully";
+        var jwt = JSON.parse(http.response).token;
+        sessionStorage.setItem("accessToken", jwt);
+        var payload = parseJwt(jwt);
+        console.log(payload);
         window.location.href = "home.html";
       }
       console.log(http.responseText);
@@ -47,3 +51,18 @@ requestToApi = () => {
     $(".toast").toast("show");
   }
 };
+
+function parseJwt(token) {
+  var base64Url = token.split(".")[1];
+  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+  var jsonPayload = decodeURIComponent(
+    atob(base64)
+      .split("")
+      .map(function(c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
+
+  return JSON.parse(jsonPayload);
+}

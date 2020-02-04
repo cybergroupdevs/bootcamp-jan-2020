@@ -24,7 +24,7 @@ namespace project3_company.Controllers
 
         public LoginController(IConfiguration config)
         {
-            _config = config;   
+            _config = config;
         }
 
 
@@ -47,7 +47,8 @@ namespace project3_company.Controllers
         private string BuildToken(Employee employee)
         {
             var claims = new[] {
-                new Claim("Role", employee.Role),
+                new Claim("role", employee.Role),
+                new Claim("name", $"{employee.FirstName} {employee.LastName}"),
                 new Claim(JwtRegisteredClaimNames.Email, employee.Email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
