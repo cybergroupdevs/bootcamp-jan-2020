@@ -1,0 +1,14 @@
+C:\Users\shivani.bansal\source\repos\company\company\bin\Debug\netcoreapp2.1\company.deps.json
+C:\Users\shivani.bansal\source\repos\company\company\bin\Debug\netcoreapp2.1\company.runtimeconfig.json
+C:\Users\shivani.bansal\source\repos\company\company\bin\Debug\netcoreapp2.1\company.runtimeconfig.dev.json
+C:\Users\shivani.bansal\source\repos\company\company\bin\Debug\netcoreapp2.1\company.dll
+C:\Users\shivani.bansal\source\repos\company\company\obj\Debug\netcoreapp2.1\company.csprojAssemblyReference.cache
+C:\Users\shivani.bansal\source\repos\company\company\obj\Debug\netcoreapp2.1\company.csproj.CoreCompileInputs.cache
+C:\Users\shivani.bansal\source\repos\company\company\obj\Debug\netcoreapp2.1\company.RazorAssemblyInfo.cache
+C:\Users\shivani.bansal\source\repos\company\company\obj\Debug\netcoreapp2.1\company.RazorAssemblyInfo.cs
+C:\Users\shivani.bansal\source\repos\company\company\obj\Debug\netcoreapp2.1\company.AssemblyInfoInputs.cache
+C:\Users\shivani.bansal\source\repos\company\company\obj\Debug\netcoreapp2.1\company.AssemblyInfo.cs
+C:\Users\shivani.bansal\source\repos\company\company\obj\Debug\netcoreapp2.1\company.RazorTargetAssemblyInfo.cache
+C:\Users\shivani.bansal\source\repos\company\company\bin\Debug\netcoreapp2.1\company.pdb
+C:\Users\shivani.bansal\source\repos\company\company\obj\Debug\netcoreapp2.1\company.dll
+C:\Users\shivani.bansal\source\repos\company\company\obj\Debug\netcoreapp2.1\company.pdb
