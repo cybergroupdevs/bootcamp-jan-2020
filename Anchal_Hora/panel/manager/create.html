@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/222eef09a0.js" crossorigin="anonymous"></script>
+   
+    <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../manager/styles/style.css">
+    <link rel="stylesheet" href="../admin/styles/admin.css">
+    <title>Manage manager</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1 class="logo-text"><span>Anchal</span>Hora</h1>
+        </div>
+       
+        <ul class="nav">
+            <li>
+                <a href="#">
+                    <i class="fa fa-user"></i>
+                    Anchal Hora
+                    <i class="fa fa-chevron-down" style="font-size: .8rem;"></i>
+                </a>
+                <ul>
+                    <li><a href="#" class="logout">Dashboard</a></li>
+                    <li><a href="#" class="logout">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <div class="admin-wrapper">
+        <div class="left-sidebar">
+<ul>
+    <li><a href="../admin/index.html">Manage admin</a></li>
+    <li><a href="../user/index.html">Manage users</a></li>
+    <li><a href="index.html">Manage managers</a></li>
+</ul>
+        </div>
+        <div class="admin-content">
+            <div class="button-group">
+                <a href="create.html" type="button" class="btn btn-big">Add user</a>
+                <a href="index.html" type="button" class="btn btn-big">Manage user</a>
+            </div>
+<div class="content">
+    <h2 class="page-title">Add users</h2>
+    <form action="create.html" method="user">
+        <div>
+            <label>Name of the user</label>
+            <input type="text" name="title" class="text-input">
+        </div>
+<div>
+    <label>About user</label>
+    <textarea name="body" id="body"></textarea>
+</div>
+<div>
+    <label>ProjectName</label>
+<select name="Project name" class="text-input">
+<option value="Web Development">Web Development</option>
+<option value="AI">AI</option>
+</select>
+</div>
+<div>
+<button type="submit" class="btn btn-big">Add user</button>
+</div>
+
+    </form>
+    
+</div>
+        </div>
+
+
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
+<script src="../manager/js/scripts.js"></script>
+
+
+</body>
+</html>
