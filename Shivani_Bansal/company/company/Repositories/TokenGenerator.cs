@@ -7,5 +7,6 @@ namespace company.Repositories
 {
     public class TokenGenerator
     {
+
     }
 }
