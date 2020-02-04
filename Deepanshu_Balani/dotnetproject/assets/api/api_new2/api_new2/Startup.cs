@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using apiproject.DbModels;
+using api_new2.DbModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -13,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace apiproject
+namespace api_new2
 {
     public class Startup
     {
@@ -28,9 +28,8 @@ namespace apiproject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<apiprojectContext>(sql => sql.UseSqlServer("server =CYG363;database=apiproject;Trusted_Connection=True;"));
+            services.AddDbContext<apiproject2Context>(sql => sql.UseSqlServer("server =CYG363;database=apiproject2;Trusted_Connection=True;"));
         }
-    
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -43,12 +42,15 @@ namespace apiproject
             {
                 app.UseHsts();
             }
+
             app.UseCors(builder =>
-            builder.AllowAnyHeader()
+            builder.AllowAnyOrigin()
                     .AllowAnyMethod()
-                    .AllowAnyOrigin());
+                    .AllowAnyHeader());
             app.UseHttpsRedirection();
             app.UseMvc();
+            
+            
         }
     }
 }
