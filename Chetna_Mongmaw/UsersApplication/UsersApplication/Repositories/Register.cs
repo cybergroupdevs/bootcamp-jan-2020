@@ -61,8 +61,27 @@ namespace UsersApplication.Repositories
             return ("deleted");
 
         }
-        
-            
-}
+        public string updateHandler(UserInfo updatedDetails)
+        {
+            Users user = _webAppcontext.Users.Find(updatedDetails.RId);
+            user.Name = updatedDetails.Name;
+            user.Username = updatedDetails.Username;
+            user.Email = updatedDetails.Email;
+            user.Password = updatedDetails.Password;
+            user.ProjectId = updatedDetails.ProjectId;
+            user.Role = updatedDetails.Role;
+            _webAppcontext.SaveChanges();
+            return ("Student updated");
+        }
+
+        public List<Users> listHandler()
+        {
+            List<Users> output = _webAppcontext.Users.ToList();
+            return (output);
+        }
+
+
+
+    }
 }
 

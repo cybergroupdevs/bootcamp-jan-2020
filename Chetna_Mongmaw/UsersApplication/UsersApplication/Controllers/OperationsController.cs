@@ -36,13 +36,20 @@ namespace UsersApplication.Controllers
             return Ok(output);
         }
 
+        [HttpPut("{id}")]
+        public IActionResult Put([FromBody] UserInfo updatedDetails)
 
-        //[HttpPost]
-        //public IActionResult Post([FromBody] ISignUp enteredDetails)
-        //{
-        //SignUp signUp = new SignUp(enteredDetails);
-        //return Ok(signUp.signUpHandler());
-        //}
-        //}
+        {
+            var output = _reg.updateHandler(updatedDetails);
+            return Ok(output);
+        }
+
+        [HttpGet]
+        public IActionResult Get()
+        {
+            var output = _reg.listHandler();
+            return Ok(output);
+
+        }
     }
 }
