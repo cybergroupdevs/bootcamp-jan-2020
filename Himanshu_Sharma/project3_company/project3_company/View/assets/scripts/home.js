@@ -60,27 +60,28 @@ function uiUpdateAccordingToRoles() {
     ".logout-btn"
   ).textContent = `Logout ${refactoredData.name}`;
 
-  document.querySelector(".btn--read").addEventListener("click", (e) => {
+  document.querySelectorAll(".btn--read").forEach((cur) => cur.addEventListener("click", (e) => {
     sessionStorage.setItem("state", "read");
-    let email = e.target.parentNode.parentNode.firstElementChild.children[2].textContent;
-    sessionStorage.setItem("email", email);
+    setEmailInSessionStorage(e);
     window.location.href = "form.html";
-  });
+  }));
 
-  document.querySelector(".btn--update").addEventListener("click", () => {
+  document.querySelectorAll(".btn--update").forEach((cur) => cur.addEventListener("click", (e) => {
     sessionStorage.setItem("state", "update");
+    setEmailInSessionStorage(e);
     window.location.href = "form.html";
-  });
-
-  document.querySelector(".btn--delete").addEventListener("click", () => {
-    sessionStorage.setItem("state", "delete");
-    window.location.href = "form.html";
-  });
+  }));
 
   document.querySelector(".btn-create").addEventListener("click", () => {
     sessionStorage.setItem("state", "create");
     window.location.href = "form.html";
   });
+}
+
+function setEmailInSessionStorage(e) {
+    let email = e.target.parentNode.parentNode.firstElementChild.children[2].textContent;
+    console.log(email);
+    sessionStorage.setItem("email", email);
 }
 
 function requestToApi() {

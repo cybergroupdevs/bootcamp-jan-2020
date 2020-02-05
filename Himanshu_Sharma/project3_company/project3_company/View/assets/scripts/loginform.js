@@ -39,6 +39,7 @@ requestToApi = () => {
         var jwt = JSON.parse(http.response).token;
         sessionStorage.setItem("accessToken", jwt);
         var payload = parseJwt(jwt);
+        sessionStorage.setItem("role", payload.role);
         console.log(payload);
         window.location.href = "home.html";
       }

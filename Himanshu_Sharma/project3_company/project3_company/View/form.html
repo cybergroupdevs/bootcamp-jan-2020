@@ -38,7 +38,7 @@
             <label for="validationTooltip01">First name</label>
             <input
               type="text"
-              class="form-control"
+              class="form-control first_name"
               id="validationTooltip01"
               value=""
               required
@@ -51,7 +51,7 @@
             <label for="validationTooltip02">Last name</label>
             <input
               type="text"
-              class="form-control"
+              class="form-control last_name"
               id="validationTooltip02"
               value=""
               required
@@ -72,7 +72,7 @@
               </div>
               <input
                 type="text"
-                class="form-control"
+                class="form-control email"
                 id="validationTooltipUsername"
                 aria-describedby="validationTooltipUsernamePrepend"
                 required
@@ -95,7 +95,7 @@
                 >
                 <input
                   type="number"
-                  class="form-control"
+                  class="form-control mobile"
                   id="validationTooltip03"
                 />
               </div>
@@ -104,9 +104,9 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 role-parent">
             <label for="validationTooltip04">Role</label>
-            <select class="custom-select" id="validationTooltip04" required>
+            <select class="custom-select role" id="validationTooltip04" required>
               <option selected value="Employee">Employee</option>
               <option class="Manager">Project Manager</option>
               <option class="Admin">Admin</option>
@@ -115,11 +115,11 @@
               Please select a valid role.
             </div>
           </div>
-          <div class="col-md-3 mb-3">
+          <div class="col-md-3 mb-3 manager-parent">
             <label for="validationTooltip05">ManagerID</label>
             <input
               type="number"
-              class="form-control"
+              class="form-control manager"
               id="validationTooltip05"
             />
             <div class="invalid-tooltip">
@@ -127,20 +127,20 @@
             </div>
           </div>
 
-          <div class="col-md-6">
-            <label for="validationTooltip06">Project</label>
+          <div class="col-md-6 projects-parent">
+            <label for="validationTooltip06">Projects</label>
             <div class="input-group">
               <div class="input-group-prepend row m-0">
                 <input
                   type="text"
-                  class="form-control col-md-auto"
+                  class="form-control col-md-auto project"
                   id="validationTooltip06"
                 />
                 <button
-                  class="btn btn-dark col-md-auto w-100"
+                  class="btn btn-dark col-md-auto w-100 btn-addproject"
                   id="validationTooltipUsernamePrepend"
                 >
-                  + <span>Add Project</span>
+                  + <span class="add-project-btn">Add Project</span>
                 </button>
                 <ul class="list-group list-group-horizontal row m-0">
                   <li class="list-group-item col-md-auto">Project 1</li>
@@ -160,7 +160,7 @@
             </div>
           </div>
         </div>
-        <button class="btn btn-primary float-right" type="submit">Submit form</button>
+        <button class="btn btn-primary float-right submit-btn" type="submit">Submit form</button>
       </form>
     </div>
 
@@ -179,5 +179,7 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+
+    <script src="./assets/scripts/form.js"></script>
   </body>
 </html>
