@@ -30,11 +30,11 @@ namespace WebApplication2.Models
         {
             modelBuilder.Entity<Tcompanydata>(entity =>
             {
-                entity.HasKey(e => e.CusId);
+                entity.HasKey(e => e.cusId);
 
                 entity.ToTable("tcompanydata");
 
-                entity.Property(e => e.CusId).HasColumnName("cus_id");
+                entity.Property(e => e.cusId).HasColumnName("cus_id");
 
                 entity.Property(e => e.Designation)
                     .IsRequired()

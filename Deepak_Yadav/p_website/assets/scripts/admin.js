@@ -24,7 +24,31 @@ function tabulardata() {
     }
   };
 }
-
+//for deleting the employee
+//after verification this request can be made
+function deletedata(){
+  var xhr = new XMLHttpRequest();
+  var url = "https://localhost:44366//api/admin/7";
+  xhr.open("DELETE", url, true);
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.send();
+  xhr.onload = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) 
+        console.log("deleted");
+    }
+}
+//for updating the employee details
+function updatedetails(){
+  var xhr = new XMLHttpRequest();
+  var url = "https://localhost:44366//api/admin/7";
+  xhr.open("PATCH", url, true);
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.send();
+  xhr.onload = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) 
+        console.log("updated");
+    }
+}
 /*
 function(data){ 
             if(data){
