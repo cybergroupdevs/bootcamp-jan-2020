@@ -1,0 +1,22 @@
+.form-container{
+    position: relative;
+    top: 3vh;
+    left: 5vw;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 white;
+    line-height: 1;
+    width: max-content;
+    height: fit-content;
+
+}
+
+.bg{
+    background: url('../images/bg_img.jpg') repeat-y;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    opacity: 0.8;
+}
+
