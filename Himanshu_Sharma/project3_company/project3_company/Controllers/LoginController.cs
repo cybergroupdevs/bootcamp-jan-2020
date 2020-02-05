@@ -47,6 +47,7 @@ namespace project3_company.Controllers
         private string BuildToken(Employee employee)
         {
             var claims = new[] {
+                new Claim("id", employee.EmployeeId.ToString()),
                 new Claim("role", employee.Role),
                 new Claim("name", $"{employee.FirstName} {employee.LastName}"),
                 new Claim(JwtRegisteredClaimNames.Email, employee.Email),

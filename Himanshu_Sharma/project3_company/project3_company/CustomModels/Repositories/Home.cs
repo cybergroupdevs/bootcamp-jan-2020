@@ -25,30 +25,6 @@ namespace project3_company.CustomModels.Repositories
             _companyContext = new companyContext();
         }
 
-        public void Create()
-        {
-            if (_details.Role == "Admin")
-            {
-
-            }
-
-        }
-
-        public void Read()
-        {
-
-        }
-
-        public void Update()
-        {
-
-        }
-
-        public void Delete()
-        {
-
-        }
-
         public List<Employee> returnEmployees()
         {
             List<Employee> employees = new List<Employee>();
