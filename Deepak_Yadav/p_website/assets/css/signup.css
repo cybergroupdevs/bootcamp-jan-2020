@@ -10,7 +10,7 @@
 	font-size: 15px;
 }
 .signupbg{
-    background: url("../images/back.jpg")no-repeat;
+    background: url("../images/bgsgnup.jpg")no-repeat;
     background-size: cover;
     min-height: 620px;
     display: flex;
