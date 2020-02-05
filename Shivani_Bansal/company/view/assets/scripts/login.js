@@ -23,7 +23,7 @@ function sendJSON(){
         // console.log(xhr);
         if (XMLHttpRequest.DONE && xhr.status ===200)
         {
-            window.open("./signup.html");
+            window.open("./dashboard.html");
             
             // console.log(mytoken);
             // console.log(xhr);
