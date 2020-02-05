@@ -1,28 +1,39 @@
-function func(){
-    Postdata();
-window.location.href="./admin/index.html";
-}
+//  function func(){
+//   window.location.href="./admin/enter.html";
+//   }
 
-const sendHTTPReq=(method,url, data)=>{
-    const promise=new Promise((resolve,reject)=>{
-        const xhr=new XMLHttpRequest();
-        xhr.open(method,url);
-        console.log(JSON.stringify(data));
-        xhr.responseType='json';
-        if(data){
-            xhr.setRequestHeader('Content-type','application/json');
+// const sendHTTPReq=(method,url, data)=>{
+//     const promise=new Promise((resolve,reject)=>{
+//         const xhr=new XMLHttpRequest();
+//         xhr.open(method,url);
+//         console.log(JSON.stringify(data));
+//         xhr.responseType='json';
+//         if(data){
+//             xhr.setRequestHeader('Content-type','application/json');
 
-        }
-        xhr.onload=()=>{
-            resolve(xhr);
-        };
-        xhr.onerror=()=>{
-            reject('Something went wrong');
-        }
-        xhr.send(JSON.stringify(data));
-    })
-    return promise; 
-}
+//         }
+//         xhr.onload=()=>{
+//             resolve(xhr);
+//             var xhr= new XMLHttpRequest();
+//     var url="http://localhost:51391/api/Panel";
+//     xhr.open('POST', url,true);
+//     xhr.responseType='json';
+//     xhr.setRequestHeader('Content-type','application/json');
+//     console.log(JSON.stringify(json));
+//      xhr.onload = () => {
+//         console.log(xhr.status);
+//         //var jwtToken = xhr.response.token;
+
+//     };
+//     xhr.send(JSON.stringify(json));
+//         };
+//         xhr.onerror=()=>{
+//             reject('Something went wrong');
+//         }
+//         xhr.send(JSON.stringify(data));
+//     })
+//     return promise; 
+// }
 
 document.getElementById("btn").addEventListener("click",Postdata)
 function Postdata(){
@@ -39,17 +50,18 @@ function Postdata(){
         "Password":Password
     };
     console.log(json);
+    //sendHTTPReq('POST', "http://localhost:51391/api/Panel", json).then(x => func() );
     var xhr= new XMLHttpRequest();
-    var url="http://localhost:51391/api/Panel";
-    xhr.open('POST', url,true);
-    xhr.responseType='json';
-    xhr.setRequestHeader('Content-type','application/json');
-    console.log(JSON.stringify(json));
-     xhr.onload = () => {
-        console.log(xhr.status);
-        //var jwtToken = xhr.response.token;
+     var url="http://localhost:51391/api/Panel";
+     xhr.open('POST', url,true);
+     xhr.responseType='json';
+     xhr.setRequestHeader('Content-type','application/json');
+     console.log(JSON.stringify(json));
+      xhr.onload = () => {
+         console.log(xhr.status);
+         //var jwtToken = xhr.response.token;
 
-    };
+   };
     xhr.send(JSON.stringify(json));
 }
 
