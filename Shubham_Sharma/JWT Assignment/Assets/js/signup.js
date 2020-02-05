@@ -86,9 +86,9 @@ const logMeIn = (lgndata) => {
             if(x.EmpRole == "ADMIN")
                 window.location.href = "./admin-page.html";
             else if(x.EmpRole == "EMPLOYEE")
-                window.location.href = "";
+                window.location.href = "#";
             else 
-                window.location.href = "";
+                window.location.href = "#";
         }
         else if(responseData.status == 401){
             window.alert("Unauthorized");

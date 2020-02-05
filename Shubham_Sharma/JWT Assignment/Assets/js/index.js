@@ -1,76 +1,59 @@
 var lgOutBtn = document.getElementById("logOut");
 var allBtn = document.getElementById("allEmp");
-// var json = [
-//     {
-//         "Name": "Shubham Sharma",
-//         "Username": null,
-//         "Phone": "9823435456",
-//         "Address": "dmddmkdkamlkl kdkdm ksmd ksadsad smsd",
-//         "Role": "Employee",
-//         "Project": "P143"
-//     },
-//     {
-//         "Name": "Deepak Yadav",
-//         "Username": null,
-//         "Phone": "9823438586",
-//         "Address": "kdkdm ksmd ksadsad smsd",
-//         "Role": "Employee",
-//         "Project": "P987"
-//     }
-// ];
 var table = document.getElementById("adminTable");
 
-function drawTable(json) {
-    for(let i=0; i<json.length; i++){
-        let tr = document.createElement("tr");
-        
-        var x = json[i];
-        
-        var a = document.createTextNode(i+1);
-        var b = document.createTextNode(x.empName);
-        var c = document.createTextNode(x.username);
-        var d = document.createTextNode(x.empPhone);
-        var e = document.createTextNode(x.empRole);
-        var f = document.createTextNode();
-        // var f = document.createElement("select");
-        // var o1 = document.createElement("option");
-        // o1.text = "PROJECT MANAGER"
-        // var o2 = document.createElement("option");
-        // o2.text = "ADMIN";
-        var g = document.createTextNode(x.empProjectId);
+var json = [
+    {
+        "empName": "Abha",
+        "username": "abha.rana@cygrp.com",
+        "empPhone": "8765432345",
+        "empAddress": "Somewhere near Karakarduma, Delhi-110043",
+        "empRole": "EMPLOYEE",
+        "empPassword": null,
+        "empProjectId": "Bench",
+        "adminFlag": 0,
+        "empFlag": 0
+    },
+    {
+        "empName": "Deepak",
+        "username": "deepak.yadav@cygrp.com",
+        "empPhone": "9991112345",
+        "empAddress": "B-123, Govindpuri, Okhla Vihar, Delhi-110321",
+        "empRole": "EMPLOYEE",
+        "empPassword": null,
+        "empProjectId": "Bench",
+        "adminFlag": 0,
+        "empFlag": 0
+    }];
 
-        f.appendChild(o1);
-        f.appendChild(o2);
+const giveInputElement = (edit, data) => {
+    var temp = document.createElement("input");
+    temp.type = 'text';
+    temp.value = data;
+    temp.readOnly = false;
+    temp.style.width = "100%";
+    temp.style.border = "none";
+    if(edit == true){
+        temp.readOnly = true;
+    }
+    return temp;
+}
 
-        //f.style.display = "flex";
+function  drawTable(json) {
+    var colLength = 7;
+    //var aws = ["___Shubham","--dcsdac","--dasad","__asdcasdc","__ascasdc","__ascsac","--asasd"];
 
-        let indx = document.createElement("td");
-        let nm = document.createElement("td");
-        let usn = document.createElement("td");
-        let ph = document.createElement("td");
-        let adrs = document.createElement("td");
-        let rl = document.createElement("td");
-        let pr = document.createElement("td");
-
-        indx.appendChild(a);
-        nm.appendChild(b);
-        usn.appendChild(c);
-        ph.appendChild(d);
-        adrs.appendChild(e);
-        rl.appendChild(f);
-        pr.appendChild(g);
-
-        tr.appendChild(indx);
-        tr.appendChild(nm);
-        tr.appendChild(usn);
-        tr.appendChild(ph);
-        tr.appendChild(adrs);
-        tr.appendChild(rl);
-        tr.appendChild(pr);
-        
-        table.appendChild(tr);
+    for(let j=0; j<json.length; j++){
+        var x = json[j];
+        var data = [j+1, x.empName, x.username, x.empPhone, x.empRole, x.empAddress, x.empProjectId];
+        var row = table.insertRow(j);        
+        for(let i=0; i<colLength; i++){
+            var cell = row.insertCell(i);
+            cell.innerHTML = data[i];
+        }
     }
 }
+
 
 const jsonDecoder = (token) => {
     var base64Url = token.split('.')[1];
@@ -83,22 +66,21 @@ const jsonDecoder = (token) => {
 };
 
 window.onload = () => {
-    document.getElementById("empRole").style.display = "none";
+    //document.getElementById("empRole").style.display = "none";
     if (typeof(Storage) !== "undefined") {
-        // Code for localStorage/sessionStorage.
         const token = localStorage.getItem("JwtTOKEN");
-        //drawTable();
         if(token != null){
             var jsonPayload = jsonDecoder(token);
-            document.getElementById("userName").innerHTML = jsonPayload.Username;
+            console.log(jsonPayload)
+            document.getElementById("userName").innerHTML = jsonPayload.EmpName;
             getAll();
-            //drawTable();
         }
         else{
             console.log("There is no JwtToken present");
+            window.location.href = "./index.html";
         }
-    } else {
-        // Sorry! No Web Storage support..
+    } 
+    else {
         alert("Sorry ! Your browser is not cool.");
     }
 }
@@ -123,7 +105,6 @@ const sendHTTPReq = (method, url, data) => {
         if(data){
             xhr.setRequestHeader('Content-Type', 'application/json');
         }
-
         xhr.onload = () => {
             //resolve(xhr.status + "--Token--"+xhr.response.token);
             resolve(xhr);
@@ -140,7 +121,8 @@ const sendHTTPReq = (method, url, data) => {
 const getAll = () => {
     sendHTTPReq('GET', "https://localhost:44305/api/Admin")
     .then((responseData) => {
-        json = responseData.response();
+        // console.log(responseData.response);
+        json = responseData.response;
         drawTable(json);
     })
     .catch(err => {
@@ -148,6 +130,7 @@ const getAll = () => {
     });
 };
 
+// drawTable(json);
+
 allBtn.addEventListener('click', getAll);
 lgOutBtn.addEventListener('click', lgout);
-
