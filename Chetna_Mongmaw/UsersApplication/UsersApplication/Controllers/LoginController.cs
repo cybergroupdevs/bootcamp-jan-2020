@@ -45,6 +45,12 @@ namespace UsersApplication.Controllers
 
         private string GenerateJSONWebToken(Users userInfo)
         {
+            var claims = new[] {
+            new Claim(JwtRegisteredClaimNames.Email, userInfo.Email),
+            new Claim("Username", userInfo.Username),
+            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            };
+
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
@@ -59,35 +65,14 @@ namespace UsersApplication.Controllers
 
         private Users AuthenticateUser(Users login)
         {
-            //Users user = null;
-            //try
-            //{
-                //user = _usersContext.TUser1.Where(x => (x.Email == login.Email)).FirstOrDefault();
-                //user = _webAppContext.Users.Where(x => x.Email == login.Email).FirstOrDefault();
-            //}
-            //catch (Exception e)
-            //{
-                //Console.WriteLine(e);
-            //}
-
-            //Validate the User Credentials  
-
-            //if (user != null)
-            //{
-                //user = new Users { Email = user.Email, Password = user.Password, Role = user.Role };
-
-            //}
-            //return user;
-           Users user = null;
-
-            //Validate the User Credentials  
-            //Demo Purpose, I have Passed HardCoded User Information  
-           if (login.Username == "nangchetnamaw" && login.Password=="chetnamaw")
+            Users user = null;
+            try
             {
-               user = new Users ();
-               user.Username = "nangchetnamaw";
-                user.Email = "nangchetnamaw@gmail.com";
-                user.Role = "adminS";
+                user = _webAppContext.Users.Where(x => (x.Username == login.Username && x.Password == login.Password)).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
             return user;
         }
