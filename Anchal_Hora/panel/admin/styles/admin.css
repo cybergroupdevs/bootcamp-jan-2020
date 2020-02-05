@@ -17,7 +17,7 @@ header{
 .admin-wrapper .left-sidebar{
     flex:3;
     height:100vh;
-    background: hsl(177, 70%, 41%);
+    background: #FF7F50	;
     border-top: 1px solid black;
 
     
