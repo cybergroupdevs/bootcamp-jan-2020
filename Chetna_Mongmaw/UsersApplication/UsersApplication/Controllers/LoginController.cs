@@ -47,6 +47,7 @@ namespace UsersApplication.Controllers
         {
             var claims = new[] {
             new Claim(JwtRegisteredClaimNames.Email, userInfo.Email),
+            new Claim("Role", userInfo.Role),
             new Claim("Username", userInfo.Username),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
@@ -56,7 +57,7 @@ namespace UsersApplication.Controllers
 
             var token = new JwtSecurityToken(_config["Jwt:Issuer"],
               _config["Jwt:Issuer"],
-              null,
+              claims,
               expires: DateTime.Now.AddMinutes(120),
               signingCredentials: credentials);
 
