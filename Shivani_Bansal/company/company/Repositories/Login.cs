@@ -26,7 +26,7 @@ namespace company.Repositories
 
         public UsersInfo loginHandler()
         {
-            UsersInfo usersInfo = _webapiContext.UsersInfo.Where(emp => emp.Email == _details.Email && emp.Password == _details.Password).FirstOrDefault();//is line par fat raha hai
+            UsersInfo usersInfo = _webapiContext.UsersInfo.Where(emp => emp.Email == _details.Email && emp.Password == _details.Password).FirstOrDefault();
             return usersInfo;
         }
     }
