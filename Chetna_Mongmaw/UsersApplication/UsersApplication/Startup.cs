@@ -44,7 +44,7 @@ namespace UsersApplication
         };
     });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<Models.WebAppContext>(sql => sql.UseSqlServer("server=CYG317\\SQLEXPRESS; database=WebApp; Trusted_Connection=True;"));
+            services.AddDbContext<Models.WebAppContext>(sql => sql.UseSqlServer("ConnectionString"));
             services.AddScoped<Repositories.IRegister, Repositories.Register>();
         }
 
