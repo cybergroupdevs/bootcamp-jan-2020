@@ -22,17 +22,7 @@ function sendJSON(){
     xhr.onreadystatechange = function () { 
         if (xhr.readyState===4){
         if (xhr.status === 200) { 
-            //var result;
-            // Print received data from server 
-            //result.innerHTML = this.responseText; 
-            console.log("registered");
-            alert("successfully registered");    
-            // Converting JSON data to string 
-            //var data = JSON.stringify({ "Name": name.value, "Username": username.value, "Password": password.value,
-            //"ProjectId": p_id.value, "Role": role.value }); 
-
-            // Sending data with the request 
-            //xhr.send(data);         
+            console.log("registered");   
         } 
         else {
             alert("unsuccessful");
