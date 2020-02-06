@@ -18,11 +18,11 @@ $( document ).ready(function() {
   }
     }
     var table = document.getElementById("userdata");
-     //  for(let i=0; i<userdata.length; i++){
-      //  let tr = document.createElement("tr");
+       for(let i=0; i<userdata.length; i++){
+       let tr = document.createElement("tr");
         
        var x = userdata;
-       // console.log(x);
+       console.log(x);
         
     
         var b = document.createTextNode(x.name);
@@ -61,7 +61,7 @@ $( document ).ready(function() {
         
         table.appendChild(tr);
     
-
+       }
 });
 function DecodeToken(token) {
     var base64Url = token.split(".")[1];

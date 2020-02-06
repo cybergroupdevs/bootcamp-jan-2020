@@ -128,6 +128,45 @@ const viewdetails = () => {
   window.location.href="profile.html";
   
 }
+const deleteuser = () => {
+  var n=window.prompt("enter name of user you want ot delete:","Name");
+  var ob={ "name":n};
+  var xhr = new XMLHttpRequest();
+  var url="https://localhost:44352/api/data";
+  xhr.open("DELETE", url,true);
+  xhr.setRequestHeader('Content-type', 'application/json');
+  xhr.send(JSON.stringify(ob));
+  xhr.onload = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      var userdata=xhr.response;
+      console.log(userdata);
+      window.alert(userdata);
+}
+  }
+}
+const updateuser = () => {
+  var n=window.prompt("enter name :","Name");
+  var e=window.prompt("enter email :","email");
+  var a=window.prompt("enter address :","address");
+  var ob={ "Name":n,
+"Email": e,
+"Address": a};
+  var xhr = new XMLHttpRequest();
+  var url="https://localhost:44352/api/data";
+  xhr.open("PUT", url,true);
+  xhr.setRequestHeader('Content-type', 'application/json');
+  xhr.send(JSON.stringify(ob));
+  xhr.onload = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      var userdata=xhr.response;
+      console.log(userdata);
+      window.alert(userdata);
+}
+  }
+}
+
 
 document.getElementById("logOut").addEventListener('click', lgout);
 document.getElementById("profile").addEventListener('click', viewdetails);
+document.getElementById("delete").addEventListener('click', deleteuser);
+document.getElementById("update").addEventListener('click', updateuser);
