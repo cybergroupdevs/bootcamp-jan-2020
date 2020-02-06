@@ -1,16 +1,15 @@
 document.getElementById("btn").addEventListener("click",adminpostdata)
 function adminpostdata(){
-    
+    var Sno=document.getElementById("inputSno").value;
     var Username=document.getElementById("inputName").value;
     var Email=document.getElementById("inputEmail").value;
     var Password=document.getElementById("inputPassword").value;
-    var ContactNo=document.getElementById("inputContact").value;
     
     var format={
+        "Sno":Sno,
         "Name":Username,
         "Email":Email,
-        "Password":Password,
-        "ContactNo":ContactNo
+        "Password":Password
     };
     console.log(format);
     //sendHTTPReq('POST', "http://localhost:51391/api/Panel", json).then(x => func() );
