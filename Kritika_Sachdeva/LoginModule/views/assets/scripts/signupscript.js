@@ -26,16 +26,12 @@ function postData() {
   };
 
   //posting signup details
-  console.log(empdata);
   var httpr = new XMLHttpRequest();
   var url = "https://localhost:44341/api/Employee";
   httpr.open("POST", url, true);
   httpr.responseType = "json";
-  console.log("converted");
   httpr.setRequestHeader("Content-type", "application/json");
-  console.log(JSON.stringify(empdata));
   httpr.send(JSON.stringify(empdata));
-  console.log("Sent");
 
   window.alert("Employee registered!");
   event.preventDefault();

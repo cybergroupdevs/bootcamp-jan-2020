@@ -5,11 +5,8 @@ function findRole() {
 
     //GET request to fetch employee data
     var httpr = new XMLHttpRequest();
-    var url = "https://localhost:44341/api/EmpDetails";
-    httpr.open("GET", url, true);
-    console.log("requesting...");
+    var url = "https://localhost:44341/api/Admin/";
+    httpr.open("GET", url+mailid, true);
     httpr.send(null);
-    console.log("requested...");
-    
 }
 

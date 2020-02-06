@@ -8,7 +8,6 @@ function login() {
     EmpEmail: EmpEmail,
     EmpPassword: EmpPassword
   };
-  console.log(loginObj);
 
   //sending login details
   const promise = new Promise((resolve, reject) => {
@@ -19,7 +18,6 @@ function login() {
     if (loginObj) {
       http.setRequestHeader("Content-Type", "application/json");
     }
-    console.log(JSON.stringify(loginObj));
     http.send(JSON.stringify(loginObj));
 
     http.onload = function() {
@@ -35,16 +33,21 @@ function login() {
   promise
     .then(temp => {
       SaveToken(temp.response.token);
-      DecodeToken(temp.response.token);
-      window.location.href = './employeepage.html';
-      
+      var emprole = DecodeToken(temp.response.token);
+
+      //redirection based on roles
+      if (emprole != null && emprole == "admin")
+        window.location.href = "./adminpage.html";
+      else if (emprole == "employee" || emprole == "project manager")
+        window.location.href = "./employeepage.html";
+      else window.alert("role not assigned yet");
     })
     .catch(err => {
-          console.log("error occurred");
-          window.alert("Invalid user/password!");
+      console.log("error occurred");
+      window.alert("Invalid user/password!");
     });
 
-    event.preventDefault();
+  event.preventDefault();
 }
 
 //function for saving token in local storage
@@ -69,12 +72,14 @@ function DecodeToken(token) {
       })
       .join("")
   );
-    console.log(jsonPayload);
-      
-    claims= JSON.parse(jsonPayload);
-      
-    localStorage.setItem("email", claims["email"]);
-    localStorage.setItem("Urole", claims["Urole"]);
-    localStorage.setItem("exp", claims["exp"]);
 
+  //extracting reqd claims and saving to local storage
+  claims = JSON.parse(jsonPayload);
+
+  localStorage.setItem("email", claims["email"]);
+  localStorage.setItem("Urole", claims["Urole"]);
+  localStorage.setItem("exp", claims["exp"]);
+
+  role = localStorage.getItem("Urole");
+  return role;
 }
