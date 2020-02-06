@@ -35,11 +35,23 @@ function appendData(data)
 {
     var users = document.getElementById("users");
     console.log(users);
+    // var table = document.createElement("TABLE");
 
     for (var i = 0; i < data.length; i++) {
-        var div = document.createElement("div");
-        div.innerHTML = 'Name: ' + data[i].name + "Username :" + data[i].username + "Email :" + data[i].email + "Role :" + data[i].role + "ProjectID :" + data[i].projectID;
-        users.appendChild(div);
+      var object = data[i];
+      var arrayOfKeys = Object.keys(object)
+
+      var tr = document.createElement("TR");
+      tr.setAttribute("id", `tr${i}`);
+
+      for (var j = 0; j < data[i].length; i++){
+        var td = document.createElement("TD");
+        td.innerHTML = data[i].arrayOfKeys[j];
+        document.getElementById(`tr${i}`).appendChild(td);
+      }
+      document.getElementById("myTable").appendChild(tr);
+        
+        
     }
 }
 
