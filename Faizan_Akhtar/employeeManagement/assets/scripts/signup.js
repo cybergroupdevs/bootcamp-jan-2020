@@ -1,20 +1,11 @@
-var emp = {
-    fName: "",
-    lName: "",
-    email: "",
-    passwrd: "",
-};
-
 function signupSubmit(){
     var fName = document.getElementById("fName").value;
     var lName = document.getElementById("lName").value;
     var email = document.getElementById("email").value;
     var passwrd = document.getElementById("pwd").value;
-
     // for (let val in emp) {
     //     emp[val] = document.getElementById(val).value;
     // }
-
     var emp = {
         fName: fName,
         lName: lName,

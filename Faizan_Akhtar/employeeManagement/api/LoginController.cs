@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using EmployeeManagement.Custom_Models;
 using EmployeeManagement.DbModels;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
 
 namespace EmployeeManagement.Controllers
 {
@@ -47,10 +45,21 @@ namespace EmployeeManagement.Controllers
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
+
+            var claims = new[]
+            {
+                //new Claim(JwtRegisteredClaimNames.Sub, _config["Jwt: Issuer"]),
+                //new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                //new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
+                new Claim("FName", customEmployee.FName ),
+                new Claim("Lname", customEmployee.Lname),
+                new Claim("Email", customEmployee.Email)  
+            };
+
             var token = new JwtSecurityToken(_config["Jwt:Issuer"],
               _config["Jwt:Issuer"],
-              null,
-              expires: DateTime.Now.AddMinutes(120),
+              claims,
+              expires: DateTime.Now.AddMinutes(2400),
               signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
@@ -66,7 +75,7 @@ namespace EmployeeManagement.Controllers
 
             if (employee != null)
             {
-                user = new CustomEmployee { Email = employee.Email, Passwrd = employee.Passwrd };
+                user = new CustomEmployee { FName = employee.FName, Lname = employee.Lname, Email = employee.Email};
             }
             return user;
         }

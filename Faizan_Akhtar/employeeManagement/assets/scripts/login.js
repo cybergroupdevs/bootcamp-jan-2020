@@ -1,8 +1,3 @@
-// var empLogin = {
-//     email: "",
-//     passwrd: "",
-// };
-
 function loginSubmit(){
     var email = document.getElementById("uname").value;
     var passwrd = document.getElementById("pwd").value;
@@ -11,21 +6,20 @@ function loginSubmit(){
         email: email,
         passwrd: passwrd,
     };
-    console.log(empLogin);
+    console.log("Plain object"+empLogin);
     api(empLogin);
     //window.location.href = "./admin.html";
 }
 
-function parseJwt (token) {
-    var base64Url = token.split('.')[1];
+function parseJwt (jwtToken) {
+    var base64Url = jwtToken.split('.')[1];
     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
     var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
         return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
     }).join(''));
 
     console.log(jsonPayload);
-    printToken(jsonPayload);
-    debugger;
+    printToken(JSON.parse(jsonPayload));
     return JSON.parse(jsonPayload);
 
 };
@@ -35,23 +29,30 @@ function api(empLogin){
     const xhr = new XMLHttpRequest();
     const url = "http://localhost:61496/api/Login";
     xhr.open('POST', url);
-    //xhr.responseType = 'json';
+    xhr.responseType = 'json';
     xhr.setRequestHeader("Content-Type", "application/json");
     console.log(JSON.stringify(empObject));
     xhr.onload = () => {
-        console.log(xhr.response);
-        let jwtToken = {} ;
-        jwtToken = xhr.response; 
+        
+        let jwtToken = {};
+        jwtToken = xhr.response.token;
+        console.log("Response----"+jwtToken);
         parseJwt(jwtToken);
-        debugger;
+        saveToken(jwtToken)
     };
     xhr.onerror = (err) =>{
         console.log(err);
     };
     xhr.send(JSON.stringify(empObject));
-    //debugger;
 }
 
 function printToken(jsonPayload){
     console.log(jsonPayload);
+}
+function saveToken(jwtToken){
+    if(typeof(Storage) != "undefined"){
+        localStorage.setItem("JwtToken", jwtToken);
+    } else {
+        console.log("Local Storage not found")
+    }
 }
