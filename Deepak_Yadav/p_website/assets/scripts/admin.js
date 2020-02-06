@@ -24,11 +24,14 @@ function tabulardata() {
     }
   };
 }
+function deletionbyid(){
+  window.location.href="./admindelete.html"
+}
 //for deleting the employee
 //after verification this request can be made
 function deletedata(){
   var xhr = new XMLHttpRequest();
-  var url = "https://localhost:44366//api/admin/7";
+  var url = "https://localhost:44366//api/admin";
   xhr.open("DELETE", url, true);
   xhr.setRequestHeader("Content-type", "application/json");
   xhr.send();
@@ -49,38 +52,6 @@ function updatedetails(){
         console.log("updated");
     }
 }
-/*
-function(data){ 
-            if(data){
-                var len = data.length;
-                var txt = "";
-                if(len > 0){
-                    for(var i=0;i<len;i++){
-                        if(data[i].city && data[i].cStatus){
-                            txt += "<tr><td>"+data[i].city+"</td><td>"+data[i].cStatus+"</td></tr>";
-                        }
-                    }
-                    if(txt != ""){
-                        $("#table").append(txt).removeClass("hidden");
-                    }
-                }
-            }*/
-            /*
-function tabulardata() {
-  var table = document.getElementById("tableID");
-  var columnLength = 10;
-  console.log(columnLength);
-  var row = table.insertRow(0);
-
-  for (i = 0; i < columnLength; i++) {
-    var cell = cell + i;
-    var cell = row.insertCell(i);
-    var jwtToken = localStorage.getItem("JwtToken");
-    var parsedJwt = parseJwt(jwtToken);
-    console.log(parsedJwt);
-    cell.innerHTML = "NEW CELL1";
-  }
-}*/
 function parseJwt(jwtToken) {
   var base64Url = jwtToken.split(".")[1];
   var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
@@ -97,30 +68,3 @@ function parseJwt(jwtToken) {
   return JSON.parse(jsonPayload);
 }
 
-/*
-var rows = [{
-  name: "John",
-  age: 20,
-  email: "xx@hotmail.com"
-}, {
-  name: "Jack",
-  age: 50,
-  email: "xxx@hotmail.com"
-}, {
-  name: "Son",
-  age: 45,
-  email: "xxxx@hotmail.com"
-}];
-
-var html = "<table border='1|1'>";
-for (var i = 0; i < rows.length; i++) {
-  html+="<tr>";
-  html+="<td>"+rows[i].name+"</td>";
-  html+="<td>"+rows[i].age+"</td>";
-  html+="<td>"+rows[i].email+"</td>";
-
-  html+="</tr>";
-
-}
-html+="</table>";
-document.getElementById("box").innerHTML = html;*/

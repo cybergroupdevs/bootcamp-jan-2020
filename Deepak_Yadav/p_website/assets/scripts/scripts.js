@@ -57,13 +57,7 @@ const sendHTTPReq = (method, url, data) => {
     }
 
     xhr.onload = () => {
-      //resolve(xhr.status + "--Token--"+xhr.response.token);
       resolve(xhr);
-      // let  tokenA = {} ;
-      // tokenA = xhr.response;
-      //console.log(tokenA);
-      // debugger;
-      // parseJwt(tokenA);
       if(xhr.status==401)
       {
         window.alert("Unauthorised");
@@ -99,18 +93,6 @@ function showdata() {
       parseJwt(tokenA);
       
   });
-  //dummy for admin verification...hard coded..
-  /*if(usn=="dy30152@gmail.com"&&psswd==1234)
-  {
-    var json = {
-      "Email": usn,
-      "Password": psswd
-  };
-  console.log(json);
-}
-else{
-  console.log("no");
-}*/
 }
 
 function saveToken(token){
@@ -118,7 +100,7 @@ function saveToken(token){
     // Code for localStorage/sessionStorage.
     localStorage.setItem("JwtToken", token);
   } else {
-    // Sorry! No Web Storage support..
+       console.log("Sorry");
   }
 }
 

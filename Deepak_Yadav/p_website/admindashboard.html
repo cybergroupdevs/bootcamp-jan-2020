@@ -46,56 +46,27 @@
                         <a class="nav-link disabled" href="#">Disabled</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <button type="button" class="btn btn-outline-warning btn-warning text-center text-white font-weight-bold m-2 btnsstyle"
-                    onclick="deletedata()">Delete employee
+                <button type="button"
+                    class="btn btn-outline-warning btn-danger text-center text-white font-weight-bold m-2 btnsstyle"
+                    onclick="tabulardata()">Show Details
                 </button>
-                <button type="button" class="btn btn-outline-warning btn-success text-center text-white font-weight-bold m-2 btnsstyle"
-                onclick="updatedetails()">Update Details
-            </button>
+                <form class="form-inline my-2 my-lg-0">
+                    <button type="button"
+                        class="btn btn-outline-warning btn-warning text-center text-white font-weight-bold m-2 btnsstyle"
+                        onclick="deletionbyid()">Delete employee
+                    </button>
+                    <button type="button"
+                        class="btn btn-outline-warning btn-success text-center text-white font-weight-bold m-2 btnsstyle"
+                        onclick="updatedetails()">Update Details
+                    </button>
                 </form>
             </div>
         </nav>
     </header>
-
-
-
-
     <section class="background_dashboard">
         <table class="table" id="tableID">
             <thead>
-               <!----<tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-            </tbody>-->
         </table>
-        <button type="button" class="btn btn-outline-warning btn-danger text-center text-white font-weight-bold m-2 btnsstyle show"
-            onclick="tabulardata()">Show Details
-        </button>
-
     </section>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
