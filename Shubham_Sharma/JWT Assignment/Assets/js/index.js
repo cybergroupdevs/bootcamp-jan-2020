@@ -1,30 +1,9 @@
 var lgOutBtn = document.getElementById("logOut");
 var allBtn = document.getElementById("allEmp");
 var table = document.getElementById("adminTable");
+var del = document.getElementById("deleteOne");
 
-var json = [
-    {
-        "empName": "Abha",
-        "username": "abha.rana@cygrp.com",
-        "empPhone": "8765432345",
-        "empAddress": "Somewhere near Karakarduma, Delhi-110043",
-        "empRole": "EMPLOYEE",
-        "empPassword": null,
-        "empProjectId": "Bench",
-        "adminFlag": 0,
-        "empFlag": 0
-    },
-    {
-        "empName": "Deepak",
-        "username": "deepak.yadav@cygrp.com",
-        "empPhone": "9991112345",
-        "empAddress": "B-123, Govindpuri, Okhla Vihar, Delhi-110321",
-        "empRole": "EMPLOYEE",
-        "empPassword": null,
-        "empProjectId": "Bench",
-        "adminFlag": 0,
-        "empFlag": 0
-    }];
+var COLUMN_TO_DISPLAY = 7;
 
 const giveInputElement = (edit, data) => {
     var temp = document.createElement("input");
@@ -40,8 +19,7 @@ const giveInputElement = (edit, data) => {
 }
 
 function  drawTable(json) {
-    var colLength = 7;
-    //var aws = ["___Shubham","--dcsdac","--dasad","__asdcasdc","__ascasdc","__ascsac","--asasd"];
+    var colLength = COLUMN_TO_DISPLAY;
 
     for(let j=0; j<json.length; j++){
         var x = json[j];
@@ -117,13 +95,42 @@ const sendHTTPReq = (method, url, data) => {
     return promise;
 }
 
+function  getInput(msg) {
+    var identifier = prompt(msg);
+    return (identifier);
+}
+
+const deleteEmployee = () => {
+    allBtn.addEventListener("click", getAll);
+    del.removeEventListener("click", deleteEmployee);
+    var usn = getInput("Enter username you want to delete");
+    data = {
+        Username: usn
+    };
+    if(id != null){
+        sendHTTPReq("DELETE", "https://localhost:44305/api/Admin/getAllUsers", data);
+    }
+};
+
 
 const getAll = () => {
-    sendHTTPReq('GET', "https://localhost:44305/api/Admin")
+    allBtn.removeEventListener("click", getAll);
+    const reqBody = {
+        "JwT": localStorage.getItem("JwtTOKEN")
+    }
+    sendHTTPReq('POST', "https://localhost:44305/api/Admin/getAllUsers", reqBody)
     .then((responseData) => {
         // console.log(responseData.response);
         json = responseData.response;
-        drawTable(json);
+        console.log(json);
+        if(json != null){
+            drawTable(json);
+        }
+        else{
+            localStorage.removeItem("JwtTOKEN");
+            window.alert("Token is expired or Maybe is tampered! Please Login Again");
+            window.location.href = "./index.html";
+        }
     })
     .catch(err => {
         console.log(err);
@@ -134,3 +141,4 @@ const getAll = () => {
 
 allBtn.addEventListener('click', getAll);
 lgOutBtn.addEventListener('click', lgout);
+del.addEventListener('click', deleteEmployee);
