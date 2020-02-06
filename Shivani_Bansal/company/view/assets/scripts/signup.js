@@ -8,15 +8,6 @@ function sendJSON(){
     let password = document.getElementById("exampleInputPassword1").value
     let projectID = document.getElementById("exampleInputProjectID1").value
 
-
-console.log(name)
-
-// var obj = {
-//     firstName: 'Himanshu',
-//     lastName: "Bansal",
-
-// }
-
 //Creating a XHR request
 var xhr=new XMLHttpRequest();
 let url = "https://localhost:44371/api/signup";

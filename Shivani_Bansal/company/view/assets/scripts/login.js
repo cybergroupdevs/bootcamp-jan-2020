@@ -18,29 +18,22 @@ function sendJSON(){
     xhr.onreadystatechange = function () 
     {
         mytoken = this.responseText;
-        console.log(mytoken);
-        // console.log(xhr.responseText);
-        // console.log(xhr);
+        
         if (XMLHttpRequest.DONE && xhr.status ===200)
         {
             window.open("./dashboard.html");
-            
-            // console.log(mytoken);
-            // console.log(xhr);
+           
         }
         else
         {
             alert("not registered user");
         }
-        
-
-
+    
     };
-    // console.log(xhr);
+    
     let obj = {"email": email, "password": password};
     
-    var data = JSON.stringify(obj);
-    console.log(data)
+    var data = JSON.stringifyconsole.log(data)
 
     xhr.send(data);
     event.preventDefault();
