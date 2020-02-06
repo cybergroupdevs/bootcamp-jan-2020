@@ -20,12 +20,7 @@ namespace company.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        //public IActionResult Post([FromBody ] LoginModel enteredDetails)
-        //{
-        //    Login login = new Login(enteredDetails);
-
-        //}
-
+       
         private IConfiguration _config;
 
         public LoginController(IConfiguration config)
@@ -47,7 +42,6 @@ namespace company.Controllers
 
             return response;
         }
-
         private string GenerateJSONWebToken(UsersInfo userInfo)
         {
             string projectIdInClaims = userInfo.ProjectId;

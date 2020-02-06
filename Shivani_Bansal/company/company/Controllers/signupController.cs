@@ -15,13 +15,6 @@ namespace company.Controllers
     [ApiController]
     public class SignupController : ControllerBase
     {
-
-        //IRegister _reg;
-        //public SignupController(IRegister reg)
-        //{
-        //    _reg = reg;
-        //}
-
         [HttpPost]
         public IActionResult Post([FromBody] SignupModel enteredDetails)
         {
@@ -36,7 +29,6 @@ namespace company.Controllers
             Signup signup = new Signup(null);
             var output = signup.dashboardHandler();
             return Ok(output);
-
         }
 
         [HttpDelete("{id}")]
@@ -47,16 +39,5 @@ namespace company.Controllers
             return Ok("deleted");
 
         }
-
-        [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody]SignupModel enteredDetails)
-        {
-            Signup signup = new Signup(enteredDetails);
-
-            string returnedFromSignupHandler = signup.updateHandler();
-            return Ok("Student Updated");
-
-
-        }
-    }
+     }
 }
