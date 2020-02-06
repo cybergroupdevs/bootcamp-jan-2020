@@ -17,18 +17,12 @@ function deleteUser(){
     // Create a state change callback 
     xhr.onreadystatechange = function () { 
         if (xhr.readyState === 4 && xhr.status === 200) { 
-            //var result;
-            // Print received data from server 
-            //result.innerHTML = this.responseText; 
-            //window.open("./list.html")
             alert("deleted user")
             console.log(url);
-
-            
-        } 
+         } 
         else{
             alert("no user with such ID");
-        }
+         }
     }; 
 
     // Converting JSON data to string 
@@ -63,17 +57,8 @@ function updateUser(){
     xhr.onreadystatechange = function () { 
         if (xhr.readyState===4){
         if (xhr.status === 200) { 
-            //var result;
-            // Print received data from server 
-            //result.innerHTML = this.responseText; 
             console.log("updated");
-            alert("successfully updated");    
-            // Converting JSON data to string 
-            //var data = JSON.stringify({ "Name": name.value, "Username": username.value, "Password": password.value,
-            //"ProjectId": p_id.value, "Role": role.value }); 
-
-            // Sending data with the request 
-            //xhr.send(data);         
+            alert("successfully updated");     
         } 
         else {
             alert("unsuccessful");
