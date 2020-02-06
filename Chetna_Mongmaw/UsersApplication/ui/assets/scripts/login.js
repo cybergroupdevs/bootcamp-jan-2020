@@ -1,15 +1,4 @@
-// src="https://code.jquery.com/jquery-3.4.1.min.js"
-// integrity="sha256CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFIBw8HfCJo="
-// crossorigin="anonymous"
 
-// var u= getElemen
-// $(document).ready(function(){
-//     $("#submitbtn").click(function(){
-//         var objectdata ={
-//         "username": 
-//         }
-//     })
-// })
 function sendJSON(){ 
                
     let username = document.getElementById("username").value; 
@@ -31,23 +20,13 @@ function sendJSON(){
     // Create a state change callback 
     xhr.onreadystatechange = function () { 
         if(xhr.readyState===4){
-        if (xhr.status === 200) { 
-            //var result;
-            // Print received data from server 
-            //result.innerHTML = this.responseText; 
-            
-                
+            if (xhr.status === 200) {
                 console.log(this.response);
                 SaveToken(this.response);
-                DecodeToken(this.response); 
-                // const objectCreatedFromResponse = JSON.parse(this.response);
-                // const role = objectCreatedFromResponse.role;
-                
-                
+                DecodeToken(this.response);
                 window.open("./list.html");
-            
-            
-        } 
+
+            }
         else{
             alert("Wrong credentials");
         }
