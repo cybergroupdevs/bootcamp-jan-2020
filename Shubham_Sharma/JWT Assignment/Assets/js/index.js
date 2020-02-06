@@ -84,7 +84,6 @@ const sendHTTPReq = (method, url, data) => {
             xhr.setRequestHeader('Content-Type', 'application/json');
         }
         xhr.onload = () => {
-            //resolve(xhr.status + "--Token--"+xhr.response.token);
             resolve(xhr);
         };
         xhr.onerror = () => {
@@ -104,17 +103,32 @@ const deleteEmployee = () => {
     allBtn.addEventListener("click", getAll);
     del.removeEventListener("click", deleteEmployee);
     var usn = getInput("Enter username you want to delete");
-    data = {
-        Username: usn
-    };
-    if(id != null){
-        sendHTTPReq("DELETE", "https://localhost:44305/api/Admin/getAllUsers", data);
+    if(usn != null){
+        data = {
+            JwT: localStorage.getItem("JwtTOKEN"),
+            Username: usn
+        };
     }
+    sendHTTPReq("DELETE", "https://localhost:44305/api/Admin", data)
+    .then((responseData) => {
+        if(responseData.status == 200){
+            alert("User Deleted");
+            getAll();
+            del.addEventListener("click", deleteEmployee);
+        }
+        else{
+            alert("Some Error Occured "+responseData.status);
+        }
+    });
 };
 
+function clearTableData() {
+    
+}
 
 const getAll = () => {
-    allBtn.removeEventListener("click", getAll);
+    //allBtn.removeEventListener("click", getAll);
+    clearTableData();
     const reqBody = {
         "JwT": localStorage.getItem("JwtTOKEN")
     }
