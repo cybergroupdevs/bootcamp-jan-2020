@@ -46,20 +46,10 @@ namespace WebappAPItype.Controllers
             return response;
         }
 
-        //private object AuthenticateUser(EmpInformation login)
-        //{
-           // throw new NotImplementedException();
-        //}
-
         private object GenerateJSONWebToken(object user)
         {
             throw new NotImplementedException();
         }
-
-        //private object AuthenticateUser(DbModels.UserInformation login)
-        //{
-        // throw new NotImplementedException();
-        //}
 
         private string GenerateJSONWebToken(EmpInformation userInfo)
         {
@@ -81,12 +71,12 @@ namespace WebappAPItype.Controllers
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        private WebApplicationPanel.DbModels.EmpInformation AuthenticateUser(WebApplicationPanel.DbModels.EmpInformation login)
+        private EmpInformation AuthenticateUser(EmpInformation login)
         {
             EmpInformation user = _panelcontext.EmpInformation.Where(u => u.Sno == login.Sno && u.Password == login.Password).FirstOrDefault();
             if (user != null)
             {
-                user = new WebApplicationPanel.DbModels.EmpInformation { Email = user.Email, Name=user.Name };
+                user = new EmpInformation { Email = user.Email, Name=user.Name };
             }
             return user;
         }

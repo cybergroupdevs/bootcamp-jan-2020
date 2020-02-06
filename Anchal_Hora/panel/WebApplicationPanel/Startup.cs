@@ -46,7 +46,7 @@ namespace WebappAPItype
             });
             services.AddMvc();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<WebApplicationPanel.DbModels.panelContext>(o => o.UseSqlServer("server=CYG366\\SQLEXPRESS; database=panel; Trusted_Connection=True;"));
+            services.AddDbContext<WebApplicationPanel.DbModels.panelContext>(o => o.UseSqlServer(Configuration["ConnectionString"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

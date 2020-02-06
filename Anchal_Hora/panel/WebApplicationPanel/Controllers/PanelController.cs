@@ -19,21 +19,10 @@ namespace WebApplicationPanel.Controllers
     {
         panelContext _panelContext;
           
-            //private object panelContext;
-            //private object panel;
-           
             public PanelController(panelContext panelContext)
         {
             _panelContext = panelContext;
         }
-
-       // [HttpGet]
-        //public IActionResult heyAanchal()
-        //{
-           // return Ok("Yipeee-Ke-Yay");
-        //}
-        
-
         [HttpPost]
         public IActionResult Createpanel([FromBody]PanelRequest panelRequest)
         {
@@ -48,10 +37,29 @@ namespace WebApplicationPanel.Controllers
             return Ok("Employee Added");
 
         }
+       
+        [HttpGet]
+        public IActionResult Get()
+        {
+            List<EmpInformation> output = _panelContext.EmpInformation.ToList();
+            return Ok(output);
+        }
+        [HttpGet("{id}")]
+
+        public ActionResult<string> Get(int id)
+        {
+            EmpInformation output = _panelContext.EmpInformation.Find(id);
+            if (output == null)
+            {
+                return NotFound();
+            }
+            return Ok(output);
+        }
+
 
         [HttpPut("{id}")]
 
-        public ActionResult Put(int id, [FromBody]PanelRequest panelRequest)
+        public IActionResult Put(int id, [FromBody]PanelRequest panelRequest)
         {
             EmpInformation panel = _panelContext.EmpInformation.Find(id);
             panel.Email = panelRequest.Email;

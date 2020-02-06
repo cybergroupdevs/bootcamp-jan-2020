@@ -1,28 +1,18 @@
 header{
     background: #01474a;
 }
-
-
 .nav{
     display: flex; 
 }
-
 .admin-wrapper{
     display: flex;
    height:calc(100%-66px);
-   
-
 }
-
 .admin-wrapper .left-sidebar{
     flex:3;
     height:100vh;
     background: #FF7F50	;
     border-top: 1px solid black;
-
-    
-
- 
 }
 .admin-wrapper .left-sidebar ul{
     list-style:none;
@@ -32,16 +22,12 @@ header{
     border:5rem;
     color:white;
     
-    
 }
-
-
 .admin-wrapper .left-sidebar ul li a {
     padding:18px;
     display: block;
     border-bottom:1px solid black;
 }
-
 .admin-wrapper .left-sidebar ul li a:hover {
     background:rgb(121, 145, 165);
 }
@@ -52,7 +38,6 @@ header{
    padding:40px 100px 100px;
    
 }
-
 .admin-content .page-title{
     text-align:center;
     margin-bottom:1.5rem;

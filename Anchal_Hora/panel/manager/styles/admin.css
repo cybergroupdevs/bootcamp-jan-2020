@@ -1,17 +1,12 @@
 header{
     background: #01474a;
 }
-
-
 .nav{
     display: flex; 
 }
-
 .admin-wrapper{
     display: flex;
    height:calc(100%-66px);
-   
-
 }
 
 .admin-wrapper .left-sidebar{
@@ -20,9 +15,6 @@ header{
     background: #FF7F50;
     border-top: 1px solid black;
 
-    
-
- 
 }
 .admin-wrapper .left-sidebar ul{
     list-style:none;
@@ -32,9 +24,7 @@ header{
     border:5rem;
     color:white;
     
-    
 }
-
 
 .admin-wrapper .left-sidebar ul li a {
     padding:18px;
@@ -61,7 +51,6 @@ table{
     width:100%;
     border-collapse:collapse;
     font-size:1.1rem;
-
 }
 
 th,

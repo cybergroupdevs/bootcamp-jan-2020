@@ -1,4 +1,4 @@
-document.getElementById("btn").addEventListener("click",adminpostdata)
+document.getElementById("buttonsignup").addEventListener("click",adminpostdata);
 function adminpostdata(){
     var Sno=document.getElementById("inputSno").value;
     var Username=document.getElementById("inputName").value;

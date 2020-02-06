@@ -48,6 +48,10 @@
     <h2 class="page-title"> User Information</h2>
     <form action="create.html" method="user">
         <div>
+            <label>Sno</label>
+            <input type="int" name="Sno" class="text-input">
+        </div>
+        <div>
             <label>Username</label>
             <input type="text" name="username" id="" class="text-input">
         </div>
@@ -59,27 +63,15 @@
             <label>Password</label>
             <input type="password" name="password" id="" class="text-input"> 
         </div>
-        <div>
-            <label>ContactNo.</label>
-            <input type="tel" name="phone" id=""  pattern="[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{3}" required> 
-        </div>
         
-      
 <div>
-<button type="submit" class="btn btn-big">Update Information</button>
+<button type="submit" class="btn btn-big" id="buttonupdate">Update Information</button>
 </div>
-
-    </form>
+</form>
     
 </div>
 </div>
-        </div>
-
-
-    
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="../user/js/scripts.js"></script>
-
-
 </body>
 </html>

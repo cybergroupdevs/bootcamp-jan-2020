@@ -1,23 +1,4 @@
-function adminget()
-{
-    // let url  = "https://localhost:44371/api/signup";
-    // var xhr = new XMLHttpRequest();
-    // xhr.onreadystatechange = function() { 
-    //     if (xhr.readyState == 4 && xhr.status == 200)
-    //     {
-    //         // console.log(xhr.responseText);
-    //         var data =  xhr.responseText
-    //         // console.log(JSON.stringify(data))
-    //         return data;
-    //     }
-    // }
-    // xhr.open("GET", url, true); // true for asynchronous 
-    // xhr.send(null);
-
-    // // console.log(xhr.responseText);
-
-    // var data = xhr.onreadystatechange();
-    // console.log(data)
+function adminget(){}
 
     fetch('https://localhost:51391/api/get')
   .then(function (response) {
@@ -43,5 +24,4 @@ function appendData(data)
 }
 
 
-    // event.preventDefault();
-}
+   
