@@ -1,71 +1,30 @@
-.navbar{
-    position:fixed;
-    top:0;
-    margin:0;
-    border-radius: 0;
-    width: 100vw;
-    height:5vh;
+body{
+  background-image:url('../assets/images/adbg.jpg');
+  background-repeat:no-repeat;
+  background-size: 100%;
 }
 
-.logo
+footer{
+
+margin-top: 20px;
+padding-top: 20px;
+}
+.bg__card__navbar{
+background-color: #000000;
+}
+.bg__card__footer{
+background-color: #000000 !important;
+}
+#add__new__list{
+  margin-top: 4%;
+  top: -38px;
+  right: 0;
+}
+#update
 {
-    position: relative;
-    width:50%;
-    height:210%;
-
+  top: -38px;
 }
-
-.rounded-circle
+#delete
 {
-    position: relative;
-    float:right;
-    height: 4%;
-    width:4%;
-    border-radius:40%;
-    
+  top: -38px;
 }
-.brand-logo-mini
-{
-    position: relative;
-    left: 60%;
-
-}
-  
-  /* The navigation menu links */
-  .sidenav a {
-    text-decoration: none;
-    line-height:10rem;
-    padding: 10% 5% 5% 5%;
-    font-size: medium;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  .navbar-brand {
-    float: left;
-    height: 8%;
-    width: 20vw;
-    margin: 0 3rem 0;
-    font-size: small;
-    
-} 
-  /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  .sidenav
-  {
-    position: fixed;
-    height: 100vh;
-    width: 15vw;
-    z-index: 1;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    margin:0;
-  }
- 
-  /* Page content */
-  .main {
-    margin-left: 150px; /* Same as the width of the sidenav */
-  }
