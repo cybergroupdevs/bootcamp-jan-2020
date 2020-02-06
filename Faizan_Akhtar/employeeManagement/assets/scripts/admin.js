@@ -21,7 +21,7 @@ function api(){
     const url = "http://localhost:61496/api/Admin";
     xhr.open('GET', url);
     xhr.responseType = 'json';
-    //xhr.setRequestHeader("Content-Type", "application/json");
+    
     xhr.onload = () => {
         let empDetail = xhr.response;
         console.log(empDetail);
@@ -36,8 +36,6 @@ function api(){
 
 function printTable(empDetail){
 
-    //var columnLength = document.getElementById('tableID').row[0].cells.length;
-    //var tableLength = table.rows.length;
     var columnLength = 10;
     for(let j=0; j<empDetail.length; j++){
         var empJson = empDetail[j];
@@ -50,5 +48,16 @@ function printTable(empDetail){
     }
     
 }
+function logoutFunc(){
+    const logout = () => {
+        if (typeof(Storage) !== "undefined") {
+            localStorage.removeItem("JwtTOKEN");
+            window.location.href = "./index.html";
+        } else {
+            alert("Error - Browser Support");
+        }
+    }
+}
+
 
 

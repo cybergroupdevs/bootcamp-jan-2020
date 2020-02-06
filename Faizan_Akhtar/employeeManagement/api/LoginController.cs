@@ -48,9 +48,7 @@ namespace EmployeeManagement.Controllers
 
             var claims = new[]
             {
-                //new Claim(JwtRegisteredClaimNames.Sub, _config["Jwt: Issuer"]),
-                //new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                //new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
+               
                 new Claim("FName", customEmployee.FName ),
                 new Claim("Lname", customEmployee.Lname),
                 new Claim("Email", customEmployee.Email)  

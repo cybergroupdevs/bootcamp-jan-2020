@@ -27,5 +27,14 @@ namespace EmployeeManagement.Controllers
             List<TEmployee> employee = _employeeDBContext.TEmployee.ToList();
             return Ok(employee);
         }
+        
+        [HttpDelete]
+        public IActionResult DeleteStudent(CustomEmployee customEmployee)
+        {
+            TEmployee employee = _employeeDBContext.TEmployee.FirstOrDefault();
+            _employeeDBContext.TEmployee.Remove(employee);
+            _employeeDBContext.SaveChanges();
+            return Ok("Deleted");
+        }
     }
 }

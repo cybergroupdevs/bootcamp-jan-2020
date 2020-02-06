@@ -8,7 +8,7 @@ function loginSubmit(){
     };
     console.log("Plain object"+empLogin);
     api(empLogin);
-    //window.location.href = "./admin.html";
+    window.location.href = "./admin.html";
 }
 
 function parseJwt (jwtToken) {
