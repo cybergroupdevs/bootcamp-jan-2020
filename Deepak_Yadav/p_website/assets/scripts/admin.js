@@ -52,6 +52,7 @@ function updatedetails(){
         console.log("updated");
     }
 }
+//function for parsing jwt token
 function parseJwt(jwtToken) {
   var base64Url = jwtToken.split(".")[1];
   var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
@@ -63,7 +64,6 @@ function parseJwt(jwtToken) {
       })
       .join("")
   );
-
   console.log(JSON.parse(jsonPayload));
   return JSON.parse(jsonPayload);
 }

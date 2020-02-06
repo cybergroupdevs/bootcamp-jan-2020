@@ -31,6 +31,7 @@ const sendData = json => {
       console.log(err);
     });
 };
+//function for decoding token
 function parseJwt (tokenA) {
   var base64Url = tokenA.split('.')[1];
   var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -66,6 +67,7 @@ const sendHTTPReq = (method, url, data) => {
   });
   return promise;
 };
+//function for login function and this will get token from backend
 function showdata() {
   var usn = document.getElementById("email").value;
   var psswd = document.getElementById("pswd").value;
@@ -87,7 +89,7 @@ function showdata() {
       parseJwt(tokenA);     
   });
 }
-
+//function for saving the token in local storage
 function saveToken(token){
   if (typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
