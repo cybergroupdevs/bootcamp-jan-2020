@@ -54,7 +54,8 @@ namespace WebApplication2.controllers
                         new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
                         new Claim("Name", loginInfo.Name),
                         new Claim("Email", loginInfo.Email),
-                        new Claim("PhoneNo", loginInfo.PhoneNo)
+                        new Claim("PhoneNo", loginInfo.PhoneNo),
+                        new Claim("Designation",loginInfo.Designation)
                     };
 
             var token = new JwtSecurityToken(_configuration["Jwt:Issuer"],
@@ -74,7 +75,7 @@ namespace WebApplication2.controllers
             Models.Tcompanydata employee = _cSharpTrainingContext.Tcompanydata.Where(x => x.Email == login.Email && x.Password == login.Password).FirstOrDefault();
             if (employee != null)
             {
-                user = new WebApplication2.Custom_Models.tcompanycustom { Name = employee.Name, Email = employee.Email, PhoneNo = employee.PhoneNo };
+                user = new WebApplication2.Custom_Models.tcompanycustom { Name = employee.Name, Email = employee.Email, PhoneNo = employee.PhoneNo,Designation=employee.Designation };
             }
             return user;
         }

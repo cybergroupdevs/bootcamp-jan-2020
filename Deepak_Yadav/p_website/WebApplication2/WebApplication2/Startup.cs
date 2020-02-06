@@ -35,7 +35,7 @@ namespace WebApplication2
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<Models.companyinfoContext>(o => o.UseSqlServer("server=CYG291;database=companyinfo;Trusted_Connection=True;"));
+            services.AddDbContext<Models.companyinfoContext>(o => o.UseSqlServer(Configuration["dbConnection"]));
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {

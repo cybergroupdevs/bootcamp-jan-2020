@@ -17,25 +17,22 @@ namespace WebApplication2.controllers
             _context = context;
         }
 
-        [HttpPatch("{id}")]
+        [HttpPatch]
         public ActionResult pupdateemployee(int id, [FromBody]Custom_Models.tcompanycustom data)
         {
-            Models.Tcompanydata employees = _context.Tcompanydata.Where(x => x.cusId ==id ).FirstOrDefault();
+            Models.Tcompanydata employees = _context.Tcompanydata.Where(x => x.CusId == data.CusId).FirstOrDefault();
             employees.Name = data.Name;
             _context.Tcompanydata.Update(employees);
             _context.SaveChanges();
             return Ok("PUpdated");
         }
         // DELETE api/<controller>/5
-        [HttpDelete("{id}")]
-        public ActionResult pdeleteemployee(int id, [FromBody]Custom_Models.tcompanycustom data)
+        [HttpDelete]
+        public ActionResult pdeleteemployee([FromBody]Custom_Models.tcompanycustom data)
         {
-           // Models.Tcompanydata employees = _context.Tcompanydata.Where(x => x.cusId == id).FirstOrDefault();
-            _context.Tcompanydata.Remove(_context.Tcompanydata.Find(id));
+           Models.Tcompanydata employees = _context.Tcompanydata.Where(x => x.CusId == data.CusId).FirstOrDefault();
+            _context.Tcompanydata.Remove(employees);
             _context.SaveChanges();
-            //return RedirectToAction("Index");
-          //  _context.Tcompanydata.Remove(employees);
-           // _context.SaveChanges();
             return Ok("Deleted");
         }
     }

@@ -5,7 +5,7 @@ namespace WebApplication2.Models
 {
     public partial class Tcompanydata
     {
-        public int cusId { get; set; }
+        public int CusId { get; set; }
         public string Name { get; set; }
         public string PhoneNo { get; set; }
         public string Designation { get; set; }

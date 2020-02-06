@@ -31,8 +31,6 @@ const sendData = json => {
       console.log(err);
     });
 };
-
-
 function parseJwt (tokenA) {
   var base64Url = tokenA.split('.')[1];
   var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -43,8 +41,6 @@ function parseJwt (tokenA) {
   readabletoken(JSON.parse(jsonPayload));
   return JSON.parse(jsonPayload);
 };
-
-
 //Sending HTTP REQUESTS, other methods can call me and pass me the required information and I'll do the rest
 const sendHTTPReq = (method, url, data) => {
   const promise = new Promise((resolve, reject) => {
@@ -66,7 +62,6 @@ const sendHTTPReq = (method, url, data) => {
     xhr.onerror = () => {
       reject("Something went wrong");
     };
-   
     xhr.send(JSON.stringify(data));
   });
   return promise;
@@ -85,13 +80,11 @@ function showdata() {
       console.log(typeof(xhr.response));
       console.log(typeof(xhr.response.token));
       window.location.href="admindashboard.html";
-
       ///let  tokenA = {} ;
       let tokenA = xhr.response.token;
       console.log(tokenA);
       saveToken(tokenA)
-      parseJwt(tokenA);
-      
+      parseJwt(tokenA);     
   });
 }
 
@@ -100,10 +93,9 @@ function saveToken(token){
     // Code for localStorage/sessionStorage.
     localStorage.setItem("JwtToken", token);
   } else {
-       console.log("Sorry");
+    console.log("sorry no web storage");
   }
 }
-
 function readabletoken(jsonPayload){
   console.log(jsonPayload);
 }

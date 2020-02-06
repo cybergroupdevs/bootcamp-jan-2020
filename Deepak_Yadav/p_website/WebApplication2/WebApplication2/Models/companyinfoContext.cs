@@ -1,14 +1,17 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 
 namespace WebApplication2.Models
 {
     public partial class companyinfoContext : DbContext
     {
-        public companyinfoContext()
-        {
-        }
+        //IConfiguration _config;
+        //public companyinfoContext(IConfiguration config)
+        //{
+        //    _config = config;
+        //}
 
         public companyinfoContext(DbContextOptions<companyinfoContext> options)
             : base(options)
@@ -19,22 +22,18 @@ namespace WebApplication2.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=CYG291;Database=companyinfo;Trusted_Connection=True;");
-            }
+            
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Tcompanydata>(entity =>
             {
-                entity.HasKey(e => e.cusId);
+                entity.HasKey(e => e.CusId);
 
                 entity.ToTable("tcompanydata");
 
-                entity.Property(e => e.cusId).HasColumnName("cus_id");
+                entity.Property(e => e.CusId).HasColumnName("cus_id");
 
                 entity.Property(e => e.Designation)
                     .IsRequired()
