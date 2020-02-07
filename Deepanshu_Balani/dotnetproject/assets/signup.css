@@ -1,8 +1,10 @@
+
+/*for the complete page*/
 *{
     margin:0;
     padding:0;
 }
-
+/*background properties*/
 .bg{
     width:100%;
     height:100vh;
@@ -13,6 +15,7 @@
     text-align:center;
     
 }
+/* properties of inner div */
 .inner{
    background-color: white;
    
@@ -30,6 +33,7 @@
    flex-direction:column;
     box-shadow:0 1px 6px bisque;
 }
+/* propertiers of inner class */
 .container{
    padding:0.1rem 2rem;/*TB LR*/
     font-size: larger;
@@ -37,6 +41,7 @@
     align-items: baseline;
 
 }
+/* properites of input tag  */
 input{
 
     border-radius: 12%;
@@ -45,7 +50,7 @@ input{
     width:80%;
     
 }
-
+/*properties of button element */
   button{
     background-color: #4CAF50;
     color: white;
@@ -59,6 +64,7 @@ input{
 
 
   }
+  /*properties of image*/
   .img{
     width:8em;
     height:9em;

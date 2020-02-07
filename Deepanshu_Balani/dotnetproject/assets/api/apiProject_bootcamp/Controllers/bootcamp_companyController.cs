@@ -6,49 +6,29 @@ using api_new2.DbModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace api_new2.Controllers
+namespace apiProject_bootcamp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class company6Controller : ControllerBase
+    public class bootcamp_companyController : ControllerBase
     {
         apiproject2Context _apiproject2context;
 
-        // DbModels.STUDENTINFOContext STUDENTINFOContext
-        public company6Controller(apiproject2Context apiproject)
+        // DbModels.apiprojectContext apiproject2Context
+        public bootcamp_companyController(apiproject2Context apiproject)
         {
             _apiproject2context = apiproject;
         }
-
-
-
-
-
-        // GET: api/company6/5
-        [HttpGet]
-        public IActionResult GetEmployee([FromBody]request request)
-        { Company Emp = new Company()
+     // GET: api/bootcamp_company
+        [HttpGet]//fetching data of all the employees 
+        public IActionResult GetEmployee()
         {
-
-            Email = request.Email,
-            Password = request.Password
-
-        };
-
-            List<Company> employees = _apiproject2context.Company.ToList();
+           List<Company> employees = _apiproject2context.Company.ToList();
             return Ok(employees);
-            /*    foreach(Company Emplo in employees)
-                {
-                    if (Emplo.Email == Emp.Email && Emplo.Password == Emp.Password)
-
-
-                }  */
-
-            return null;
         }
 
 
-        // POST: api/company6
+        // POST: api/bootcamp_Company
         [HttpPost]
         public IActionResult createEmployee([FromBody] request request)
         {
@@ -67,7 +47,7 @@ namespace api_new2.Controllers
             return Ok("record updated");
         }
 
-        // PUT: api/company6/5
+        // PUT: api/bootcamp_company
         [HttpPut("{id}")]
         public IActionResult updateEmployee([FromBody]request request)
         {
@@ -83,11 +63,12 @@ namespace api_new2.Controllers
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public IActionResult DeleteEmployee([FromBody]request request)
+        public IActionResult DeleteEmployee(request request)
         {
+            
 
-            Company ID = _apiproject2context.Company.FirstOrDefault();
-
+            Company ID = _apiproject2context.Company.Where(x => x.Email ==request.Email).FirstOrDefault();
+                 
 
             _apiproject2context.Company.Remove(ID);
             _apiproject2context.SaveChanges();

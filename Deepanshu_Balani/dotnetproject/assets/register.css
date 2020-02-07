@@ -1,7 +1,10 @@
+/*********CSS for register page ********/
+/*for complete page*/
 *{
     margin:0;
     padding:0;
 }
+/****background properties********/
 .bg{
     width:100%;
     height:100vh;
@@ -11,12 +14,14 @@
    text-align:center;
     
 }
+/**********heading properties***********/
 h1{
     color:white;
     text-align: center;
     
     
 }
+/************div form properties***********/
 .inner{
     background-color: white;
     padding:1px;
@@ -32,6 +37,7 @@ h1{
     flex-direction:column;
      box-shadow:0 1px 6px bisque;
  }
+ /*****input heading properties***********/
  .contain{
     
      font-size: medium;
@@ -39,16 +45,15 @@ h1{
      align-self: left;
      
  }
+ /*********input properties*************/
  input{
 
     border-radius: 12%;
     margin:1rem 2rem ;/*TB LR*/
-    
-    /*width:49%;*/
-    align-self:center;
+     align-self:center;
     
 }
-
+/**********button properties*********/
   button{
     background-color: #4CAF50;
     color: white;
@@ -61,6 +66,7 @@ h1{
 
 
   }
+  /* image properties*/
   .img{
     width:8em;
     height:9em;

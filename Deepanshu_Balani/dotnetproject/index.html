@@ -6,7 +6,7 @@
           Employee Sign Up Form
       </title>
       
-       <link  rel="stylesheet" type="text/CSS"href="./signup.css"/>
+       <link  rel="stylesheet" type="text/CSS"href="./assets/signup.css"/>
        <style>
       #btn{
          display:flex;
@@ -22,29 +22,13 @@
     background-color: yellow;
     display:block;
      }
-     #loader{
-      border:16px solid skyblue;
-      border-radius:50%;
-      width:120px;
-      height:120px;
-      -webkit-animation: spin 2s infinite;
-      /*safari*/
-      animation:spin 2s linear infinite;
-      }
-      /*safari*/
-      @-webkit-keyframes spin{
-         0%{-webkit-transform:rotate(0deg);}
-         100%{-webkit-transform:rotate(360deg);}
-      }
-      @keyframes spin{
-         0%{transform:rotate(0deg);}
-         100%{transform:rotate(360deg);}
-      }
+    
       #btn{
          color:white;
       }
+      
       #em,#pass{
-         border: solid greenS;
+         border: solid green;
       }
       
      </style> 
@@ -54,7 +38,7 @@
       <div class="bg">
            <div class="inner">
            
-               <img src="login.jfif">
+               <img src="./assets/login.jfif">
               
             <h1>Employee Login </h1>
                 
@@ -78,7 +62,7 @@
 
             </div>
          </div>
-         <script type="text/javascript" src="script.js"></script>
+         <script type="text/javascript" src="./assets/script.js"></script>
    </body>
 
 
