@@ -8,8 +8,7 @@ var formdata={};
          xhr.open("POST", url, true);
          // sets  setrequestheader
          xhr.setRequestHeader("Content-type", "application/json");
-  
-         console.log(JSON.stringify(formdata));
+           console.log(JSON.stringify(formdata));
           console.log(typeof formdata);
           console.log(typeof JSON.stringify(formdata));
           //we have to convert JSON data into string

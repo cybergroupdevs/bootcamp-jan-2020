@@ -6,6 +6,7 @@
     // open the object
     xhr.open('GET','https://localhost:44351/api/bootcamp_company',true);
     // want to show progress
+    
        xhr.setRequestHeader("Content-type", "application/json");
        xhr.responseType='json';
           xhr.onprogress =  function() {
