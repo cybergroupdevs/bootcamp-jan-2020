@@ -5,19 +5,7 @@ var del = document.getElementById("deleteOne");
 
 var COLUMN_TO_DISPLAY = 7;
 
-const giveInputElement = (edit, data) => {
-    var temp = document.createElement("input");
-    temp.type = 'text';
-    temp.value = data;
-    temp.readOnly = false;
-    temp.style.width = "100%";
-    temp.style.border = "none";
-    if(edit == true){
-        temp.readOnly = true;
-    }
-    return temp;
-}
-
+//inserts data into the table
 function  drawTable(json) {
     var colLength = COLUMN_TO_DISPLAY;
 
@@ -32,7 +20,7 @@ function  drawTable(json) {
     }
 }
 
-
+//Decode JWT and return the Payload in JSON Format
 const jsonDecoder = (token) => {
     var base64Url = token.split('.')[1];
     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -43,13 +31,14 @@ const jsonDecoder = (token) => {
     return JSON.parse(jsonPayload);
 };
 
+//When the window is loaded onto the browser, then it will check whether a token presents or not.
+//If token is present, it will decode it and fetch the Guy's name and paste it in the NAVBAR. Then it will call getAll()
+//Else it will redirect the GUY back to LOGIN PAGE.
 window.onload = () => {
-    //document.getElementById("empRole").style.display = "none";
     if (typeof(Storage) !== "undefined") {
         const token = localStorage.getItem("JwtTOKEN");
         if(token != null){
             var jsonPayload = jsonDecoder(token);
-            console.log(jsonPayload)
             document.getElementById("userName").innerHTML = jsonPayload.EmpName;
             getAll();
         }
@@ -63,6 +52,7 @@ window.onload = () => {
     }
 }
 
+//Called when Logout button is pressed and then it deletes the Jwt and diverts the page back to LOGIN
 const lgout = () => {
     if (typeof(Storage) !== "undefined") {
         localStorage.removeItem("JwtTOKEN");
@@ -74,6 +64,7 @@ const lgout = () => {
     }
 }
 
+//Sends the HTTP request and returns the promise. On resolve, xhr is returned, from which we can retrieve the response
 const sendHTTPReq = (method, url, data) => {
     const promise = new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
@@ -94,49 +85,43 @@ const sendHTTPReq = (method, url, data) => {
     return promise;
 }
 
-function  getInput(msg) {
-    var identifier = prompt(msg);
-    return (identifier);
-}
-
+//Deletes the employee and 
 const deleteEmployee = () => {
-    allBtn.addEventListener("click", getAll);
-    del.removeEventListener("click", deleteEmployee);
-    var usn = getInput("Enter username you want to delete");
+    var usn = prompt("Enter username you want to delete");
     if(usn != null){
         data = {
             JwT: localStorage.getItem("JwtTOKEN"),
             Username: usn
         };
+        sendHTTPReq("DELETE", "https://localhost:44305/api/Admin", data)
+        .then((responseData) => {
+            if(responseData.status == 200){
+                alert("User Deleted");
+                getAll();
+            }
+            else{
+                alert("Some Error Occured "+responseData.status);
+            }
+        });
     }
-    sendHTTPReq("DELETE", "https://localhost:44305/api/Admin", data)
-    .then((responseData) => {
-        if(responseData.status == 200){
-            alert("User Deleted");
-            getAll();
-            del.addEventListener("click", deleteEmployee);
-        }
-        else{
-            alert("Some Error Occured "+responseData.status);
-        }
-    });
 };
 
 function clearTableData() {
-    
+    var first = table.firstElementChild; 
+        while (first) { 
+            first.remove(); 
+            first = table.firstElementChild; 
+        } 
 }
 
 const getAll = () => {
-    //allBtn.removeEventListener("click", getAll);
     clearTableData();
     const reqBody = {
         "JwT": localStorage.getItem("JwtTOKEN")
     }
     sendHTTPReq('POST', "https://localhost:44305/api/Admin/getAllUsers", reqBody)
     .then((responseData) => {
-        // console.log(responseData.response);
-        json = responseData.response;
-        console.log(json);
+        var json = responseData.response;
         if(json != null){
             drawTable(json);
         }
@@ -150,8 +135,6 @@ const getAll = () => {
         console.log(err);
     });
 };
-
-// drawTable(json);
 
 allBtn.addEventListener('click', getAll);
 lgOutBtn.addEventListener('click', lgout);

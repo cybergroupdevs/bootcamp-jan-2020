@@ -95,10 +95,7 @@ const logMeIn = (lgndata) => {
         }
         else{
             window.alert(responseData.status);
-            // window.location.href = "./error.html";
-            // document.getElementById("errorMessage").value = " "+xhr.status;
         }
-        console.log(responseData.status);
     })
 } 
 
