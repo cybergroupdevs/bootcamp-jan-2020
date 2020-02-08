@@ -4,7 +4,7 @@
     setTimeout(display,4000);
     const xhr = new XMLHttpRequest();
     // open the object
-    xhr.open('GET','https://localhost:44351/api/company6',true);
+    xhr.open('GET','https://localhost:44351/api/bootcamp_company',true);
     // want to show progress
        xhr.setRequestHeader("Content-type", "application/json");
        xhr.responseType='json';

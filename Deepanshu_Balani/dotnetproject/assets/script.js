@@ -4,7 +4,7 @@ var formdata={};
   function generatehttppost(formdata) {
        const xhr = new XMLHttpRequest();
        //url for http post request
-       const url = "https://localhost:44351/api/company6";
+       const url = "https://localhost:44351/api/bootcamp_company";
          xhr.open("POST", url, true);
          // sets  setrequestheader
          xhr.setRequestHeader("Content-type", "application/json");
@@ -45,14 +45,14 @@ function generatehttpdelete(formdata) {
         const xhr = new XMLHttpRequest();
           xhr.open(/*to be implemented*/
                  "DELETE",
-                 "https://localhost:44334/api/company/ApiWithActions/5",
+                 "https://localhost:44334/api/bootcamp_company",
                   true
                   );
   xhr.setRequestHeader("Content-type", "application/json");
 }
 function generatehttpput(formdata) { /*to be implemented*/
   const xhr = new XMLHttpRequest();
-  xhr.open("PUT", "https://localhost:44334/api/company", true);
+  xhr.open("PUT", "https://localhost:44334/api/bootcamp_company", true);
 }
 //this function gets called when the user presses login btn
 function login() {
@@ -72,12 +72,9 @@ function generatehttpget(Email, Password) {
   // open the object
   xhr.open(
     "GET",
-    "https://localhost:44334/api/company6/5?Email=" +
-      Email +
-      "&Password=" +
-      Password,
-    true
-  );
+    "https://localhost:44334/api/bootcamp_company/login"
+    ,true);
+  
   // want to show progress
   xhr.getResponseHeader("Content-type", "application/json");
      xhr.onprogress = function() { //to show progress

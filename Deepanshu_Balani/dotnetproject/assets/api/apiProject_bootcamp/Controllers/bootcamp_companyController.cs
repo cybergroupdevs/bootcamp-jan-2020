@@ -19,17 +19,17 @@ namespace apiProject_bootcamp.Controllers
         {
             _apiproject2context = apiproject;
         }
-     // GET: api/bootcamp_company
+        // GET: api/bootcamp_company
         [HttpGet]//fetching data of all the employees 
         public IActionResult GetEmployee()
         {
-           List<Company> employees = _apiproject2context.Company.ToList();
+            List<Company> employees = _apiproject2context.Company.ToList();
             return Ok(employees);
         }
 
 
         // POST: api/bootcamp_Company
-        [HttpPost]
+        [HttpPost("EmployeeCreate")]
         public IActionResult createEmployee([FromBody] request request)
         {
 
@@ -47,30 +47,37 @@ namespace apiProject_bootcamp.Controllers
             return Ok("record updated");
         }
 
-        // PUT: api/bootcamp_company
-        [HttpPut("{id}")]
+        // PUT: api/bootcamp_company/EmployeeUpdate
+        [HttpPut("EmployeeUpdate")]      
         public IActionResult updateEmployee([FromBody]request request)
         {
 
-            Company ID = _apiproject2context.Company.FirstOrDefault();
-            ID.Name = request.Name;
-            ID.Email = request.Email;
-            _apiproject2context.Company.Update(ID);
-            _apiproject2context.SaveChanges();
-            return Ok("record added");
+            Company Employee = _apiproject2context.Company.Where(x=>x.Email==request.Email).FirstOrDefault();
+            if (Employee != null) {
+                Employee.Email = request.Email;
+                Employee.Name = request.Name;
+                Employee.Age = request.Age;
+                _apiproject2context.SaveChanges();
+               
+            }
+            else
+            {
+                return NotFound();
+            }
+
+
+            return Ok("record updated");
 
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
+        // DELETE: api/bootcamp_company/EmployeeDelete
+        [HttpDelete]
+        [Route("EmployeeDelete")]
+       
         public IActionResult DeleteEmployee(request request)
         {
-            
-
-            Company ID = _apiproject2context.Company.Where(x => x.Email ==request.Email).FirstOrDefault();
-                 
-
-            _apiproject2context.Company.Remove(ID);
+              Company ID = _apiproject2context.Company.Where(x => x.Email ==request.Email).FirstOrDefault();
+             _apiproject2context.Company.Remove(ID);
             _apiproject2context.SaveChanges();
 
             return Ok("RECORD DELETED");
