@@ -1,4 +1,5 @@
 // const jwtToken = localStorage.getItem("JwtToken");
+//this function will display the employee details in tabular form to admin
 function tabulardata() {
   var xhr = new XMLHttpRequest();
   var url = "http://localhost:3000/employees";
@@ -10,13 +11,14 @@ function tabulardata() {
       var userdata={};
       userdata = JSON.parse(xhr.response);
       console.log(userdata);
-      console.log(userdata[1].name);
+      console.log(userdata.length)
+      console.log(userdata[1].Name);
       var html = "<table border='1|1'>";
       for (var i = 0; i < userdata.length; i++) {
         html += "<tr>";
-        html += "<td>" + userdata[i].name + "</td>";
-        html += "<td>" + userdata[i].designation + "</td>";
-        html += "<td>" + userdata[i].email + "</td>";
+        html += "<td>" + userdata[i].Name + "</td>";
+        html += "<td>" + userdata[i].Designation + "</td>";
+        html += "<td>" + userdata[i].Email + "</td>";
         html += "</tr>";
       }
       html += "</table>";

@@ -1,3 +1,4 @@
+//to store and send the data of employee to backend and then to database
 function senddata() {
   //retreiving and storing values in the form of json
   var name = document.getElementById("name").value;
@@ -66,6 +67,7 @@ const sendHTTPReq = (method, url, data) => {
   });
   return promise;
 };
+//function for admin for retreiving data about employees
 function showdata() {
   var usn = document.getElementById("email").value;
   var psswd = document.getElementById("pswd").value;
