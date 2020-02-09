@@ -61,7 +61,7 @@ namespace WebApplication2.controllers
         public ActionResult deleteStudent([FromBody]Custom_Models.tcompanycustom data)
         {
 
-            Models.Tcompanydata employees = _context.Tcompanydata.FirstOrDefault();
+            Models.Tcompanydata employees = _context.Tcompanydata.Where(x => x.CusId == data.CusId).FirstOrDefault();
             _context.Tcompanydata.Remove(employees);
             _context.SaveChanges();
             return Ok("Deleted");
