@@ -1,7 +1,7 @@
 const controller = require("../controllers");
-module.exports = (app => {
-    app.get("/getAllEmployees", controller.employees.index);
-    app.get("/employees/:id", controller.employees.show);
-    app.post("/saveEmployee", controller.employees.create);
-    app.put("/updateEmployee/:id", controller.employees.update);
+module.exports = ((app) => {
+    app.get("/getAllEmployees", controller.emp.index);
+    app.get("/employees/:id", controller.emp.show);
+    app.post("/saveEmployee", controller.emp.create);
+    app.put("/updateEmployee/:id", controller.emp.update);
 });

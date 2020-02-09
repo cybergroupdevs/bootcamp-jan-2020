@@ -20,4 +20,4 @@ class Operations{
         return this.model.update(criteria, updateObj);
     }
 }
-module.exports = new Employee();
+module.exports = new Operations();

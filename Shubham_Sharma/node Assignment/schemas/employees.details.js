@@ -1,5 +1,5 @@
 module.exports = {
-    Emp_Name: {
+    EmpName: {
         type: String,
         default: null
     },
@@ -7,45 +7,31 @@ module.exports = {
         type: String,
         default: null
     },
-    Emp_Phone: {
+    EmpPhone: {
         type: String,
         default: null
     },
-    Emp_Address: {
-        city: {
-            type: String,
-            default: null
-        },
-        state: {
-            type: String,
-            default: null
-        },
-        country: {
-            type: String,
-            default: null
-        },
-        pincode: {
-            type: String,
-            default: null
-        }
-    },
-    Emp_Role: {
+    EmpAddress: {
         type: String,
-        default: "Consultant 1"
-    },
-    Emp_Password: {
-        type: Number,
         default: null
     },
-    Emp_ProjectId: {
+    EmpRole: {
+        type: String,
+        default: "Employee"
+    },
+    EmpPassword: {
+        type: String,
+        default: null
+    },
+    EmpProjectId: {
         type: String,
         default: 'Bench'
     },
-    Admin_Flag: {
+    AdminFlag: {
         type: Boolean,
         default: false
     },
-    Emp_Flag: {
+    EmpFlag: {
         type: Boolean,
         default: false
     }

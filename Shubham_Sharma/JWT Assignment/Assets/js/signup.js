@@ -102,15 +102,17 @@ const logMeIn = (lgndata) => {
 //For Post request, called from signup page only
 const sendData = (userdata) => {
 
-    sendHTTPReq('POST', "https://localhost:44305/api/Signup", userdata)
+    // sendHTTPReq('POST', "https://localhost:44305/api/Signup", userdata)
+    sendHTTPReq('POST', "http://localhost:8080/saveEmployee", userdata)
     .then(responseData => {
         console.log(responseData);
-        if(responseData == 200){
+        console.log(responseData.status);
+        if(responseData.status == 200){
             document.getElementById("sgnup1").style.display = "none";
             document.getElementById("lgn").style.display = "flex";
         }
         else{
-            window.alert(responseData);
+            window.alert(responseData.status);
         }
     })
     .catch(err => {
