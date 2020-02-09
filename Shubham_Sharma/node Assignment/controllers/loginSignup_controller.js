@@ -1,4 +1,5 @@
 const model = require("../models");
+const jwtHandler = require("../jwtHandler");
 class employee{
     constructor(){
 
@@ -6,19 +7,28 @@ class employee{
 
     //Are these req, res objects coming here automatically or de we have to set them manually
     async create(req, res){
-        // Do we really need this ?
-        // let employeeObj = {
-        //     EmpName: req.body.name, 
-        //     Username: req.body.email,
-        //     EmpPhone: req.body.phone,
-        //     EmpAddress: req.body.address,
-        //     Emp_Role: req.body.designation,
-        //     Emp_Password: req.body.age,
-        // }
         console.log(req.body);
         const employee = await model.empModel.save(req.body);
         console.log(employee);
         res.send(employee);
+    }
+
+    async match(req, res){
+        const allEmp = await model.empModel.get({$and : [{"Username": req.body.Username},{"EmpPassword": req.body.EmpPassword}]
+                                                }, 
+                                                {"Username": 1,
+                                                "EmpName": 1,
+                                                "EmpPhone": 1,
+                                                "EmpRole": 1,
+                                                "_id": 0}
+                                                );
+        if(allEmp != null){
+            const token = jwtHandler.tokenGenerator(allEmp);
+            res.status('200').send(token);
+        }
+        else{
+            res.status('401').send(allEmp);
+        }
     }
 
     async update(req, res){
