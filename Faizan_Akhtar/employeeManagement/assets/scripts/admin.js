@@ -1,8 +1,5 @@
-// const jwtToken = localStorage.getItem("JwtToken");
-
 function tryFunction() {
     api();
-    printTable();
 }
 
 function parseJwt (jwtToken) {
@@ -58,6 +55,3 @@ function logoutFunc(){
         }
     }
 }
-
-
-
