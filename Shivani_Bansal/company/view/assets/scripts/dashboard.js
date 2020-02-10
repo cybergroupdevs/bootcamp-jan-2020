@@ -6,7 +6,8 @@ function sendJSON()
     return response.json();
   })
   .then(function (data) {
-    console.log(data)
+    console.log(data);
+    return data;
     appendData(data);
   })
   .catch(function (err) {
@@ -40,5 +41,6 @@ function appendData(data)
         
         
     }
-}
+  }
+  
 }
