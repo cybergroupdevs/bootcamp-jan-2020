@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Portfolio Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./Assets/images/profile2.jpg" type="image" class="rounded-circle" sizes="16*16"/>
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Shubham Sharma"/>
+    <meta name="keywords" content="html, css, shubham, sharma ji, PurpleDragon"/>
+    <meta name="description" content="Shubham Sharma is an INTERN at CYBER GROUP"/> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- My Personal Stylesheet-->
+    <link rel="stylesheet" href="./Assets/css/Profile.css">''
+    <title>Document</title>
+    
+    <style>
+        .bg-pic{
+            background-image: url("./Assets/images/techy-bg.jpg");
+            background-size: cover;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <!-- Upper part where name and icon are displayed -->
+    <div class="container text-center pt-3">
+        <!--My Image Icon -->
+        <div class="d-inline-block">
+            <img src="./Assets/Images/profile2.jpg" alt="Not available" class="rounded-circle" height="40" width="40"/>
+        </div>
+        <!-- My  name -->
+        <div class="d-inline-block">
+            <h5>Shubham Sharma</h5>
+        </div>
+    </div>
+    <br>
+
+    <!--JUMBOTRON is Here-->
+    <div class="jumbotron bg-secondary mb-0">
+        <div class="container">
+            <h1 class="display-3 text-center text-light">Hi there !</h1>
+            <div class="text-center">
+                <img src="./Assets/images/profile2.jpg" alt="Not available" class="rounded-circle">
+            </div>
+        <br>
+            <div class="text-center">
+                <p class="lead text-light">Who's this ?</p>
+                <br>
+                <p class="text-light">That's me, SHUBHAM SHARMA. I am an INTERN at CYBER GROUP INDIA Pvt. Ltd. I am on my way to become a FULL STACK DEVELOPER, and I can bet that I am going to be a good one too.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--NAVBAR is here-->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark align-items-end mb-3">
+        <a class="navbar-brand" href="#">SHUBHAM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#academics">Academics <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#techKnowledge">Technical Knowledge</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <br>
+    <br>
+
+    <!--Academics-->
+    <h1 class="text-center my-3 display-3" id="academics">Academics</h1>
+    <div class="row">
+        <div class="col-sm-5 offset-sm-1 mb-3">
+            <div class="card bg-pic">
+                <div class="card-block text-center py-3">
+                    <h3 class="card-title">Xth</h3>
+                    <p class="card-text">Sarvada Modern Secondary School</p>
+                    <p class="card-text"><b>CBSE</b></p>
+                    <p class="card-text"><b>8.8 CGPA</b></p>
+                    <a href="http://smsschool.net/" class="btn btn-primary">About School</a>
+                </div>
+          </div>
+        </div>
+        <div class="col-sm-5 mb-3">
+            <div class="card bg-pic">
+                <div class="card-block text-center py-3">
+                    <h3 class="card-title">XIIth</h3>
+                    <p class="card-text"><b>Rukmani Devi Jaipuria Public School</b></p>
+                    <p class="card-text"><b>CBSE</b></p>
+                    <p class="card-text"><b>86.8 %</b></p>
+                    <a href="http://rdjps.co.in/" class="btn btn-primary">About School</a>
+                </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-sm-6 offset-sm-3">
+            <div class="card bg-pic">
+                <div class="card-block text-center py-3">
+                    <h3 class="card-title">B.Tech</h3>
+                    <p class="card-text"><b>Sharda University</b></p>
+                    <p class="card-text"><b>Computer Science</b></p>
+                    <p class="card-text"><b>8.46 CGPA</b></p>
+                    <a href="https://www.sharda.ac.in/" class="btn btn-primary">About Institute</a>
+                </div>
+            </div>           
+        </div> 
+    </div>
+
+    <hr>
+
+    <!--Technical Knowledge-->
+    <h1 class="text-center my-3 display-3" id="techKnowledge">Technical Knowledge</h1>
+    <div class="row">
+        <!--<div class="col-sm-1">
+
+        </div>-->
+        <div class="col-sm-5 offset-sm-1 mb-3">
+            <div class="card bg-pic">
+                <div class="card-block text-center py-3">
+                    <h3 class="card-title">HTML</h3>
+                    <p class="card-text">Intermediate</p>
+                    <footer class="blockquote-footer"><b>On my way to <cite title="Source Title">Become Professional</cite></b></footer>
+                </div>
+          </div>
+        </div>
+        <div class="col-sm-5 mb-3">
+            <div class="card bg-pic">
+                <div class="card-block text-center py-3">
+                    <h3 class="card-title">CSS</h3>
+                    <p class="card-text"><b>Intermediate</b></p>
+                    <footer class="blockquote-footer"><b>On my way to <cite title="Source Title">Become Professional</cite></b></footer>
+                </div>
+          </div>
+        </div>
+        <!--<div class="col-sm-1">
+
+        </div>-->
+    </div>
+    <div class="row mb-5">
+        <!--<div class="col-sm-3">
+
+        </div>-->
+        <div class="col-sm-6 offset-sm-3">
+            <div class="card bg-pic">
+                <div class="card-block text-center py-3">
+                    <h3 class="card-title">JavaScript</h3>
+                    <p class="card-text"><b>Intermediate</b></p>
+                    <footer class="blockquote-footer"><b>On my way to <cite title="Source Title">Become Professional</cite></b></footer>
+                </div>
+            </div>   
+        </div>
+        <!--<div class="col-sm-3">
+
+        </div>-->
+    </div>
+    
+    <br>
+    <hr>
+    <br>
+    <h1 class="text-center my-3 display-3" id="projects">Projects</h1>
+    <h1 class="text-center my-3 display-5">Soon to come ....</h1> 
+
+
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- My Js File-->
+    <script type="text/javascript" src="./Assets/js/Profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+body {
+    background: #2f235d2b;
+}
+
+button {
+    width: 100%;
+    height: 100%;
+    background: black;
+    font-size: 3rem;
+    color: bisque;
+    border: double red;
+    border-radius: 15px;
+}
+
+td {
+    height: 33.33%;
+    width: 33.33%;
+    text-align: center;
+}
+
+table {
+    margin-top: 2rem;
+    width: 50vh;
+    height: 50vh;
+}
+
+/*for reset button*/
+.btn {
+    color: black;
+    font-weight: 1000;
+    width: 200px;
+    border-radius: 20px;
+}
