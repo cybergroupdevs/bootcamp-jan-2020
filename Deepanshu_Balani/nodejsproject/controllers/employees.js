@@ -1,6 +1,7 @@
 
-const model=require('../models')
+const model=require('../models)
 const jwt = require('jsonwebtoken')
+
 class Employee{
   constructor(){
 
@@ -32,6 +33,7 @@ async index(req,res){
       
     res.send({"employees":[employee]});
 }
+
    signIn =(req,res)=>{
     let loginObj={
         username: "bala23@gmail.com",
@@ -46,5 +48,6 @@ async index(req,res){
 
  
  }
+
 }
 module.exports= new Employee()
