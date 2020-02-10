@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Assets/css/Main.css">
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid bg-info">
+        <div class="container bg-white">
+            <h1 class="text-center heading">Tic-Tac-Toe</h1>
+        </div>
+    </div>
+
+    <div class="text-center fixed-center" id="intro">
+        <div class="d-inline-flex flex-column p-4 m-3 bg-danger">
+            <div class="mb-3">
+                <input type="text" id="p1" placeholder="Player 1">
+            </div>
+            <div class="mb-3">
+                <input type="text" id="p2" placeholder="Player 2">
+            </div>
+            <input type="button" value="--NEXT--" onclick="getUser()" class="btn btn-primary">
+            <p class="figure-caption text-center mt-1">By Default <b>O</b> is assigned to PLAYER 1, and <b>X</b> is assigned to PLAYER 2</p>
+        </div>
+    </div>
+    
+    <span class="row">
+        <div class="col-6 col-sm-6 text-center mr-auto ml-auto" id="scoreBoard">
+            <div class="text-center my-5 text-white bg-dark">
+                <h1 id="pl1">Player 1</h1>
+                <h3 id="pl1s" class="pb-1">Score</h3>
+            </div>
+            <div class="text-center text-white bg-dark">
+                <h1 id="pl2">Player 1</h1>
+                <h3 id="pl2s" class="pb-1">Score</h3>
+            </div>            
+        </div>
+
+        <div class="table-container pt-2 pb-3 col-6 col-sm-6" id="gameButtons">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><button id="b1" onclick="clicker(1)" value=""></button></td>
+                        <td><button id="b2" onclick="clicker(2)" value=""></button></td>
+                        <td><button id="b3" onclick="clicker(3)" value=""></button></td>
+                    </tr>     
+                    <tr>
+                        <td><button id="b4" onclick="clicker(4)" value=""></button></td>
+                        <td><button id="b5" onclick="clicker(5)" value=""></button></td>
+                        <td><button id="b6" onclick="clicker(6)" value=""></button></td>
+                    </tr>     
+                    <tr>
+                        <td><button id="b7" onclick="clicker(7)" value=""></button></td>
+                        <td><button id="b8" onclick="clicker(8)" value=""></button></td>
+                        <td><button id="b9" onclick="clicker(9)" value=""></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </span>
+    <div id="resetBtn" class="mb-3">
+        <input type="button" class="btn btn-primary" onclick="refreshPage()" value="RESTART">
+        <input type="button" class="btn btn-primary" onclick="reset()" value="RESET">
+    </div 
+    
+    <!-- jQuery firs    t, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./Assets/js/Main.js"></script>
+</body>
+</html>

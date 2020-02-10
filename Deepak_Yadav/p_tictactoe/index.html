@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--layout for tic tac toe-->
+    <h1 class="text-center text-danger mt-5"><b>Tic-Tac-Toe</b></h1>
+    <div class="container">
+        <table class="w-100">
+            <tr>
+                <td><button id="b1" onclick="clicker(1)" class="text-white" value="">#</button></td>
+                <td><button id="b2" onclick="clicker(2)" class="text-white" value="">#</button></td>
+                <td><button id="b3" onclick="clicker(3)" class="text-white" value="">#</button></td>
+            </tr>
+            <tr class="w-100">
+                <td><button id="b4" onclick="clicker(4)" class="text-white" value="">#</button></td>
+                <td><button id="b5" onclick="clicker(5)" class="text-white" value="">#</button></td>
+                <td><button id="b6" onclick="clicker(6)" class="text-white" value="">#</button></td>
+            </tr>
+            <tr class="w-100">
+                <td><button id="b7" onclick="clicker(7)" class="text-white" value="">#</button></td>
+                <td><button id="b8" onclick="clicker(8)" class="text-white" value="">#</button></td>
+                <td><button id="b9" onclick="clicker(9)" class="text-white" value="">#</button></td>
+            </tr>
+        </table>
+    </div>
+    <div class="container text-center">
+        <button class="btn btn-outline-primary btn-danger mt-4" onclick="reset()"><b>Reset</b></button>
+    </div>
+    <script type="text/javascript" src="scripts.js"></script>
+</body>
+
+</html>

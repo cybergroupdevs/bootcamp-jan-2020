@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
+    <script src="./assets/scripts/script.js" ></script>
+
+
+</head>
+<body>
+    <!--complete calculator container-->
+    <div class="container">
+        
+        <!--screen section-->
+        <div class="scrn"><input type="text" name="display" id="display" size="20" readonly></div>
+
+        <!--buttons sections-->
+        <div class="calc_btns">
+            <p>
+                <input type="button" value="x!" class="other_opr" onclick=factorial()>
+                <input type="button" value="C" class="other_opr" onclick=allClear()>
+                <input type="button" value="CE" class="other_opr" id="ce_btn" onclick=clearEntry()>
+                <button class="major_opr" onclick="insert('/')"><i class='fa fa-divide '></i></button>
+                
+                
+            </p>
+
+            <p>
+                <button class="other_opr" onclick="operation('sqrt')"><i class='fa fa-square-root-alt'></i></button>
+                <input type="button" value="7" class="num" onclick=insert(7)>
+                <input type="button" value="8" class="num" onclick=insert(8)>
+                <input type="button" value="9" class="num" onclick=insert(9)>
+                <button class="major_opr" onclick="insert('*')"><i class='fa fa-times'></i></button>
+            </p> 
+
+            <p>
+                <input type="button" value="sin" class="other_opr" onclick="operation('sin')">
+                <input type="button" value="4" class="num" onclick=insert(4)>
+                <input type="button" value="5" class="num" onclick=insert(5)>
+                <input type="button" value="6" class="num" onclick=insert(6)>
+                <button class="major_opr" onclick="insert('-')"><i class='fa fa-minus'></i></button>
+                
+            </p>
+
+            <p>
+                <input type="button" value="cos" class="other_opr" onclick="operation('cos')">
+                <input type="button" value="1" class="num" onclick=insert(1)>
+                <input type="button" value="2" class="num" onclick=insert(2)>
+                <input type="button" value="3" class="num" onclick=insert(3)>
+                <button class="major_opr" onclick="insert('+')"><i class='fa fa-plus '></i></button>
+            </p>
+            
+            <p>
+                <input type="button" value="tan" class="other_opr" onclick="operation('tan')">
+                <input type="button" value="0" class="num" id="zero" onclick=insert(0)> 
+                <input type="button" value="." class="num" onclick="insert('.')">
+                <button class="major_opr" id="equal_btn" onclick=calc_equal()><i class='fa fa-equals'></i></button>
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>

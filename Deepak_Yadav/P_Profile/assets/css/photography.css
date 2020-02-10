@@ -1,0 +1,28 @@
+/* styles to show text on hovering on images*/
+/*opacity of content written on image is zero without hover*/
+.ig1,.ig2,.ig3,.ig4,.ig5,.ig6{
+    opacity: 0;
+}
+/* on hover content will be shown on center of the image*/
+.dg1:hover .ig1,.dg0:hover .ig2,.dg3:hover .ig3,.dg4:hover .ig4,.dg5:hover .ig5,.dg6:hover .ig6{
+    color: black;
+    font-size: 34px;
+    font-weight: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 1;
+}
+.design-section{
+    margin-top: -3rem;
+    background: #f3f8f8;
+}
+.img-fluid{
+    border-top: black solid;
+    border-bottom: black solid;
+    border-radius: 5%;
+}

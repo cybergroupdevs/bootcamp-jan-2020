@@ -1,0 +1,52 @@
+body{
+    height: 100vh;
+    background-image: url("../images/bg.jfif");
+    background-size: cover;
+}
+.heading{
+    font-family: 'Zhi Mang Xing', cursive;
+}
+.row{
+    margin-left: 0;
+    margin-right: 0;
+}
+input{
+    border: 0;
+    padding: 0.5rem;
+}
+input[type="text"]{
+    outline: none;
+    width: 60%;    
+}
+button{
+    border-radius: 5%;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    background-color: brown;
+    font-size: 150%;
+    color: white;
+}
+td{
+    height: 33.33%;
+    width: 33.33%;
+    text-align: center;
+}
+.table-container{
+    display: none;
+    justify-content: space-around;
+    max-width: 200px;
+    min-width: 370px;
+    margin-left: auto;
+    margin-right: auto;
+}
+table{
+    width: 50vh;
+    height: 50vh;
+}
+#resetBtn{
+    display: none;
+}
+#scoreBoard{
+    display: none;
+}

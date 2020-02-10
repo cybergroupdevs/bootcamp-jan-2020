@@ -1,0 +1,48 @@
+.nav1{
+	padding-left: 100px;
+}
+.background-front{
+    background: url(../images/background-front.jpg) no-repeat;
+    background-size: cover;
+    -webkit-filter: blur(0.5px);
+    min-height: 630px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+}
+.title{
+    font-size: 50px;
+    color:white;
+    text-shadow: 2px 2px 4px #000000;
+    border-bottom: solid 5px;
+    border-color: bisque;
+  }
+  .sub-title{
+      color: white;
+      font-size: 30px;
+      padding: 0 2rem;
+  }
+  .btn-submit {
+    background: rgb(120, 121, 214);
+    border: 0px;
+    display: inline-block;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 10px 40px;
+    font-weight: normal;
+    border-radius: 0px;
+    letter-spacing: 1px;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+    margin-top: 25px;
+    border: 2px solid rgb(240, 237, 229);
+}
+.btn-submit:hover {
+    background: #fff;
+}
+.nav-name{
+    padding-left: 1rem;
+}
