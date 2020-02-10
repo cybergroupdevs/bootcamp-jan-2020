@@ -1,21 +1,21 @@
 module.exports = {
-	Name:{
+	name:{
 		type: String,
 		default: null
 	},
-	PhoneNo:{
+	phoneNo:{
 		type:String
 	},
-	Email:{
+	email:{
 		type: String,
 		required: true
 	},
-	Designation:{
+	designation:{
 		type: String,
 		default: 'consultant 1',
 		//enum:['consultant 1','consultant 2','associate 1','associate 2']
 	},
-	Password:{
+	password:{
 		type: String,
 		default: null
 	}

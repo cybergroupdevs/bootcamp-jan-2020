@@ -6,11 +6,11 @@ class Employee {
 
   async create(req, res) {
     let employeeObj = {
-      Name: req.body.Name,
-      PhoneNo: req.body.phoneNo,
-      Email: req.body.Email,
-      Designation: req.body.Designation,
-      Password:req.body.Password
+      name: req.body.fname,
+      phoneNo: req.body.phoneNo,
+      email: req.body.email,
+      designation: req.body.designation,
+      password:req.body.password
       /*aDdress: {
         city: req.body.address.city,
         state: req.body.address.state,

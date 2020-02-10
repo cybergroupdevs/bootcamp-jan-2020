@@ -8,11 +8,11 @@ function senddata() {
   var psswd = document.getElementById("pswd").value;
   console.log(psswd);
   var json = {
-    Name: name,
-    PhoneNo: phone,
-    Designation: address,
-    Email: usn,
-    Password: psswd
+    fname: name,
+    phoneNo: phone,
+    designation: address,
+    email: usn,
+    password: psswd
   };
   sendData(json);
   console.log(json); //for debugging
