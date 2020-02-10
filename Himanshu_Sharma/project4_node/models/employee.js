@@ -1,7 +1,7 @@
 const Joi = require("joi");
 const mongoose = require("mongoose");
 
-const employeeSchema = mongoose.model(
+const Employee = mongoose.model(
   "Employee",
   new mongoose.Schema({
     email: {
@@ -35,13 +35,13 @@ const employeeSchema = mongoose.model(
   })
 );
 
-employeeSchema.methods.generateAuthToken = function() {
-  const token = jwt.sign(
-    { _id: this._id, isAdmin: this.isAdmin },
-    config.get("jwtPrivateKey")
-  );
-  return token;
-};
+// employeeSchema.methods.generateAuthToken = function() {
+//   const token = jwt.sign(
+//     { _id: this._id, isAdmin: this.isAdmin },
+//     config.get("jwtPrivateKey")
+//   );
+//   return token;
+// };
 
 function validateEmployee(employee) {
   const schema = {
