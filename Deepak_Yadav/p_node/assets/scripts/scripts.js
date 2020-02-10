@@ -32,16 +32,6 @@ const sendData = json => {
       console.log(err);
     });
 };
-function parseJwt (tokenA) {
-  var base64Url = tokenA.split('.')[1];
-  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-  var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-  }).join(''));
-
-  readabletoken(JSON.parse(jsonPayload));
-  return JSON.parse(jsonPayload);
-};
 //Sending HTTP REQUESTS, other methods can call me and pass me the required information and I'll do the rest
 const sendHTTPReq = (method, url, data) => {
   const promise = new Promise((resolve, reject) => {
@@ -73,8 +63,8 @@ function showdata() {
   var psswd = document.getElementById("pswd").value;
   console.log(psswd);
   var json = {
-    Email: usn,
-    Password: psswd
+    email: usn,
+    password: psswd
   };
   sendHTTPReq("post","http://localhost:3000/employees",json)
   .then((xhr) => {
@@ -88,16 +78,4 @@ function showdata() {
       saveToken(tokenA)
       parseJwt(tokenA);     
   });
-}
-
-function saveToken(token){
-  if (typeof(Storage) !== "undefined") {
-    // Code for localStorage/sessionStorage.
-    localStorage.setItem("JwtToken", token);
-  } else {
-    console.log("sorry no web storage");
-  }
-}
-function readabletoken(jsonPayload){
-  console.log(jsonPayload);
 }
