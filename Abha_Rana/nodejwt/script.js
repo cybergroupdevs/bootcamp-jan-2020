@@ -31,8 +31,8 @@ function login() {
   promise
     .then(temp => {
       console.log(temp.response.token);
-      SaveToken(temp.response.token);
-      var payload = DecodeToken(temp.response.token);
+      saveToken(temp.response.token);
+      var payload = decodeToken(temp.response.token);
       if(payload.Role === 'Admin'){
         window.location.href = "admin.html";
       }
@@ -42,7 +42,7 @@ function login() {
     });
 }
 
-function SaveToken(token) {
+function saveToken(token) {
   console.log(token);
   if (typeof Storage !== "undefined") {
     localStorage.setItem("JWTtoken", token);
@@ -51,7 +51,7 @@ function SaveToken(token) {
   }
 }
 
-function DecodeToken(token) {
+function decodeToken(token) {
   var base64Url = token.split(".")[1];
   var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
   var jsonPayload = decodeURIComponent(
