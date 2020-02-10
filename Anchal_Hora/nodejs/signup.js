@@ -1,5 +1,5 @@
-document.getElementById("btn").addEventListener("click",Postdata)
-function Postdata(){
+document.getElementById("btn").addEventListener("click",postData)
+function postData(){
     var Sno=parseInt(document.getElementById("inputid").value);
     var Username=document.getElementById("inputName").value;
     var Email=document.getElementById("inputEmail").value;
@@ -13,9 +13,9 @@ function Postdata(){
         "Password":Password
     };
     console.log(json);
-    //sendHTTPReq('POST', "http://localhost:51391/api/Panel", json).then(x => func() );
+    //sendHTTPReq('POST', "http://localhost:3000/employees/register", json).then(x => func() );
     var xhr= new XMLHttpRequest();
-     var url="http://localhost:51391/api/Panel";
+     var url="http://localhost:3000/employees/register";
      xhr.open('POST', url,true);
      xhr.responseType='json';
      xhr.setRequestHeader('Content-type','application/json');

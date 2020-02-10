@@ -1,8 +1,8 @@
-function func(){
+function login(){
     window.location.href = "./admin/index.html";
     }
-document.getElementById("button").addEventListener("click",Gettoken)
-function Gettoken(){
+document.getElementById("button").addEventListener("click",getToken)
+function getToken(){
 
     var Sno=parseInt(document.getElementById("inputid").value);
     var Username=document.getElementById("inputName").value;
@@ -17,9 +17,9 @@ function Gettoken(){
         "Password":Password
     };
     console.log(get);
-    //sendHTTPReq('POST', "http://localhost:51391/api/Panel", json).then(x => func() );
+    //sendHTTPReq('POST', "http://localhost:3000/employees/login", json).then(x => func() );
     var xhr= new XMLHttpRequest();
-     var url="http://localhost:51391/api/Login";
+     var url="http://localhost:3000/employees/login";
      xhr.open('POST', url,true);
      xhr.responseType='json';
      xhr.setRequestHeader('Content-type','application/json');

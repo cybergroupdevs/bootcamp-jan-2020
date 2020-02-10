@@ -1,12 +1,12 @@
-document.getElementById("buttondelete").addEventListener("click",admindeletedata)
-function admindeletedata(){ 
+document.getElementById("buttondelete").addEventListener("click",adminDeletedata)
+function adminDeletedata(){ 
                
     let id = document.getElementById("id").value; 
     console.log(id.value);
        
     // Creating a XHR object 
     var xhr = new XMLHttpRequest(); 
-    let url = "https://localhost:51391/api/delete/"+id; 
+    let url = "https://localhost:3000/employees/"+id; 
 
 
     // open a connection 

@@ -1,6 +1,6 @@
-function adminget(){}
+function adminGet(){}
 
-    fetch('https://localhost:51391/api/get')
+    fetch('https://localhost:3000/employees')
   .then(function (response) {
     return response.json();
   })

@@ -18,9 +18,25 @@ class Employee {
     res.send(employee);
   }
 
-
+  async add(req, res) {
+    let employeeObj = {
+      name: req.body.name,
+      phoneNo: req.body.phoneNo,
+      address: {
+        city: req.body.city,
+        state: req.body.state
+      },
+      designation: req.body.designation,
+      emailid: req.body.emailid,
+      age: req.body.age,
+      technologies: req.body.technologies
+    };
+    const employee = await model.employee.save(employeeObj);
+    res.send(employee);
+  }
+  
     async update(req, res)  {
-      let employeeObj = {
+      const employeeObj = {
         name: req.body.name,
         phoneNo: req.body.phoneNo,
         address: {
@@ -53,5 +69,18 @@ async show(req, res)  {
       res.send(employee);
 
   }
+  async login(req,res){
+    let loginObject={
+        username: "Anchal",
+        password: "@nchal1995",
+        role: "Intern"
+    }
+    jwt.sign({user: {username: loginObject.username, role: loginObject.role}},'secretkey',{ expiresIn: '1h' },(err,token)=>{
+        res.json({
+            token:token
+        });
+    });
+
 }
-module.exports = new Employee();
+}
+module.exports =new Employee();

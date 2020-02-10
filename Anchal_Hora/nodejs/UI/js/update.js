@@ -1,5 +1,5 @@
-document.getElementById("buttonupdate").addEventListener("click",adminupdatedata);
-function adminupdatedata(){ 
+document.getElementById("buttonupdate").addEventListener("click",adminUpdatedata);
+function adminUpdatedata(){ 
     var Sno=document.getElementById("inputSno").value;
     var Username=document.getElementById("inputName").value;
     var Email=document.getElementById("inputEmail").value;
@@ -8,7 +8,7 @@ function adminupdatedata(){
        
     // Creating a XHR object 
     var xhr = new XMLHttpRequest(); 
-    let url = "https://localhost:51391/api/update/"+id; 
+    let url = "https://localhost:3000/employees/"+id; 
     console.log(url);
 
     // open a connection 
