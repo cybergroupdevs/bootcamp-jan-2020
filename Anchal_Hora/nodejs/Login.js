@@ -10,25 +10,25 @@ function getToken(){
     var Password=document.getElementById("inputPassword").value;
     
     
-    var jformat= {
+    var json= {
         "Sno":Sno,
         "Name":Username,
         "Email":Email,
         "Password":Password
     };
-    console.log(jformat);
+    console.log(json);
     //sendHTTPReq('POST', "http://localhost:3000/employees/login", json).then(x => func() );
     var xhr= new XMLHttpRequest();
      var url="http://localhost:3000/employees/login";
      xhr.open('POST', url,true);
      xhr.responseType='json';
      xhr.setRequestHeader('Content-type','application/json');
-     console.log(JSON.stringify(jformat));
+     console.log(JSON.stringify(json));
       xhr.onload = () => {
          console.log(xhr.status);
          //var jwtToken = xhr.response.token;
 
    };
-    xhr.send(JSON.stringify(jformat));
+    xhr.send(JSON.stringify(json));
 }
 
