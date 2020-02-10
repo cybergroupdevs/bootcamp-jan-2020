@@ -1,5 +1,5 @@
-document.getElementById("buttonsignup").addEventListener("click",adminpostdata);
-function adminpostdata(){
+document.getElementById("buttonsignup").addEventListener("click",adminPostdata);
+function adminPostdata(){
     var Sno=document.getElementById("inputSno").value;
     var Username=document.getElementById("inputName").value;
     var Email=document.getElementById("inputEmail").value;
@@ -12,9 +12,9 @@ function adminpostdata(){
         "Password":Password
     };
     console.log(format);
-    //sendHTTPReq('POST', "http://localhost:51391/api/Panel", json).then(x => func() );
+    //sendHTTPReq('POST', "http://localhost:3000/employees", json).then(x => func() );
     var xhr= new XMLHttpRequest();
-     var url="http://localhost:51391/api/post";
+     var url="http://localhost:3000/employees";
      xhr.open('POST', url,true);
      xhr.responseType='json';
      xhr.setRequestHeader('Content-type','application/json');

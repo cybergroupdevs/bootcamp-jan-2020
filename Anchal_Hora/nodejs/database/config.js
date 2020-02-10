@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const url = "mongodb://localhost:27017/bootcamp";
+const url = "mongodb://localhost:27017/EmployeeDB";
 
 mongoose.Promise = global.Promise;
 mongoose
