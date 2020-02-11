@@ -53,17 +53,6 @@ class Employee{
                 role: "role"
             }
             
-            // model.employee.find({username:req.body.username, password:req.body.password, role:req.body.role}
-            //     ,function(err,token){
-            //     if(err){
-            //        console.log= "error"
-            //    }
-            //    else{
-            //     const token=jwt.sign({user: {username: req.body.username, role: req.body.role}},'secretkey',{ expiresIn: '1h' });
-            //     res.json({
-            //             token:token
-            //         });
-            //    } });
             jwt.sign({user: {username: loginObj.username, role: loginObj.role}},'secretkey',{ expiresIn: '1h' },(err,token)=>{
                 res.json({
                     token:token
