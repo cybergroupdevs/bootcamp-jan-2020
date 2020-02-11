@@ -79,3 +79,26 @@ function showdata() {
       parseJwt(tokenA);     
   });
 }
+//for decoding jwt
+function parseJwt (tokenA) {
+  var base64Url = tokenA.split('.')[1];
+  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+
+  readabletoken(JSON.parse(jsonPayload));
+  return JSON.parse(jsonPayload);
+};
+//for saving the token in local storage
+function saveToken(token){
+  if (typeof(Storage) !== "undefined") {
+    // Code for localStorage/sessionStorage.
+    localStorage.setItem("JwtToken", token);
+  } else {
+    console.log("sorry no web storage");
+  }
+}
+function readabletoken(jsonPayload){
+  console.log(jsonPayload);
+}

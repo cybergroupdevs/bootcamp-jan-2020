@@ -16,9 +16,9 @@ function tabulardata() {
       var html = "<table border='1|1'>";
       for (var i = 0; i < userdata.length; i++) {
         html += "<tr>";
-        html += "<td>" + userdata[i].Name + "</td>";
-        html += "<td>" + userdata[i].Designation + "</td>";
-        html += "<td>" + userdata[i].Email + "</td>";
+        html += "<td>" + userdata[i].name + "</td>";
+        html += "<td>" + userdata[i].designation + "</td>";
+        html += "<td>" + userdata[i].email + "</td>";
         html += "</tr>";
       }
       html += "</table>";
