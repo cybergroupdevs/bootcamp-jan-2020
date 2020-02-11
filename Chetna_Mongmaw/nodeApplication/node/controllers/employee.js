@@ -53,12 +53,16 @@ class Employee{
                 role: "role"
             }
             
-            jwt.sign({user: {username: loginObj.username, role: loginObj.role}},'secretkey',{ expiresIn: '1h' },(err,token)=>{
-                res.json({
-                    token:token
+            if(loginObj.username==="nangchetnamaw"&& loginObj.password==="chetnamaw" && loginObj.role==="admin"){
+                jwt.sign({user: {username: loginObj.username, role: loginObj.role}},'secretkey',{ expiresIn: '1h' },(err,token)=>{
+                    res.json({
+                        token:token
+                    });
                 });
-            });
-
+            }
+            else{
+                console.log("error")
+            }
         }
         
         
