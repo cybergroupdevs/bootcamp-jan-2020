@@ -10,7 +10,7 @@ var credentials = {};
   const xhr = new XMLHttpRequest();
   //return it as a promise
  
-    const url = "http://localhost:4000/emoployees";
+    const url = "https://localhost:5000/employees";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
   
@@ -55,14 +55,14 @@ function generatehttpdelete(formdata) {
   const xhr = new XMLHttpRequest();
   xhr.open(
     "DELETE",
-    "http://localhost:4000/employees",
+    "https://localhost:5000/employees",
     true
   );
   xhr.setRequestHeader("Content-type", "application/json");
 }
 function generatehttpput(formdata) {
   const xhr = new XMLHttpRequest();
-  xhr.open("PUT", "https://localhost:4000/employees", true);
+  xhr.open("PUT", "https://localhost:5000/employees", true);
 }
 //this function gets called when the user presses login btn
 function login() {
@@ -80,7 +80,7 @@ function GeneratehttpGet_Login(credentials) {
   // open the object
   xhr.open(
     "GET",
-    "https://localhost:4000/login",true);
+    "https://localhost:44351/api/login",true);
   
   // want to show progress
   xhr.setRequestHeader("Content-type", "application/json");

@@ -1,7 +1,5 @@
 
 const model=require('../models')
-const jwt = require('jsonwebtoken')
-const fs   = require('fs');
 class Employee{
   constructor(){
 
@@ -33,21 +31,5 @@ async index(req,res){
       
     res.send({"employees":[employee]});
 }
-  /* signIn =(req,res)=>{
-    let loginobj=req.body;
-    const employee= model.employee.find();
-    if(email&&password){
-
-         if(loginobj.email===employee.email&&loginobj.password===employee.password){
-    let token=jwt.sign({user: loginObj},'secretkey',(err,token)=>{
-        res.json({
-            success:true,
-            message:'Authentication successful',
-            token:token
-        });
-    });
-    }
-}
-}*/
 }
 module.exports= new Employee()

@@ -18,7 +18,6 @@ return this.model.find(criteria);
  async delete(criteria){
     return this.model.deleteOne(criteria);
  }
- 
 
 }
 
