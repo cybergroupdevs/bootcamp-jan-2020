@@ -66,7 +66,7 @@ function showdata() {
     email: usn,
     password: psswd
   };
-  sendHTTPReq("post","http://localhost:3000/employees",json)
+  sendHTTPReq("post","http://localhost:3000/api/auth/login",json)
   .then((xhr) => {
       console.log(xhr.response.token);
       console.log(typeof(xhr.response));

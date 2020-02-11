@@ -7,12 +7,9 @@ app.use(bodyParser.json());
 app.use(cors({origin: '*'}));
 require('./routes/route.js')(app)
 
-
 app.listen(3000,()=>{
 	console.log("listening port 3000");
 })
-
-
 
 app.get("/",(req,res)=>{
 	console.log("Hello,This is node")
