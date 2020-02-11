@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>
+          Employee Sign Up Form
+      </title>
+      
+       <link  rel="stylesheet" type="text/CSS"href="./signup.css"/>
+       <style>
+      #btn{
+         display:flex;
+      }
+       .bl{
+         display:none;
+
+     }
+     button:hover{
+        background-color:darkgreen ;
+     }
+ button:hover +bl{
+    background-color: yellow;
+    display:block;
+     }
+     #loader{
+      border:16px solid skyblue;
+      border-radius:50%;
+      width:120px;
+      height:120px;
+      -webkit-animation: spin 2s infinite;
+      /*safari*/
+      animation:spin 2s linear infinite;
+      }
+      /*safari*/
+      @-webkit-keyframes spin{
+         0%{-webkit-transform:rotate(0deg);}
+         100%{-webkit-transform:rotate(360deg);}
+      }
+      @keyframes spin{
+         0%{transform:rotate(0deg);}
+         100%{transform:rotate(360deg);}
+      }
+      #btn{
+         color:white;
+      }
+      #em,#pass{
+         border: solid greenS;
+      }
+      
+     </style> 
+   </head>
+   <body>
+       
+      <div class="bg">
+           <div class="inner">
+           
+               <img src="login.jfif">
+              
+            <h1>Employee Login </h1>
+                
+                 <div class="container">
+                  <input type="text" placeholder="Email" id="em">   
+                 </div>
+                 <div class="container">
+                  <input type="Password" placeholder="Password" id="pass">   
+                 </div>
+                <div>
+                  <button type="submit" class="btn"onclick="login()">Login</button>
+                </div>
+                <div>
+                   <button type="submit" class="register" onsubmit="event.preventDefault()">Register here
+                     
+                    
+                    </button>
+                    
+                  </div>
+             
+
+            </div>
+         </div>
+         <script type="text/javascript" src="script.js"></script>
+   </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
