@@ -58,10 +58,10 @@ namespace WebApplication2.controllers
         }
 
         [HttpDelete]
-        public ActionResult deleteStudent([FromBody]Custom_Models.tcompanycustom data)
+        public ActionResult deleteStudent(int id)
         {
 
-            Models.Tcompanydata employees = _context.Tcompanydata.Where(x => x.CusId == data.CusId).FirstOrDefault();
+            Models.Tcompanydata employees = _context.Tcompanydata.Where(x => x.CusId == id).FirstOrDefault();
             _context.Tcompanydata.Remove(employees);
             _context.SaveChanges();
             return Ok("Deleted");

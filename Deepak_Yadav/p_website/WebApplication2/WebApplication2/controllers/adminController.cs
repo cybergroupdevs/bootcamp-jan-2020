@@ -16,7 +16,13 @@ namespace WebApplication2.controllers
         {
             _context = context;
         }
-
+        [HttpGet]
+        public ActionResult getStudent([FromBody]Custom_Models.tcompanycustom data)
+        {
+            //DbModels.StudentInfo student = new DbModels.StudentInfo();
+            List<Models.Tcompanydata> employees = _context.Tcompanydata.ToList();
+            return Ok(employees);
+        }
         [HttpPatch]
         public ActionResult pupdateemployee(int id, [FromBody]Custom_Models.tcompanycustom data)
         {
@@ -28,9 +34,9 @@ namespace WebApplication2.controllers
         }
         // DELETE api/<controller>/5
         [HttpDelete]
-        public ActionResult pdeleteemployee([FromBody]Custom_Models.tcompanycustom data)
+        public ActionResult pdeleteemployee(int id)
         {
-           Models.Tcompanydata employees = _context.Tcompanydata.Where(x => x.CusId == data.CusId).FirstOrDefault();
+           Models.Tcompanydata employees = _context.Tcompanydata.Where(x => x.CusId == id).FirstOrDefault();
             _context.Tcompanydata.Remove(employees);
             _context.SaveChanges();
             return Ok("Deleted");
