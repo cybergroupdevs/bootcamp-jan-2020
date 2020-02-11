@@ -1,4 +1,7 @@
-const model = require("../models");
+const model = require('../models');
+const jwt = require('jsonwebtoken')
+const bcrypt= require('bcrypt')
+
 class Employee {
   constructor() {}
   async create(req, res) {
@@ -71,16 +74,21 @@ async show(req, res)  {
   }
   async login(req,res){
     let loginObject={
-        username: "Anchal",
-        password: "@nchal1995",
-        role: "Intern"
+        Name: "req.body.Name",
+        password: "req.body.password",
+        Email: "req.body.Email"
     }
-    jwt.sign({user: {username: loginObject.username, role: loginObject.role}},'secretkey',{ expiresIn: '1h' },(err,token)=>{
-        res.json({
-            token:token
+    
+    if(loginObject.Name==="Anchal"&& loginObject.password==="hora" && loginObject.Email==="horaanchal@gmail.com"){
+        jwt.sign({user: {Name: loginObj.username, Email: loginObj.Email}},'secretkey',{ expiresIn: '1h' },(err,token)=>{
+            res.json({
+                token:token
+            });
         });
-    });
-
-}
+    }
+    else{
+        console.log("error")
+    }
+  }
 }
 module.exports =new Employee();
