@@ -10,20 +10,20 @@ module.exports = (payload) => {
     var s  = 'User Auth';                           // Subject 
     var a  = 'someone@cygrp.com';                   // Audience
      
-    const actualPayload = JSON.stringify(payload[0]);
-    console.log(actualPayload);
+    const actualPayload = payload[0];//JSON.stringify(payload[0]);
+
     // SIGNING OPTIONS
-    var signOptions = JSON.stringify({
+    var signOptions = {
     issuer:  i,
     subject:  s,
     audience:  a,
     expiresIn:  "12h",
-    algorithm:  "RS256"
-    });
-    console.log(signOptions);
+    algorithm:  "HS256"
+    };
+
 
     try{
-        var token = jwt.sign(actualPayload, privateKEY, signOptions);
+        var token = jwt.sign({data: actualPayload}, privateKEY, signOptions);
         console.log("Token - " + token)
         return token;
     }

@@ -14,7 +14,7 @@ class Operations{
     }
 
     async save(employeeObj){
-        return this.model.create(employeeObj);
+        return await this.model.create(employeeObj);
     }
 
     async update(criteria ={}, updateObj){

@@ -7,13 +7,15 @@ class employee{
 
     //Are these req, res objects coming here automatically or de we have to set them manually
     async create(req, res){
-        console.log(req.body);
+        console.log(req);
         const employee = await model.empModel.save(req.body);
         console.log(employee);
         res.send(employee);
     }
 
     async match(req, res){
+        console.log(req.body.Username);
+        console.log(req.body.EmpPassword);
         const allEmp = await model.empModel.get({$and : [{"Username": req.body.Username},{"EmpPassword": req.body.EmpPassword}]
                                                 }, 
                                                 {"Username": 1,
@@ -68,7 +70,7 @@ class employee{
     }
 
     async index(req, res){
-        const employee = await model.employee.get({});
+        const employee = await model.empModel.get({}, {});
         console.log(employee);
         res.send(employee);
     }
