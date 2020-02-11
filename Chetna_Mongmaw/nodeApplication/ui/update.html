@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/styles/update.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/scripts/update.js"></script> 
+</head>
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+    <form >
+        <input type="button" id="submitbtn" class="fadeIn first" onclick="updateUser()" value="update user">
+        <input type="number" id="r_id" class="fadeIn second" placeholder=" enter registration id of user"><br>
+        <input type="number" id="p_id" class="fadeIn second" placeholder="enter project id of user"><br>
+        <input type="text" id="name"  class="fadeIn second" placeholder="name"><br>
+        <input type="text" id="username" class="fadeIn third"  placeholder="username"><br>
+        <input type="text" id="email" class="fadeIn fourth"  placeholder="email"><br>
+        <input type="text" id="password" class="fadeIn first" placeholder="password"><br>
+        <input type="text" id="role" class="fadeIn third" placeholder="role"><br>
+      </form>
+    
+    </div>
+    <div id="formContent">
+        <!-- Tabs Titles -->
+    <form>
+      <input type="button" id="submitbtn" class="fadeIn first" onclick="deleteUser()" value="delete user">
+      <input type="number" step=1 id="id"  class="fadeIn second" placeholder="enter registration ID of user to delete"><br>
+      <!-- <input type="text" id="username" class="fadeIn third"  placeholder="username"><br>
+      <input type="text" id="email" class="fadeIn fourth"  placeholder="email"><br>
+      <input type="text" id="password" class="fadeIn first" placeholder="password"><br>
+      <input type="number" id="p_id" class="fadeIn second" placeholder="project id"><br>
+      <input type="text" id="role" class="fadeIn third" placeholder="role"><br> -->
+    </form>
+  
+  </div>
+</div>
+    
+</body>
+</html>
