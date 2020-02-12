@@ -1,0 +1,108 @@
+body {
+    height: 100vh;
+}
+
+input {
+    width: 100%;
+}
+
+/*For Login Page*/
+.lgn-1 {
+    display: flex;
+    /*display: flex*/
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.lgn-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10%;
+    width: fit-content;
+}
+
+.lgn-2 div {
+    width: 120%;
+    margin-bottom: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/*For Signup Page*/
+.sgn-up-1 {
+    display: none;
+    /*display: flex*/
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.sign_up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10%;
+    width: fit-content;
+}
+
+.sign_up div {
+    width: 120%;
+    margin-bottom: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/*Navbar Admin*/
+.nav-Admin {
+    display: none;
+}
+
+.img1 {
+    margin-top: 3rem;
+}
+
+/*vbfgbgfbgfbvgfb*/
+.frm input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-color: black;
+}
+
+.frm {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#country {
+    color: blue;
+    font-weight: 600;
+}
+
+.bt2 {
+    color: black;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+.frm input[type=text]:focus {
+    background-color: lightblue;
+}
+
+.ft1 {
+    margin-top: 100px;
+}
+
+.frm ::placeholder {
+    color: navy;
+    font-weight: 500;
+}
+
+/*style for form field ends here*/

@@ -1,0 +1,33 @@
+.login_form{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+} 
+.btnsstyle:hover{
+    background-color: #2c9988;
+    font-weight: bolder;
+  }
+  .frm input
+          {
+            width: 100%;
+            max-width: 350px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border-color: black;
+            border-radius: 10px;
+          }
+.frm{
+    font-size: 20px;
+    font-weight: bold;
+}
+.frm input:focus {
+    background-color: lightblue;
+}
+.frm ::placeholder {
+    color: navy;
+    font-weight: 500;
+}/*style for form field ends here*/
