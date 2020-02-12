@@ -9,10 +9,6 @@ using System.Threading.Tasks;
 
 namespace company.Repositories
 {
-    
-
-
-
     public class Signup
     {
         private webApiContext _webapiContext;
@@ -24,7 +20,6 @@ namespace company.Repositories
 
             _webapiContext = new webApiContext() ;
         }
-
         public string signupHandler()
         {
             UsersInfo user = new UsersInfo()
@@ -36,9 +31,6 @@ namespace company.Repositories
                 Role = _details.Role,
                 ProjectId = _details.ProjectID
             };
-
-
-
             _webapiContext.UsersInfo.Add(user);
             _webapiContext.SaveChanges();
 
@@ -69,16 +61,6 @@ namespace company.Repositories
             user.Email = SignupModel.Email;
             _webapiContext.SaveChanges();
             return ("user updated");
-
-
         }
-
-
-
-
-
-
-
-
     }
 }

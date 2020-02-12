@@ -13,8 +13,6 @@ namespace company.Repositories
         webApiContext _webapiContext;
 
         public Login( LoginModel enteredDetails) {
-
-
             _details = new LoginModel()
             {
                 Email = enteredDetails.Email,
@@ -23,7 +21,6 @@ namespace company.Repositories
 
             _webapiContext = new webApiContext() ;
         }
-
         public UsersInfo loginHandler()
         {
             UsersInfo usersInfo = _webapiContext.UsersInfo.Where(emp => emp.Email == _details.Email && emp.Password == _details.Password).FirstOrDefault();

@@ -12536,11 +12536,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\shivani.bansal\\source\\repos\\company\\company\\company.csproj",
+      "projectUniqueName": "C:\\Users\\shivani.bansal\\Documents\\Projects\\HTML_Assignment\\BootcampJan2020\\Shivani_Bansal\\company\\company\\company.csproj",
       "projectName": "company",
-      "projectPath": "C:\\Users\\shivani.bansal\\source\\repos\\company\\company\\company.csproj",
+      "projectPath": "C:\\Users\\shivani.bansal\\Documents\\Projects\\HTML_Assignment\\BootcampJan2020\\Shivani_Bansal\\company\\company\\company.csproj",
       "packagesPath": "C:\\Users\\shivani.bansal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\shivani.bansal\\source\\repos\\company\\company\\obj\\",
+      "outputPath": "C:\\Users\\shivani.bansal\\Documents\\Projects\\HTML_Assignment\\BootcampJan2020\\Shivani_Bansal\\company\\company\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
