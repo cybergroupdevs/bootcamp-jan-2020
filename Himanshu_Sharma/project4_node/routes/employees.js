@@ -1,56 +1,81 @@
-const {Employee, validate} = require('../models/employee'); 
 const express = require('express');
 const router = express.Router();
+const bcrypt = require('bcrypt');
+const { Employee, validateEmployee } = require('../models/employee');
 
-router.get('/', async (req, res) => {
-  const employees = await Employee.find().sort('name');
-  res.send(employees);
+
+// const employees = [{
+//     id: 1,
+//     name: 'Shivani Bansal'
+// },{
+//     id: 2,
+//     name: 'Himanshu Sharma'
+// }];
+
+router.get('/', (req, res) => {
+    res.send('Route Handler for root');
+})
+
+router.get('/', (req, res) => { 
+    res.send(employees);
 });
 
-router.post('/', async (req, res) => {
-  const { error } = validate(req.body); 
-  if (error) return res.status(400).send(error.details[0].message);
+router.get('/:id', (req, res) => {
+    const employee = employees.find(emp => emp.id === parseInt(req.params.id));
+    if(!employee) return res.status(404).send('Employee with given id is not available!');
 
-  const {email, password, firstName, lastName, mobile, role, manager, projects} = req.body;
-
-  let customer = new Customer(
-    {email, password, firstName, lastName, mobile, role, manager, projects}
-  );
-  customer = await customer.save();
-  
-  res.send(customer);
+    res.send(employee);
 });
 
-// router.put('/:id', async (req, res) => {
-//   const { error } = validate(req.body); 
-//   if (error) return res.status(400).send(error.details[0].message);
+router.post('/', async(req, res) => {
+    const { error } = validateEmployee(req.body);
+    if(error){
+        res.status(400).send(error.details[0].message);
+        return;
+    }
 
-//   const customer = await Customer.findByIdAndUpdate(req.params.id,
-//     { 
-//       name: req.body.name,
-//       isGold: req.body.isGold,
-//       phone: req.body.phone
-//     }, { new: true });
+    let employee = await Employee.findOne({ email: req.body.email });
+    console.log(employee);
+    if(employee) return res.status(400).send('Employee with this id is already registered');
 
-//   if (!customer) return res.status(404).send('The customer with the given ID was not found.');
-  
-//   res.send(customer);
-// });
+    const { email, password, firstName, lastName, mobile, role, manager, projects } = req.body;
+    employee = new Employee({ email, password, firstName, lastName, mobile, role, manager, projects });
 
-// router.delete('/:id', async (req, res) => {
-//   const customer = await Customer.findByIdAndRemove(req.params.id);
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
 
-//   if (!customer) return res.status(404).send('The customer with the given ID was not found.');
+    employee.password = hashedPassword;
+    employee = await employee.save();
+    res.send(employee);
+});
 
-//   res.send(customer);
-// });
+router.put('/:id', (req, res) => {
+    const employee = employees.find(emp => emp.id === parseInt(req.params.id));
+    if(!employee) return res.status(404).send('Employee with this id does not exist to update');
 
-// router.get('/:id', async (req, res) => {
-//   const customer = await Customer.findById(req.params.id);
+    const { error } = validateEmployee(req.body);
+    if(error){
+        res.status(400).send(result.error.details[0].message);
+        return;
+    }
 
-//   if (!customer) return res.status(404).send('The customer with the given ID was not found.');
+    employees.map(emp => { 
+        if(emp.id === parseInt(req.params.id)){
+            emp.name = req.body.name
+        }
+    });
+    
+    res.send(employees);
+});
 
-//   res.send(customer);
-// });
+router.delete('/:id', (req, res) => {
+    const employee = employees.find(emp => emp.id === parseInt(req.params.id));
+    if(!employee) return res.status(404).send('Employee with given id doesn\'t exist');
 
-module.exports = router; 
+    const index = employees.indexOf(employee);
+    employees.splice(index, 1);
+
+    res.send(employee);
+});
+
+module.exports = router;

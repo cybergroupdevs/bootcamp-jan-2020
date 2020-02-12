@@ -1,66 +1,66 @@
-const Joi = require("joi");
 const mongoose = require("mongoose");
+const Joi = require('joi');
 
-const Employee = mongoose.model(
-  "Employee",
-  new mongoose.Schema({
+employeeSchema = new mongoose.Schema({
     email: {
-      type: String,
-      required: true
+        type: String,
+        unique: true,
+        required: true,
+        minlength: 5   
     },
     password: {
-      type: String,
-      required: true
+        type: String,
+        required: true,
+        minlength: 5,
+        maxlength: 1024    
     },
     firstName: {
-      type: String,
-      required: true
+        type: String,
+        required: true,
+        minlength: 2
     },
-    lastName: String,
-    mobile: String,
+    lastName: {
+        type: String
+    },
+    mobile: {
+        type: String,
+    },
     role: {
-      type: String,
-      enum: ["Employee", "Manager", "Admin"],
-      default: "Employee"
+        type: String,
+        enum: ['Employee', 'Manager', 'Admin'],
+        default: 'Employee'
     },
     manager: {
-      type: mongoose.Schema.Types.ObjectId,
-      default: null
+        type: mongoose.Schema.Types.ObjectId
     },
-    projects: [
-      {
+    projects: [{
         projectName: String
-      }
-    ]
-  })
-);
+    }]
+});
 
-// employeeSchema.methods.generateAuthToken = function() {
-//   const token = jwt.sign(
-//     { _id: this._id, isAdmin: this.isAdmin },
-//     config.get("jwtPrivateKey")
-//   );
-//   return token;
-// };
+const Employee = mongoose.model('Employee', employeeSchema);
+
+// async function createEmployee(){
+//     const employee = new Employee({
+//         firstName: 'Himanshu'
+//     });
+
+//     const result = await employee.save();
+//     console.log(result);
+// }
 
 function validateEmployee(employee) {
-  const schema = {
-    email: Joi.string()
-      .min(5)
-      .max(255)
-      .required(),
-    password: Joi.string()
-      .min(5)
-      .max(1024)
-      .required(),
-    firstName: Joi.string()
-      .min(5)
-      .max(50)
-      .required()
-  };
-
-  return Joi.validate(employee, schema);
+    const schema = {
+        email: Joi.string().min(5).required(),
+        password: Joi.string().min(5).max(255).required(),
+        firstName: Joi.string().min(2).required(),
+        lastName: Joi.string(),
+        mobile: Joi.string(),
+        role: Joi.string().tags(['Employee', 'Manager', 'Admin'])
+    }
+    console.log(Joi.validate(employee, schema), 'validateEmployee mein hoon');
+    return Joi.validate(employee, schema);
 }
 
-exports.Employee = Employee;
-exports.validate = validateEmployee;
+module.exports.Employee = Employee;
+module.exports.validateEmployee = validateEmployee;
