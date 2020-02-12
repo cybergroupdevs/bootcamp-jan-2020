@@ -1,5 +1,5 @@
-document.getElementById("buttondelete").addEventListener("click",admindeletedata)
-function admindeletedata(){ 
+document.getElementById("buttondelete").addEventListener("click",adminDeletedata)
+function adminDeletedata(){ 
                
     let id = document.getElementById("id").value; 
     console.log(id.value);

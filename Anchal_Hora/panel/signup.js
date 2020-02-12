@@ -1,5 +1,5 @@
-document.getElementById("btn").addEventListener("click",Postdata)
-function Postdata(){
+document.getElementById("btn").addEventListener("click",postData)
+function postData(){
     var Sno=parseInt(document.getElementById("inputid").value);
     var Username=document.getElementById("inputName").value;
     var Email=document.getElementById("inputEmail").value;

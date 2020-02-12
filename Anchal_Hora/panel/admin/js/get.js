@@ -1,4 +1,4 @@
-function adminget(){}
+function adminGet(){}
 
     fetch('https://localhost:51391/api/get')
   .then(function (response) {

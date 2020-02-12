@@ -1,8 +1,8 @@
 function func(){
     window.location.href = "./admin/index.html";
     }
-document.getElementById("button").addEventListener("click",Gettoken)
-function Gettoken(){
+document.getElementById("button").addEventListener("click",getToken)
+function getToken(){
 
     var Sno=parseInt(document.getElementById("inputid").value);
     var Username=document.getElementById("inputName").value;
@@ -10,25 +10,25 @@ function Gettoken(){
     var Password=document.getElementById("inputPassword").value;
     
     
-    var get = {
+    var json = {
         "Sno":Sno,
         "Name":Username,
         "Email":Email,
         "Password":Password
     };
-    console.log(get);
+    console.log(json);
     //sendHTTPReq('POST', "http://localhost:51391/api/Panel", json).then(x => func() );
     var xhr= new XMLHttpRequest();
      var url="http://localhost:51391/api/Login";
      xhr.open('POST', url,true);
      xhr.responseType='json';
      xhr.setRequestHeader('Content-type','application/json');
-     console.log(JSON.stringify(get));
+     console.log(JSON.stringify(json));
       xhr.onload = () => {
          console.log(xhr.status);
          //var jwtToken = xhr.response.token;
 
    };
-    xhr.send(JSON.stringify(get));
+    xhr.send(JSON.stringify(json));
 }
 

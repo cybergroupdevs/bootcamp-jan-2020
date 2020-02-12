@@ -1,5 +1,5 @@
-document.getElementById("buttonupdate").addEventListener("click",adminupdatedata);
-function adminupdatedata(){ 
+document.getElementById("buttonupdate").addEventListener("click",adminUpdatedata);
+function adminUpdatedata(){ 
     var Sno=document.getElementById("inputSno").value;
     var Username=document.getElementById("inputName").value;
     var Email=document.getElementById("inputEmail").value;
