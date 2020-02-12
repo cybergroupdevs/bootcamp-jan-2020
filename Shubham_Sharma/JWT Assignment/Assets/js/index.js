@@ -1,20 +1,27 @@
-var lgOutBtn = document.getElementById("logOut");
-var allBtn = document.getElementById("allEmp");
+var logOutButton = document.getElementById("logOut");
+var findAllEmployees = document.getElementById("allEmp");
 var table = document.getElementById("adminTable");
-var del = document.getElementById("deleteOne");
+var deleteEmployeeLink = document.getElementById("deleteOne");
 
 var COLUMN_TO_DISPLAY = 7;
 
 //inserts data into the table
 function  drawTable(json) {
-    var colLength = COLUMN_TO_DISPLAY;
+    let columnLength = COLUMN_TO_DISPLAY;
 
     for(let j=0; j<json.length; j++){
-        var x = json[j];
-        var data = [j+1, x.empName, x.username, x.empPhone, x.empRole, x.empAddress, x.empProjectId];
-        var row = table.insertRow(j);        
-        for(let i=0; i<colLength; i++){
-            var cell = row.insertCell(i);
+        let employee = json[j];
+        let data = [j+1, 
+                    employee.empName, 
+                    employee.username, 
+                    employee.empPhone, 
+                    employee.empRole, 
+                    employee.empAddress, 
+                    employee.empProjectId
+                ];
+        let row = table.insertRow(j);        
+        for(let i=0; i<columnLength; i++){
+            let cell = row.insertCell(i);
             cell.innerHTML = data[i];
         }
     }
@@ -32,7 +39,7 @@ const jsonDecoder = (token) => {
 };
 
 //When the window is loaded onto the browser, then it will check whether a token presents or not.
-//If token is present, it will decode it and fetch the Guy's name and paste it in the NAVBAR. Then it will call getAll()
+//If token is present, it will decode it and fetch the Guy's name and paste it in the NAVBAR. Then it will call getAllEmployeeDetails()
 //Else it will redirect the GUY back to LOGIN PAGE.
 window.onload = () => {
     if (typeof(Storage) !== "undefined") {
@@ -40,7 +47,7 @@ window.onload = () => {
         if(token != null){
             var jsonPayload = jsonDecoder(token);
             document.getElementById("userName").innerHTML = jsonPayload.EmpName;
-            getAll();
+            getAllEmployeeDetails();
         }
         else{
             console.log("There is no JwtToken present");
@@ -53,7 +60,7 @@ window.onload = () => {
 }
 
 //Called when Logout button is pressed and then it deletes the Jwt and diverts the page back to LOGIN
-const lgout = () => {
+const logOut = () => {
     if (typeof(Storage) !== "undefined") {
         localStorage.removeItem("JwtTOKEN");
         console.log("something is not working");
@@ -65,11 +72,10 @@ const lgout = () => {
 }
 
 //Sends the HTTP request and returns the promise. On resolve, xhr is returned, from which we can retrieve the response
-const sendHTTPReq = (method, url, data) => {
+const sendHTTPRequest = (method, url, data) => {
     const promise = new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
         xhr.open(method, url);
-        console.log(JSON.stringify(data));
         xhr.responseType = 'json';
         if(data){
             xhr.setRequestHeader('Content-Type', 'application/json');
@@ -86,18 +92,18 @@ const sendHTTPReq = (method, url, data) => {
 }
 
 //Deletes the employee and 
-const deleteEmployee = () => {
+const deleteEmployeeDetails = () => {
     var username = prompt("Enter username you want to delete");
-    if(usn != null){
+    if(username != null){
         data = {
             JwT: localStorage.getItem("JwtTOKEN"),
             Username: username
         };
-        sendHTTPReq("DELETE", "https://localhost:44305/api/Admin", data)
+        sendHTTPRequest("DELETE", "https://localhost:44305/api/Admin", data)
         .then((responseData) => {
             if(responseData.status == 200){
                 alert("User Deleted");
-                getAll();
+                getAllEmployeeDetails();
             }
             else{
                 alert("Some Error Occured "+responseData.status);
@@ -114,16 +120,16 @@ function clearTableData() {
         } 
 }
 
-const getAll = () => {
+const getAllEmployeeDetails = () => {
     clearTableData();
     const reqBody = {
         "JwT": localStorage.getItem("JwtTOKEN")
     }
-    sendHTTPReq('POST', "https://localhost:44305/api/Admin/getAllUsers", reqBody)
+    sendHTTPRequest('POST', "https://localhost:44305/api/Admin/Employees", reqBody)
     .then((responseData) => {
-        var json = responseData.response;
-        if(json != null){
-            drawTable(json);
+        var res = responseData.response;
+        if(res != null){
+            drawTable(res);
         }
         else{
             localStorage.removeItem("JwtTOKEN");
@@ -136,6 +142,6 @@ const getAll = () => {
     });
 };
 
-allBtn.addEventListener('click', getAll);
-lgOutBtn.addEventListener('click', lgout);
-del.addEventListener('click', deleteEmployee);
+findAllEmployees.addEventListener('click', getAllEmployeeDetails);
+logOutButton.addEventListener('click', logOut);
+deleteEmployeeLink.addEventListener('click', deleteEmployeeDetails);

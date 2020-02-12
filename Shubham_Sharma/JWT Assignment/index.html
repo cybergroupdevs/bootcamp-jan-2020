@@ -10,7 +10,7 @@
 </head>
 <body>
     <!--Login Page-->
-    <div class="lgn-1" id="lgn">
+    <div class="lgn-1" id="loginForm">
         <div class="lgn-2">
             <div class="text-center">
                 <img src="./Assets/images/lock.png" alt="Not Available" class="rounded-circle border border-secondary">
@@ -19,7 +19,7 @@
                 <input type="text" id="email" placeholder="Email" class="form-control">
             </div>
             <div>
-                <input type="password" id="lgnpswd" placeholder="Password" class="form-control">
+                <input type="password" id="loginPassword" placeholder="Password" class="form-control">
             </div>
             <div>
                 <input type="button" value="Login" id="loginButton" class="btn btn-primary">
@@ -31,7 +31,7 @@
     </div>
 
     <!--Signup Page-->
-    <div class="sgn-up-1" id="sgnup1">
+    <div class="sgn-up-1" id="signupForm">
         <form class="sgn-up-2">
             <div class="text-center">
                 <img src="./Assets/images/lock.png" alt="Not Available" class="rounded-circle border border-secondary">
@@ -40,19 +40,19 @@
                 <input type="text" id="name" placeholder="Name" required pattern="[a-z,A-Z]{4,20}" class="form-control">
             </div>
             <div>
-                <input type="email" id="usn" placeholder="username@cygrp.com" required pattern=".+@cygrp.com" class="form-control">
+                <input type="email" id="username" placeholder="username@cygrp.com" required pattern=".+@cygrp.com" class="form-control">
             </div>
             <div>
-                <input type="text" id="phn" placeholder="Phone Number" required pattern="[0-9]{10,10}" class="form-control">
+                <input type="text" id="phone" placeholder="Phone Number" required pattern="[0-9]{10,10}" class="form-control">
             </div>
             <div>
-                <input type="text" id="addrs" placeholder="Address" required class="form-control">
+                <input type="text" id="address" placeholder="Address" required class="form-control">
             </div>
             <div>
-                <input type="password" id="pswd" placeholder="Password" required value="jgfjhg" class="form-control">
+                <input type="password" id="password" placeholder="Password" required value="jgfjhg" class="form-control">
             </div>
             <div>
-                <input type="button" value="SignUp" id="signUpBtn" class="btn btn-primary">
+                <input type="button" value="SignUp" id="signUpButton" class="btn btn-primary">
             </div>
             <div class="text-center">
                 <a id="toLogin" href="#"><small>Existing User ? Login</small></a>

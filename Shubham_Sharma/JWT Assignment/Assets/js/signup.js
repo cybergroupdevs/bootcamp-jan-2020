@@ -1,26 +1,26 @@
-var sign = document.getElementById("signUpBtn");
+var signup = document.getElementById("signUpButton");
 var login = document.getElementById("loginButton");
 
-//regLinki is in LOGIN Page
-var regLink = document.getElementById("toRegistration");
+//regLink is in LOGIN Page
+var registerLink = document.getElementById("toRegistration");
 //logLink is in SIGNUP PAGE
 var logLink = document.getElementById("toLogin");
 
 //Getting data from SIGNUP form and storing it in a JSON format
-const getDataFromForm = () => {
-    var name = document.getElementById("name").value;
-    var phone = document.getElementById("phn").value;
-    var address = document.getElementById("addrs").value;
-    var usn = document.getElementById("usn").value;
-    var psswd = document.getElementById("pswd").value;
+const getDataFromSignupForm = () => {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let address = document.getElementById("address").value;
+    let usn = document.getElementById("username").value;
+    let psswd = document.getElementById("password").value;
     console.log(psswd);
-    var userData = {
+    let userData = {
         "EmpName": name,
-        "Username": usn,
+        "Username": username,
         "EmpPhone": phone,
         "EmpAddress": address,
         "EmpRole": "EMPLOYEE",
-        "EmpPassword": psswd,
+        "EmpPassword": password,
         "EmpProjectId": "Bench",
         "AdminFlag": 0,
         "EmpFlag": 0
@@ -31,35 +31,31 @@ const getDataFromForm = () => {
 
 //Getting data from LOGIN form and storing it in a JSON format
 const getDataFromLoginForm = () => {
-    var usn = document.getElementById("email").value;
-    var paswd = document.getElementById("lgnpswd").value;
-    console.log(paswd);
-    var usrInfo = {
-        "Username": usn,
-        "EmpPassword": paswd
+    let username = document.getElementById("email").value;
+    let password = document.getElementById("loginPassword").value;
+    let userInfo = {
+        "Username": username,
+        "EmpPassword": password
     };
-    logMeIn(usrInfo);
+    logMeIn(userInfo);
 }
 
 //Sending HTTP REQUESTS, other methods can call me and pass me the required information and I'll do the rest
-const sendHTTPReq = (method, url, data) => {
+const sendHTTPRequest = (method, url, payload) => {
     const promise = new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
         xhr.open(method, url);
-        console.log(JSON.stringify(data));
         xhr.responseType = 'json';
-        if(data){
+        if(payload){
             xhr.setRequestHeader('Content-Type', 'application/json');
         }
-
         xhr.onload = () => {
-            //resolve(xhr.status + "--Token--"+xhr.response.token);
             resolve(xhr);
         };
         xhr.onerror = () => {
             reject('Something went wrong');
         }
-        xhr.send(JSON.stringify(data));
+        xhr.send(JSON.stringify(payload));
     });
     return promise;
 }
@@ -77,15 +73,15 @@ function saveInLocalStorage(ResToken){
 }
 
 //Also for POST request, called from login page only
-const logMeIn = (lgndata) => {
-    sendHTTPReq('POST', "https://localhost:44305/api/Login", lgndata)
+const logMeIn = (loginData) => {
+    sendHTTPRequest('POST', "https://localhost:44305/api/Login", loginData)
     .then(responseData => {
         if(responseData.status == 200){
             saveInLocalStorage(responseData.response.token);
-            var x = jsonDecoder(responseData.response.token);
-            if(x.EmpRole == "ADMIN")
+            var claimsData = jsonDecoder(responseData.response.token);
+            if(claimsData.EmpRole == "ADMIN")
                 window.location.href = "./admin-page.html";
-            else if(x.EmpRole == "EMPLOYEE")
+            else if(claimsData.EmpRole == "EMPLOYEE")
                 window.location.href = "#";
             else 
                 window.location.href = "#";
@@ -101,15 +97,11 @@ const logMeIn = (lgndata) => {
 
 //For Post request, called from signup page only
 const sendData = (userdata) => {
-
-    // sendHTTPReq('POST', "https://localhost:44305/api/Signup", userdata)
-    sendHTTPReq('POST', "http://localhost:8080/saveEmployee", userdata)
+    sendHTTPReuest('POST', "http://localhost:8080/saveEmployee", userdata)
     .then(responseData => {
-        console.log(responseData);
-        console.log(responseData.status);
         if(responseData.status == 200){
-            document.getElementById("sgnup1").style.display = "none";
-            document.getElementById("lgn").style.display = "flex";
+            document.getElementById("signupForm").style.display = "none";
+            document.getElementById("loginForm").style.display = "flex";
         }
         else{
             window.alert(responseData.status);
@@ -137,7 +129,7 @@ window.onload = () => {
         // Code for localStorage/sessionStorage.
         const token = localStorage.getItem("JwtTOKEN");
         if(token != null){
-            var jsonPayload = jsonDecoder(token);
+            let jsonPayload = jsonDecoder(token);
             if(jsonPayload.EmpRole == "ADMIN")
                 window.location.href = "./admin-page.html";
             else if(jsonPayload.EmpRole == "EMPLOYEE")
@@ -155,19 +147,19 @@ window.onload = () => {
 }
 
 //Attaching listeners to LOGIN Button and SIGNUP Button
-sign.addEventListener('click', getDataFromForm);
+signup.addEventListener('click', getDataFromSignupForm);
 login.addEventListener('click', getDataFromLoginForm);
 
 // For Links
-var l = () => {
-    document.getElementById("sgnup1").style.display = "none";
-    document.getElementById("lgn").style.display = "flex";
+var toLoginPage = () => {
+    document.getElementById("signupForm").style.display = "none";
+    document.getElementById("loginForm").style.display = "flex";
 }
 //For Links
-var s = () => {
-    document.getElementById("lgn").style.display = "none";
-    document.getElementById("sgnup1").style.display = "flex";
+var toSignupPage = () => {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("signupForm").style.display = "flex";
 }
 
-logLink.addEventListener('click', l);
-regLink.addEventListener('click', s);
+logLink.addEventListener('click', toLoginPage);
+registerLink.addEventListener('click', toSignupPage);
