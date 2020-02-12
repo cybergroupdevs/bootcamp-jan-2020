@@ -6,6 +6,9 @@ module.exports=(app) =>
     app.get("/employee/:parameter",controller.employee.show)
     app.put("/employee",controller.employee.update)
     app.post("/employee",controller.employee.create)
+
+    // app.find("/employee/:parameter",controller.employee.search)
+    
     //app.get("/employee",controller.employee.index)
     // app.get("/",(req,res) =>
     // {

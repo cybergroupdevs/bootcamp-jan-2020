@@ -9,7 +9,8 @@ module.exports= {
     },
     email:{
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     
     designation:{

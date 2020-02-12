@@ -18,5 +18,9 @@ class Employee{
     {
         return this.model.deleteOne(criteria)
     }
+
+    async search(employeeObj){
+        return this.model.find(employeeObj)
+    }
 }
 module.exports =new Employee();
