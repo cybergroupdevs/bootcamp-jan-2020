@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/css.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body  style="background-image: url(../images/Backgrounds.jpg)">
+<div class="container">
+	<div class="row petweb">
+		<strong style="font-size: 50px; font-family:Comic Sans MS;margin-left: 35%; color: brown;">CyberGroup</strong>
+		<img class="logo-img" src="https://media-exp1.licdn.com/dms/image/C4D0BAQFSk7W1KUiG0w/company-logo_200_200/0?e=2159024400&v=beta&t=dToUex9P08LphNIkkj5aT6ZhSC17M8orhdt784fwwjE" style="width: 75px; height: 75px; margin-top: -30px;">
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-info" style="border: 0px;">
+				<div id="admin" class="panel-heading col-lg-10" style="height: 55px;padding-top: 15px; border-radius: 0px;"><strong style="color: white;">ADMIN</strong> </div>
+				<div class="panel-heading col-lg-1" style=" border-radius: 0px;">
+					<div class="dropdown">
+						<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Find By
+						<span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<a href="#"><li>id</li></a>
+						    <a href="#"><li>name</li></a>
+						    <a href="#"><li>project</li></a>
+						    
+						</ul>
+					</div>
+				</div>
+				
+				<div class="panel-heading col-lg-1">
+					<button class="btn btn-outline-success" id="logOut">Log Out</button>
+				</div>
+				
+				<div class="panel-body">
+				  <div>
+					<table class="table">
+						<thead>
+						<tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Job Role</th>
+						</tr>
+						</thead>
+						<tbody id="adminTable">
+						
+						</tbody>
+					</table>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="./js/tablePage.js"></script>
+</body>
+</html>
