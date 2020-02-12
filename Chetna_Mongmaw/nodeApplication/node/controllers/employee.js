@@ -1,6 +1,8 @@
 const model =require('../models')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt');
+const db = require('../database/config')
+const User = db.User
 
 
 class Employee{
@@ -48,12 +50,13 @@ class Employee{
         }
         async login(req,res){
             let loginObj={
-                username: "nangchetnamaw",
-                password: "chetnamaw",
-                role: "role"
+                username: req.body.username,
+                password: req.body.password,
+                role: req.body.role
             }
-            
-            if(loginObj.username==="nangchetnamaw"&& loginObj.password==="chetnamaw" && loginObj.role==="admin"){
+
+            const user = await model.employee.findOne({username: loginObj.username,password: loginObj.password,role: loginObj.role});
+            if(user!= null){
                 jwt.sign({user: {username: loginObj.username, role: loginObj.role}},'secretkey',{ expiresIn: '1h' },(err,token)=>{
                     res.json({
                         token:token
