@@ -32,7 +32,7 @@ namespace WebappAPItype.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login([FromBody] WebApplicationPanel.DbModels.EmpInformation login)
+        public IActionResult Login([FromBody] EmpInformation login)
         {
             IActionResult response = Unauthorized();
             var user = AuthenticateUser(login);
