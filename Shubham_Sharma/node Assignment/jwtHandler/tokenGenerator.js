@@ -10,7 +10,7 @@ module.exports = (payload) => {
     var s  = 'User Auth';                           // Subject 
     var a  = 'someone@cygrp.com';                   // Audience
      
-    const actualPayload = payload[0];//JSON.stringify(payload[0]);
+    const actualPayload = payload[0];
 
     // SIGNING OPTIONS
     var signOptions = {
@@ -20,7 +20,6 @@ module.exports = (payload) => {
     expiresIn:  "12h",
     algorithm:  "HS256"
     };
-
 
     try{
         var token = jwt.sign({data: actualPayload}, privateKEY, signOptions);

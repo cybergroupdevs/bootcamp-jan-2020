@@ -14,8 +14,6 @@ class employee{
     }
 
     async match(req, res){
-        console.log(req.body.Username);
-        console.log(req.body.EmpPassword);
         const allEmp = await model.empModel.get({$and : [{"Username": req.body.Username},{"EmpPassword": req.body.EmpPassword}]
                                                 }, 
                                                 {"Username": 1,
