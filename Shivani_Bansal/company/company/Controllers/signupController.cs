@@ -37,7 +37,6 @@ namespace company.Controllers
             Signup signup = new Signup(null);
             signup.deleteHandler(empID);
             return Ok("deleted");
-
         }
      }
 }

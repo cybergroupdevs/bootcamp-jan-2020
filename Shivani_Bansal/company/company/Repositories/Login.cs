@@ -11,7 +11,6 @@ namespace company.Repositories
     {
         LoginModel _details;
         webApiContext _webapiContext;
-
         public Login( LoginModel enteredDetails) {
             _details = new LoginModel()
             {

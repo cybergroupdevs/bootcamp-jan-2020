@@ -13,13 +13,11 @@ namespace company.DbModels
             : base(options)
         {
         }
-
         public virtual DbSet<UsersInfo> UsersInfo { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UsersInfo>(entity =>

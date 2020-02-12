@@ -20,7 +20,6 @@ namespace company.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-       
         private IConfiguration _config;
 
         public LoginController(IConfiguration config)
@@ -76,18 +75,13 @@ namespace company.Controllers
             }
             
             return "";
-            
         }
 
         private UsersInfo AuthenticateUser(LoginModel enteredDetails)
         {
             Login login = new Login(enteredDetails);
             UsersInfo user = login.loginHandler();
-            return user;
-
-            
-
-            
+            return user;            
         }
     }
 }
