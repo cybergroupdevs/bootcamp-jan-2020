@@ -1,0 +1,44 @@
+
+body{
+    background-image: url(../images/Backgrounds.jpg);
+    
+}
+.navbar div a{
+    color: white;
+}
+.navbar-brand{
+    font-size: 25px;
+    font-family:Comic Sans MS;
+}
+.row{
+    margin-top: 5%;
+}
+.panel{
+    border: 0px; border-radius: 5%;
+}
+.panel-heading{
+    font-size: 2rem;
+    font-family:Comic Sans MS;
+    text-align: center; 
+    
+}
+
+.form-horizontal{
+    margin-bottom: 20px;
+}
+.btn{
+    margin-left: 45%; margin-bottom: 10px;
+}
+.logo-img{
+    width: 10%; height: 10%; margin-left: 45%; margin-bottom: 5%;
+}
+
+.table{
+    border: 1px solid #6AAD4A;
+}
+.table thead tr th{
+    border: 1px solid #6AAD4A;
+}
+.table tbody tr td{
+    border: 1px solid #6AAD4A;
+}
