@@ -29,7 +29,7 @@ namespace EmployeeProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DbModels.projectContext>(o => o.UseSqlServer("server=CYG236;database=project;Trusted_Connection=True;"));
+            services.AddDbContext<DbModels.projectContext>(o => o.UseSqlServer("ConnectionString"));
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>

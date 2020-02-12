@@ -34,7 +34,7 @@ const lgout = () => {
 
 //function for getting a list of users from db
 const getAll = () => {
-  sendHTTPReq("POST", "https://localhost:44341/api/Admin/getAllUsers")
+  sendHTTPReq("POST", "https://localhost:44341/api/Admin/UsersList")
     .then(responseData => {
       json = responseData.response;
       if (json != null) {

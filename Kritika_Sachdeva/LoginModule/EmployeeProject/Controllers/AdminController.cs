@@ -99,13 +99,12 @@ namespace EmployeeProject.Controllers
             DbModels.Temployee temployee = _projectContext.Temployee.Where(s => s.EmpId == id).FirstOrDefault();
             temployee.EmpRole = detailsClass.EmpRole;
             temployee.EmpPm = detailsClass.EmpPm;
-            //_demodbContext.Student.Update(stu);
             _projectContext.SaveChanges();
 
             return Ok("Employee data updated by patch!");
         }
 
-        [Route("getAllUsers")]
+        [Route("UsersList")]
         [HttpGet]
         public IActionResult GetAll()
         {

@@ -49,8 +49,7 @@ namespace EmployeeProject.Controllers
             var claims = new[] {
             new Claim(JwtRegisteredClaimNames.Sub, _config["Jwt:Issuer"]),
             new Claim(JwtRegisteredClaimNames.Email, userInfo.EmpEmail),
-            new Claim("Urole", userInfo.EmpRole),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            new Claim("Urole", userInfo.EmpRole)
             };
 
             var token = new JwtSecurityToken(_config["Jwt:Issuer"],
@@ -64,11 +63,8 @@ namespace EmployeeProject.Controllers
 
         private DbModels.Temployee AuthenticateUser(CustomModels.Credentials details)
         {
-            //DbModels.UserModel user = null;
-
             DbModels.Temployee user = _projectContext.Temployee.Where(x => x.EmpEmail == details.EmpEmail && x.EmpPassword == details.EmpPassword).FirstOrDefault();
-            //Validate the User Credentials  
-            //Demo Purpose, I have Passed HardCoded User Information  
+            //Validate the User Credentials 
             if (user != null)
             {
                 user = new DbModels.Temployee { EmpName = user.EmpName, EmpEmail = user.EmpEmail, EmpPassword = user.EmpPassword, EmpRole = user.EmpRole };

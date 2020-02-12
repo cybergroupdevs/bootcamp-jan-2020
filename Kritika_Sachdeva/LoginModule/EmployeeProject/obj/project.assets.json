@@ -12535,11 +12535,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kritika.sachdeva\\source\\repos\\EmployeeProject\\EmployeeProject\\EmployeeProject.csproj",
+      "projectUniqueName": "C:\\Users\\kritika.sachdeva\\Desktop\\bootcamp-jan-2020\\Kritika_Sachdeva\\LoginModule\\EmployeeProject\\EmployeeProject.csproj",
       "projectName": "EmployeeProject",
-      "projectPath": "C:\\Users\\kritika.sachdeva\\source\\repos\\EmployeeProject\\EmployeeProject\\EmployeeProject.csproj",
+      "projectPath": "C:\\Users\\kritika.sachdeva\\Desktop\\bootcamp-jan-2020\\Kritika_Sachdeva\\LoginModule\\EmployeeProject\\EmployeeProject.csproj",
       "packagesPath": "C:\\Users\\kritika.sachdeva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kritika.sachdeva\\source\\repos\\EmployeeProject\\EmployeeProject\\obj\\",
+      "outputPath": "C:\\Users\\kritika.sachdeva\\Desktop\\bootcamp-jan-2020\\Kritika_Sachdeva\\LoginModule\\EmployeeProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
