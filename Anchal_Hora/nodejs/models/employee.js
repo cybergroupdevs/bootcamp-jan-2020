@@ -8,25 +8,22 @@ class Employee {
   async get(criteria = {}) {
     return this.model.find(criteria);
   }
-  async save(empObj={})
-{
+  async save(empObj={}){
     return this.model.add(empObj)
-}
+  }
   async save(employeeObj = {}) {
     return this.model.create(employeeObj);
   }
   async update(criteria={}){
     return this.model.update(criteria)
-}
-async delete(criteria={})
-{
+  }
+  async delete(criteria={}){
     return this.model.delete(criteria)
-}
-async find(criteria={})
-{
+  }
+  async find(criteria={}){
     return this.model.find(criteria)
-}
+  }
 
   
-}
-module.exports = new Employee();
+  }
+  module.exports = new Employee();

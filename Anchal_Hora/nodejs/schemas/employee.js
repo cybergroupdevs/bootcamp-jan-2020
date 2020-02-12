@@ -1,6 +1,10 @@
 module.exports = {
-  name: {
+  Name: {
     type: String,
+    default: null
+  },
+  password: {
+    type:String,
     default: null
   },
   phoneNo: {
@@ -14,11 +18,11 @@ module.exports = {
     { type: String,
         default: null}
   },
-  designation: {
+  Designation: {
     type: String,
     default: null
   },
-  emailid: {
+  Emailid: {
     type: String,
     required: true
   },
