@@ -87,11 +87,11 @@ const sendHTTPReq = (method, url, data) => {
 
 //Deletes the employee and 
 const deleteEmployee = () => {
-    var usn = prompt("Enter username you want to delete");
+    var username = prompt("Enter username you want to delete");
     if(usn != null){
         data = {
             JwT: localStorage.getItem("JwtTOKEN"),
-            Username: usn
+            Username: username
         };
         sendHTTPReq("DELETE", "https://localhost:44305/api/Admin", data)
         .then((responseData) => {

@@ -33,9 +33,9 @@ namespace UserAuthorization.Controllers
         }
 
         [HttpDelete]
-        public IActionResult deleteOne([FromBody] CustomModels.CustomEmployee customEmployee)
+        public IActionResult deleteOne([FromBody] CustomModels.CustomTokenAndUsername customTokenAndUsername)
         {
-            int temp = _idbo.deleteEmp(customEmployee.Username, customEmployee.JwT);
+            int temp = _idbo.deleteEmp(customTokenAndUsername.Username, customTokenAndUsername.JwT);
             if (temp == 1)
             {
                 return Ok("Deleted");
