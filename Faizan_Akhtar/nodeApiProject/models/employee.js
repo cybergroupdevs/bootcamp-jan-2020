@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const schema=require('../schemas')
-const employeeSchema=mongoose.Schema(schema.employee);
+const schema = require('../schemas')
+const employeeSchema = mongoose.Schema(schema.employee);
 class Employee{
         constructor(){
             this.model=mongoose.model('Employee',employeeSchema)
@@ -8,11 +8,11 @@ class Employee{
         async get(criteria={}){
             return this.model.find(criteria)
         }
-        async save(employeeobj){
-            return this.model.create(employeeobj)
+        async save(employeeObject){
+            return this.model.create(employeeObject)
         }
-        async update(criteria={},updateobj){
-            return this.model.update(criteria,updateobj)
+        async update(criteria={},updateObject){
+            return this.model.update(criteria,updateObject)
         }
 }
 module.exports=new Employee();
