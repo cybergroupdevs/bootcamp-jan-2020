@@ -1,6 +1,6 @@
 // const jwtToken = localStorage.getItem("JwtToken");
 //this function will display the employee details in tabular form to admin
-function tabulardata() {
+function tabularData() {
   var xhr = new XMLHttpRequest();
   var url = "http://localhost:3000/employees";
   xhr.open("GET", url, true);
@@ -8,10 +8,10 @@ function tabulardata() {
   xhr.send();
   xhr.onload = function() {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-      var userdata={};
+      var userdata = {};
       userdata = JSON.parse(xhr.response);
       console.log(userdata);
-      console.log(userdata.length)
+      console.log(userdata.length);
       console.log(userdata[1].Name);
       var html = "<table border='1|1'>";
       for (var i = 0; i < userdata.length; i++) {
@@ -26,31 +26,31 @@ function tabulardata() {
     }
   };
 }
-function deletionbyid(){
-  window.location.href="./admindelete.html"
+function deletionByid() {
+  window.location.href = "./adminDelete.html";
 }
 //for deleting the employee
 //after verification this request can be made
-function deletedata(){
+function deleteData() {
   var xhr = new XMLHttpRequest();
   var url = "http://localhost:3000/employees";
   xhr.open("DELETE", url, true);
   xhr.setRequestHeader("Content-type", "application/json");
   xhr.send();
   xhr.onload = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) 
-        console.log("deleted");
-    }
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200)
+      console.log("deleted");
+  };
 }
 //for updating the employee details
-function updatedetails(){
+function updateDetails() {
   var xhr = new XMLHttpRequest();
   var url = "http://localhost:3000/employees";
   xhr.open("PUT", url, true);
   xhr.setRequestHeader("Content-type", "application/json");
   xhr.send();
   xhr.onload = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) 
-        console.log("updated");
-    }
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200)
+      console.log("updated");
+  };
 }

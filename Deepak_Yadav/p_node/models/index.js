@@ -1,5 +1,5 @@
-const employee = require('./employee');
+const employee = require("./employee");
 
-module.exports={
-	employee : employee
-}
+module.exports = {
+  employee: employee
+};
