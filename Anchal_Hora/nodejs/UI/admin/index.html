@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/222eef09a0.js" crossorigin="anonymous"></script>
+   
+    <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../admin/styles/style.css">
+    <link rel="stylesheet" href="../admin/styles/admin.css">
+    <title>Manage admin</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1 class="logo-text"><span>Cyber</span>Group</h1>
+        </div>
+       
+        <ul class="nav">
+            <li>
+                <a href="#">
+                    <i class="fa fa-user"></i>
+                    CyberGroup
+                    <i class="fa fa-chevron-down" style="font-size: .8rem;"></i>
+                </a>
+                <ul>
+                    <li><a href="index.html" class="Dashboard">Dashboard</a></li>
+                    <li><a href="../index.html" class="logout">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <div class="admin-wrapper">
+        <div class="left-sidebar">
+<ul>
+    <li><a href="index.html">Manage admin</a></li>
+    <li><a href="../admin/index.html">Manage users</a></li>
+    <li><a href="../manager/index.html">Manage managers</a></li>
+</ul>
+        </div>
+        <div class="admin-content">
+            <div class="button-group">
+                <a href="create.html" type="button" class="btn btn-big">Add user</a>
+                <a href="index.html" type="button" class="btn btn-big">Manage user</a>
+                <a href="view.html" type="button" class="btn btn-big">View user</a>
+            </div>
+        
+<div class="content">
+    <h2 class="page-title">Manage users</h2>
+    <table>
+        <thead>
+            <th>SNo.</th>
+            <th>User name</th>
+            <th colspan="2">Action</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Anchal</td>
+                <td><a href="update.html" class="update">update</a></td>
+                <td><a href="delete.html" class="delete">delete</a></td>
+            </tr>
+           
+            
+        </tbody>
+    </table>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+</html>
