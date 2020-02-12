@@ -9,12 +9,10 @@ class Employee{
     async get(criteria={}){
         return this.model.find(criteria)
     }
-
     
     async save(employeeObj){
         return this.model.create(employeeObj)
     }
-
     
     async update(criteria={}, updateObj){
         return this.model.update(criteria, updateObj)
@@ -23,6 +21,5 @@ class Employee{
     async delete(criteria={}){
         return this.model.deleteOne(criteria)
     }
-
 }
 module.exports= new Employee();

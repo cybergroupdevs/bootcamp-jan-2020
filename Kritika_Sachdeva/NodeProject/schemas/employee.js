@@ -1,43 +1,45 @@
-module.exports={
+module.exports = {
+    name: {
+    type: String,
+    required: true
+    },
+    
+    email: {
+    type: String,
+    required: true
+    },
+  
+    password: {
+    type: String,
+    required: true
+    },
+  
+    gender: {
+    type: String,
+    required: true
+    },
+  
+    phoneNo: {
+    type: Number,
+    required: true
+    },
 
-    // EmpID:{
-    //         type:Number,
-    //         required:false     
-    // },
-    name:{
-        type:String,
-        required:true
+    joiningDate: {
+    type: Date
     },
-    email:{
-            type: String,
-            required:true,
-           // unique:true
+    
+    role: {
+    type: String,
+    default: "Employee"
     },
-    password:{
-        type:String,
-        required:true
+  
+    experience: {
+    type: Number,
+    required: true
     },
-    gender:{
-        type:String,
-        required:true
-    },
-    phoneNo:{
-        type:Number,
-        required:true
-    },
-    joiningDate:{
-        type:Date
-    },
-    role:{
-        type:String,
-        default:"Employee"
-    },
-    experience:{
-        type:Number,
-        required:true
-        },
-    projectManager:{
-        type:String,
-        default:null
+
+    projectManager: {
+    type: String,
+    default: null
     }
-}
+};

@@ -43,14 +43,12 @@ class Employee{
     async show(req,res){
         const employee=await model.employee.get({_id: req.params.id})
         res.send(employee)
-
     }
 
 //get request for all employees
     async index(req,res){
         const employee=await model.employee.get();
-        res.send(employee)
-        
+        res.send(employee)  
     }
 }
 
