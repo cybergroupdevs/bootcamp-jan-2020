@@ -1,0 +1,59 @@
+body{
+    height: 100vh;
+}
+input{
+    width: 100%;
+}
+
+/*For Login Page*/
+.lgn-1{
+    display: flex;   /*display: none*/
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+.lgn-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10%;
+    width: fit-content;
+}
+.lgn-2 div{
+    width: 120%;
+    margin-bottom: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/*For Signup Page*/
+.sgn-up-1{
+    display: none;   /*display: flex*/
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+.sgn-up-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10%;
+    width: fit-content;
+}
+.sgn-up-2 div{
+    width: 120%;
+    margin-bottom: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/*Navbar Admin*/
+.nav-Admin{
+    display: none;
+}
+/* Removing arrows from input number fieldset */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
