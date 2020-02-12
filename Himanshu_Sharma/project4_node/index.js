@@ -6,6 +6,14 @@ const logger = require('./middleware/logger');
 const authenticator = require('./middleware/authenticator');
 const employeeRoutes = require('./routes/employees');
 const authRoutes = require('./routes/auth');
+const config = require('config');
+
+//Fatal Error in case of non-configuration of key
+if(!config.get('jwtPrivateKey')){
+    console.log(config.get('jwtPrivateKey'));
+    console.error('FATAL ERROR: secretKey not set');
+    process.exit(1);
+}
 
 //Connection for mongoose
 mongoose.connect('mongodb://localhost/cybergroup').then(() => console.log('MongoDb connected')).catch(err => console.error('Error occured while connecting to db', err));

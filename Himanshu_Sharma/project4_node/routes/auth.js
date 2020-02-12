@@ -3,6 +3,8 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const { Employee } = require('../models/employee');
 const Joi = require('joi');
+const jwt = require('jsonwebtoken');
+const config = require('config');
 
 router.post('/', async(req, res) => {
     const { error } = validate(req.body);
@@ -15,8 +17,9 @@ router.post('/', async(req, res) => {
     const isPassword = await bcrypt.compare(req.body.password, employee.password);
     console.log(isPassword, 'Line number 16@auth.js');
     if(!isPassword) return res.status(400).send('Invalid email or password');
-
-    res.send(true);
+    
+    const token = jwt.sign({ email: employee.email, role: employee.role }, config.get('jwtPrivateKey'));
+    res.header('x-auth-token', token).send('Logged in successfully');
 });
 
 function validate(req){
