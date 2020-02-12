@@ -17,7 +17,7 @@ namespace UserAuthorization.Controllers
             _idbo = idbo;
         }
 
-        [Route("getAllUsers")]
+        [Route("Users")]
         [HttpPost]
         public IActionResult getAll([FromBody] CustomModels.CustomEmployee customEmployee)
         {
@@ -35,14 +35,18 @@ namespace UserAuthorization.Controllers
         [HttpDelete]
         public IActionResult deleteOne([FromBody] CustomModels.CustomEmployee customEmployee)
         {
-
-            if((_idbo.deleteEmp(customEmployee.Username, customEmployee.JwT)))
+            int temp = _idbo.deleteEmp(customEmployee.Username, customEmployee.JwT);
+            if (temp == 1)
             {
                 return Ok("Deleted");
             }
-            else
+            else if(temp == 0)
             {
                 return Ok("No such username exists");
+            }
+            else
+            {
+                return Unauthorized();
             }
         }
 

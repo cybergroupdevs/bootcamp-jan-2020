@@ -17,7 +17,6 @@ namespace UserAuthorization.Controllers
             _dbOperations = dbOperations;
         }
 
-
         [HttpPost]
         public IActionResult Signup([FromBody] CustomModels.CustomEmployee employeeDetails)
         {

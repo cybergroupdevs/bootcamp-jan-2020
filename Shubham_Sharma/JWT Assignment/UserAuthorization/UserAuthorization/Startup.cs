@@ -30,7 +30,7 @@ namespace UserAuthorization
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<DbModels.EmployeesContext>(o => o.UseSqlServer("server=.; database=Employees; Trusted_Connection=True;"));
+            services.AddDbContext<DbModels.EmployeesContext>(o => o.UseSqlServer(Configuration["dbConnection"]));
             services.AddScoped<DbOperations.IDbOperations, DbOperations.DbOperations>();
             services.AddScoped<Services.IBusinessLogic, Services.BusinessLogic>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

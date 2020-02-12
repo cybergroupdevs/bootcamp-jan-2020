@@ -12,7 +12,7 @@ namespace UserAuthorization.DbOperations
         Boolean insertData(CustomModels.CustomEmployee employeeDetails);
         CustomModels.CustomEmployee checkUser(CustomModels.CustomEmployee customEmployee);
         List<CustomModels.CustomEmployee> getAllEmp(string token);
-        Boolean deleteEmp(string usn, string token);
+        int deleteEmp(string usn, string token);
     }
 
     public class DbOperations : IDbOperations
@@ -25,6 +25,7 @@ namespace UserAuthorization.DbOperations
             _businessLogic = businessLogic;
         }
 
+        //insert data, will be hit by Signup Page
         public Boolean insertData(CustomModels.CustomEmployee employeeDetails)
         {
             try
@@ -98,6 +99,7 @@ namespace UserAuthorization.DbOperations
             }
         }
 
+        //Delete employee and the token for signature matching
         public int deleteEmp(string usn, string token)
         {
             if (_businessLogic.checkUserAuthentication(token))
