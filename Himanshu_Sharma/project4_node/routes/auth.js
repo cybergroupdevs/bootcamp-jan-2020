@@ -2,31 +2,29 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const { Employee } = require('../models/employee');
+const Joi = require('joi');
 
 router.post('/', async(req, res) => {
-    const { error } = validateEmployee(req.body);
-    if(error){
-        res.status(400).send(error.details[0].message);
-        return;
-    }
+    const { error } = validate(req.body);
+    if(error) return res.status(400).send(error.details[0].message);
 
     let employee = await Employee.findOne({ email: req.body.email });
-    console.log(employee);
-    if(employee) return res.status(400).send('Employee with this id is already registered');
+    console.log(employee, 'Employee mein hoon!');
+    if(!employee) return res.status(400).send('Invalid email or password');
 
-    const { email, password, firstName, lastName, mobile, role, manager, projects } = req.body;
-    employee = new Employee({ email, password, firstName, lastName, mobile, role, manager, projects });
+    const isPassword = await bcrypt.compare(req.body.password, employee.password);
+    console.log(isPassword, 'Line number 16@auth.js');
+    if(!isPassword) return res.status(400).send('Invalid email or password');
 
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
-
-    employee.password = hashedPassword;
-    employee = await employee.save();
-    res.send(employee);
+    res.send(true);
 });
 
 function validate(req){
-    
+    const schema = {
+        email: Joi.string().min(5).required(),
+        password: Joi.string().min(5).max(255).required()
+    };
+    return Joi.validate(req.body, schema);
 }
 
 module.exports = router;
