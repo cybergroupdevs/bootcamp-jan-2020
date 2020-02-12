@@ -25,39 +25,39 @@ $( document ).ready(function() {
        console.log(x);
         
     
-        var b = document.createTextNode(x.name);
-        var c = document.createTextNode(x.username);
-        var d = document.createTextNode(x.phone);
-        var e = document.createTextNode(x.role);
-        var f = document.createTextNode(x.email);
-        var g = document.createTextNode(x.address);
-        var h = document.createTextNode(x.project);
+        var node1 = document.createTextNode(x.name);
+        var node2 = document.createTextNode(x.username);
+        var node3 = document.createTextNode(x.phone);
+        var node4 = document.createTextNode(x.role);
+        var node5 = document.createTextNode(x.email);
+        var node6 = document.createTextNode(x.address);
+        var node7 = document.createTextNode(x.project);
 
-        let nm = document.createElement("td");
-        let usn = document.createElement("td");
-        let ph = document.createElement("td");
-        let rl = document.createElement("td");
-        let em = document.createElement("td");
-        let ad = document.createElement("td");
-        let pr=  document.createElement("td");
-
-        
-        nm.appendChild(b);
-        usn.appendChild(c);
-        ph.appendChild(d);
-        rl.appendChild(e);
-        em.appendChild(f);
-        ad.appendChild(g);
-        pr.appendChild(h);
+        let name = document.createElement("td");
+        let username = document.createElement("td");
+        let phone = document.createElement("td");
+        let role = document.createElement("td");
+        let email = document.createElement("td");
+        let address = document.createElement("td");
+        let project=  document.createElement("td");
 
         
-        tr.appendChild(nm);
-        tr.appendChild(usn);
-        tr.appendChild(ph);
-        tr.appendChild(rl);
-        tr.appendChild(em);
-        tr.appendChild(ad);
-        tr.appendChild(pr);
+        name.appendChild(node1);
+        username.appendChild(node2);
+        phone.appendChild(node3);
+        role.appendChild(node4);
+        email.appendChild(node5);
+        address.appendChild(node6);
+        project.appendChild(node7);
+
+        
+        tr.appendChild(name);
+        tr.appendChild(username);
+        tr.appendChild(phone);
+        tr.appendChild(role);
+        tr.appendChild(email);
+        tr.appendChild(address);
+        tr.appendChild(project);
         
         table.appendChild(tr);
     

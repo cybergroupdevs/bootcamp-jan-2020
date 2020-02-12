@@ -15,6 +15,7 @@ function Postdata()
         "Phone":Phone,
         "Address":Address
         };
+        
         console.log(userdata);
         var xhr = new XMLHttpRequest();
         var url="https://localhost:44352/api/signup";

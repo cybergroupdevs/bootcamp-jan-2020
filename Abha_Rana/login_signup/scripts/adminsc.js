@@ -22,7 +22,7 @@ function drawTable()
        for(let i=0; i<userdata.length; i++){
         let tr = document.createElement("tr");
         
-        var x = userdata[i];
+        var userdata= userdata[i];
         console.log(x);
         
         var a = document.createTextNode(i+1);
@@ -35,13 +35,13 @@ function drawTable()
         var h = document.createTextNode(x.project);
 
         let indx = document.createElement("td");
-        let nm = document.createElement("td");
-        let usn = document.createElement("td");
-        let ph = document.createElement("td");
-        let rl = document.createElement("td");
-        let em = document.createElement("td");
-        let ad = document.createElement("td");
-        let pr=  document.createElement("td");
+        let name = document.createElement("td");
+        let username = document.createElement("td");
+        let phone = document.createElement("td");
+        let role = document.createElement("td");
+        let email = document.createElement("td");
+        let address = document.createElement("td");
+        let project=  document.createElement("td");
 
         indx.appendChild(a);
         nm.appendChild(b);
@@ -53,13 +53,13 @@ function drawTable()
         pr.appendChild(h);
 
         tr.appendChild(indx);
-        tr.appendChild(nm);
-        tr.appendChild(usn);
-        tr.appendChild(ph);
-        tr.appendChild(rl);
-        tr.appendChild(em);
-        tr.appendChild(ad);
-        tr.appendChild(pr);
+        tr.appendChild(name);
+        tr.appendChild(username);
+        tr.appendChild(phone);
+        tr.appendChild(role);
+        tr.appendChild(email);
+        tr.appendChild(address);
+        tr.appendChild(project);
         
         table.appendChild(tr);
     
@@ -67,7 +67,7 @@ function drawTable()
 }
 }
 }
-function DecodeToken(token) {
+function decodeToken(token) {
   var base64Url = token.split(".")[1];
   var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
   var jsonPayload = decodeURIComponent(

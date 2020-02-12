@@ -49,12 +49,12 @@ namespace userjwt.Controllers
         {
             var claims = new[] {
               
-               // new Claim(JwtRegisteredClaimNames.Email, user.Email),
+               new Claim(JwtRegisteredClaimNames.Email, user.Email),
                  new Claim(JwtRegisteredClaimNames.Sub, user.Username),
-                 //  new Claim("Role", user.Role),
-                  // new Claim("Address", user.Address),
-                   //  new Claim("Project", user.Project),
-                   //   new Claim("ProjectManager", user.ProjectManager),
+                 new Claim("Role", user.Role),
+                  new Claim("Address", user.Address),
+                   new Claim("Project", user.Project),
+                   new Claim("ProjectManager", user.ProjectManager),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
