@@ -1,0 +1,55 @@
+#bodyID{
+    background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mainBox{
+    height: 70%;
+    width: 80%;
+    background:white;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#dashboardBody{
+    background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#dashboardDiv{
+    height: 90%;
+    width: 90%;
+    background:white;
+    border-radius: 2rem;
+   
+}
+
+#formID{
+    width: 70%;
+    height: 70%;    
+}
+.nameDiv{
+    display: flex;
+}
+#lastNameDiv{
+    margin-left: 3rem;
+}
+#navbar {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin: 0;
+}
+.table{
+    margin: 2rem 0rem;
+}

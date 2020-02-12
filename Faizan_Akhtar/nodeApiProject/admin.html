@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="./assets/scripts/admin.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Admin Dashboard</a>
+            </div>
+            <div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav">
+                    <li><a href="#skillsDiv">Employee</a></li>
+                    <li><a href="#dscDiv">Pending Employee</a></li>
+                    <li class="active"><a href="#">Manager</a></li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                      <li><a href="#socialConnect"><span class="glyphicon glyphicon-user"></span> Add Employee</a></li>
+                  </ul>
+            </div>
+        </div>
+
+    </nav>
+    <button type="button" onclick="testFunction()">Try it</button>
+    <div id="dashboardBody"> 
+        <div id="dashboardDiv">
+            <table class="table table-hover" id="tableID">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">EmpID</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">FirstName</th>
+                    <th scope="col">LastName</th>
+                    <th scope="col">Designation</th>
+                    <th scope="col">Project</th>
+                    <th scope="col">Manager</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">EDIT</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>104</td>
+                    <td>faizan.akhtar</td>
+                    <td>Faizan</td>
+                    <td>Akhtar</td>
+                    <td>Intern</td>
+                    <td>Bootcamp</td>
+                    <td>Mayank</td>
+                    <td>20000</td>
+                    <td>
+                        <button type="button" class="btn btn-danger"><i class="fas fa-edit"></i></button>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+              
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
