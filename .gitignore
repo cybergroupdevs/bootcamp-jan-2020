@@ -6,3 +6,6 @@ Shubham_Sharma/Practice/Practice/bin/**
 Shubham_Sharma/Practice/Practice/obj/**
 **/bin/
 **/obj/
+node_modules/
+package-lock.json
+yarn.lock
