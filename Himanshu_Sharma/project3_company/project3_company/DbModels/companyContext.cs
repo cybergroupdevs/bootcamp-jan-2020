@@ -19,14 +19,6 @@ namespace project3_company.DbModels
         public virtual DbSet<EmployeeProject> EmployeeProject { get; set; }
         public virtual DbSet<Project> Project { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("server=CYG364; database=company; Trusted_Connection=True;");
-            }
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Employee>(entity =>

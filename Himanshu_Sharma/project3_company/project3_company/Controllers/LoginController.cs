@@ -50,8 +50,7 @@ namespace project3_company.Controllers
                 new Claim("id", employee.EmployeeId.ToString()),
                 new Claim("role", employee.Role),
                 new Claim("name", $"{employee.FirstName} {employee.LastName}"),
-                new Claim(JwtRegisteredClaimNames.Email, employee.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                new Claim(JwtRegisteredClaimNames.Email, employee.Email)
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
@@ -73,13 +72,5 @@ namespace project3_company.Controllers
 
             return employee;
         }
-
-
-        //[HttpPost]
-        //public IActionResult Post([FromBody] ILogin enteredDetails)
-        //{
-        //    Login login = new Login(enteredDetails);
-        //    return Ok(login.loginHandler());
-        //}
     }
 }

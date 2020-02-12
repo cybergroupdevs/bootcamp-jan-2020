@@ -49,12 +49,5 @@ namespace project3_company.Controllers
             form.updateEmployee();
         }
 
-        [Authorize]
-        [HttpDelete("api/delete/{id}")]
-        public void Delete(int id)
-        {
-
-        }
-
     }
 }

@@ -15,12 +15,7 @@ namespace project3_company.CustomModels.Repositories
         companyContext _companyContext;
 
         Employee employee;
-
-        //public SignUp(companyContext companyContext)
-        //{
-        //    this._companyContext = companyContext;
-        //}
-
+        
         public SignUp(ISignUp details)
         {
             if (details.Mobile == "")
