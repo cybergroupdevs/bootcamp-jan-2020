@@ -1,0 +1,30 @@
+body{
+  background-image:url('../assets/images/adbg.jpg');
+  background-repeat:no-repeat;
+  background-size: 100%;
+}
+
+footer{
+
+margin-top: 20px;
+padding-top: 20px;
+}
+.bg__card__navbar{
+background-color: #000000;
+}
+.bg__card__footer{
+background-color: #000000 !important;
+}
+#add__new__list{
+  margin-top: 4%;
+  top: -38px;
+  right: 0;
+}
+#update
+{
+  top: -38px;
+}
+#delete
+{
+  top: -38px;
+}
