@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/222eef09a0.js" crossorigin="anonymous"></script>
-   
+    
     <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="../admin/styles/style.css">
     <link rel="stylesheet" href="../admin/styles/admin.css">
     <title>Manage admin</title>
 </head>
@@ -39,44 +39,17 @@
     <li><a href="../admin/index.html">Manage users</a></li>
     <li><a href="../manager/index.html">Manage managers</a></li>
 </ul>
-        </div>
-        <div class="admin-content">
-            <div class="button-group">
-                <a href="create.html" type="button" class="btn btn-big">Add user</a>
-                <a href="index.html" type="button" class="btn btn-big">Manage user</a>
-            </div>
+</div>
+<div class="admin-content">
+    <button type="button" class="btn btn-primary" id ="users"><button>
+   
 <div class="content">
-    <h2 class="page-title">Add users</h2>
-    <form action="create.html" method="user">
-        <div>
-            <label>Sno</label>
-            <input type="int" name="sno" id="inputSno" class="text-input">
-        </div>
-        <div>
-            <label>Username</label>
-            <input type="text" name="title" id="inputName" class="text-input">
-        </div>
-        <div>
-            <label>Email</label>
-            <input type="email" name="email" id="inputEmail" class="text-input">
-        </div>
-        <div>
-            <label>Password</label>
-            <input type="password" name="password" id="inputPassword" class="text-input">
-        </div>
+<h2 class="page-title">View users</h2>
 
-<div>
-<button type="submit" class="btn btn-big" id="buttonsignup">Add user</button>
-</div>
-</form>
-    
 </div>
 </div>
-</div>
+<script src="../admin/js/get.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
-<!-- <script src="../admin/js/scripts.js"></script> -->
-<script src="./js/post.js"></script>
-
 </body>
 </html>

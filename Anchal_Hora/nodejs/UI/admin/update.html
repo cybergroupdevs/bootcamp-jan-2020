@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/222eef09a0.js" crossorigin="anonymous"></script>
-    
+   
     <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="../admin/styles/style.css">
     <link rel="stylesheet" href="../admin/styles/admin.css">
-    <title>Manage admin</title>
+    <title>Manage user</title>
 </head>
 <body>
     <header>
@@ -35,21 +33,46 @@
     <div class="admin-wrapper">
         <div class="left-sidebar">
 <ul>
-    <li><a href="index.html">Manage admin</a></li>
-    <li><a href="../admin/index.html">Manage users</a></li>
+    <li><a href="../user/index.html">Manage admin</a></li>
+    <li><a href="index.html">Manage users</a></li>
     <li><a href="../manager/index.html">Manage managers</a></li>
 </ul>
-</div>
-<div class="admin-content">
-    <button type="button" class="btn btn-primary" id ="users"><button>
-   
+        </div>
+        <div class="admin-content">
+            <div class="button-group">
+                
+                <a href="index.html" type="button" class="btn btn-big">Manage user</a>
+            </div>
+        
 <div class="content">
-<h2 class="page-title">View users</h2>
-
+    <h2 class="page-title"> User Information</h2>
+    <form action="create.html" method="user">
+        <div>
+            <label>Sno</label>
+            <input type="int" name="Sno" class="text-input">
+        </div>
+        <div>
+            <label>Username</label>
+            <input type="text" name="username" id="" class="text-input">
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="email" name="email" id="" class="text-input"> 
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" name="password" id="" class="text-input"> 
+        </div>
+        
+<div>
+<button type="submit" class="btn btn-big" id="buttonupdate">Update Information</button>
+</div>
+</form>
+    
 </div>
 </div>
-<script src="./js/get.js"></script>
+</div>
+<script src="../admin/js/update.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
 </body>
 </html>
