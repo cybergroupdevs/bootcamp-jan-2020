@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>The Company</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/styles/form.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="navbar navbar-light bg-dark">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/images/icon.png" width="60" height="60" alt="#" />
+        </a>
+        <form class="form-inline">
+          <button type="button" class="btn btn-primary btn-create hide">Create</button>
+
+          <button
+            class="btn btn-outline-warning my-2 my-sm-0 ml-2 logout-btn"
+          >
+          </button>
+        </form>
+      </nav>
+
+      <p class="h2 bg-success text-center text-light">Form</p>
+
+      <form class="needs-validation ml-auto mr-auto w-75" novalidate>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationTooltip01">First name</label>
+            <input
+              type="text"
+              class="form-control first_name"
+              id="validationTooltip01"
+              value=""
+              required
+            />
+            <div class="valid-tooltip">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="validationTooltip02">Last name</label>
+            <input
+              type="text"
+              class="form-control last_name"
+              id="validationTooltip02"
+              value=""
+              required
+            />
+            <div class="valid-tooltip">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-12 mb-3">
+            <label for="validationTooltipUsername">Email</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span
+                  class="input-group-text"
+                  id="validationTooltipUsernamePrepend"
+                  >@</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control email"
+                id="validationTooltipUsername"
+                aria-describedby="validationTooltipUsernamePrepend"
+                required
+              />
+              <div class="invalid-tooltip">
+                Please choose a unique and valid email.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6">
+            <label for="validationTooltip03">Mobile No.</label>
+            <div class="input-group">
+              <div class="input-group-prepend w-100">
+                <span
+                  class="input-group-text"
+                  id="validationTooltipUsernamePrepend"
+                  >+91</span
+                >
+                <input
+                  type="number"
+                  class="form-control mobile"
+                  id="validationTooltip03"
+                />
+              </div>
+              <div class="invalid-tooltip">
+                Please provide a valid mobile number.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 role-parent">
+            <label for="validationTooltip04">Role</label>
+            <select class="custom-select role" id="validationTooltip04" required>
+              <option selected value="Employee">Employee</option>
+              <option class="Manager">Project Manager</option>
+              <option class="Admin">Admin</option>
+            </select>
+            <div class="invalid-tooltip">
+              Please select a valid role.
+            </div>
+          </div>
+          <div class="col-md-3 mb-3 manager-parent">
+            <label for="validationTooltip05">ManagerID</label>
+            <input
+              type="number"
+              class="form-control manager"
+              id="validationTooltip05"
+            />
+            <div class="invalid-tooltip">
+              Please provide a valid Manager.
+            </div>
+          </div>
+
+          <div class="col-md-6 projects-parent">
+            <label for="validationTooltip06">Projects</label>
+            <div class="input-group">
+              <div class="input-group-prepend row m-0">
+                <input
+                  type="text"
+                  class="form-control col-md-auto project"
+                  id="validationTooltip06"
+                />
+                <button
+                  class="btn btn-dark col-md-auto w-100 btn-addproject"
+                  id="validationTooltipUsernamePrepend"
+                >
+                  + <span class="add-project-btn">Add Project</span>
+                </button>
+                <ul class="list-group list-group-horizontal row m-0">
+                  <li class="list-group-item col-md-auto">Project 1</li>
+                  <li class="list-group-item col-md-auto">Project 2</li>
+                  <li class="list-group-item col-md-auto">Project 3</li>
+                  <li class="list-group-item col-md-auto">Project 1</li>
+                  <li class="list-group-item col-md-auto">Project 2</li>
+                  <li class="list-group-item col-md-auto">Project 3</li>
+                  <li class="list-group-item col-md-auto">Project 1</li>
+                  <li class="list-group-item col-md-auto">Project 2</li>
+                  <li class="list-group-item col-md-auto">Project 3</li>
+                </ul>
+              </div>
+              <div class="invalid-tooltip">
+                Please provide a valid mobile number.
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary float-right submit-btn" type="submit">Submit form</button>
+      </form>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./assets/scripts/form.js"></script>
+  </body>
+</html>
