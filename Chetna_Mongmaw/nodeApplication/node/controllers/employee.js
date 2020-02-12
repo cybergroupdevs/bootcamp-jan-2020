@@ -55,7 +55,7 @@ class Employee{
                 role: req.body.role
             }
 
-            const user = await model.employee.findOne({username: loginObj.username,password: loginObj.password,role: loginObj.role});
+            const user = await model.employee.find({username: loginObj.username,password: loginObj.password,role: loginObj.role});
             if(user!= null){
                 jwt.sign({user: {username: loginObj.username, role: loginObj.role}},'secretkey',{ expiresIn: '1h' },(err,token)=>{
                     res.json({
