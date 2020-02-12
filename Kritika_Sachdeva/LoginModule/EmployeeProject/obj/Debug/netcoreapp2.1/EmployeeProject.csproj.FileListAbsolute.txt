@@ -1,0 +1,14 @@
+C:\Users\kritika.sachdeva\source\repos\EmployeeProject\EmployeeProject\bin\Debug\netcoreapp2.1\EmployeeProject.deps.json
+C:\Users\kritika.sachdeva\source\repos\EmployeeProject\EmployeeProject\bin\Debug\netcoreapp2.1\EmployeeProject.runtimeconfig.json
+C:\Users\kritika.sachdeva\source\repos\EmployeeProject\EmployeeProject\bin\Debug\netcoreapp2.1\EmployeeProject.runtimeconfig.dev.json
+C:\Users\kritika.sachdeva\source\repos\EmployeeProject\EmployeeProject\bin\Debug\netcoreapp2.1\EmployeeProject.dll
+C:\Users\kritika.sachdeva\source\repos\EmployeeProject\EmployeeProject\bin\Debug\netcoreapp2.1\EmployeeProject.pdb
+C:\Users\kritika.sachdeva\source\repos\EmployeeProject\EmployeeProject\obj\Debug\netcoreapp2.1\EmployeeProject.csprojAssemblyReference.cache
+C:\Users\kritika.sachdeva\source\repos\EmployeeProject\EmployeeProject\obj\Debug\netcoreapp2.1\EmployeeProject.csproj.CoreCompileInputs.cache
+C:\Users\kritika.sachdeva\source\repos\EmployeeProject\EmployeeProject\obj\Debug\netcoreapp2.1\EmployeeProject.RazorAssemblyInfo.cache
+C:\Users\kritika.sachdeva\source\repos\EmployeeProject\EmployeeProject\obj\Debug\netcoreapp2.1\EmployeeProject.RazorAssemblyInfo.cs
+C:\Users\kritika.sachdeva\source\repos\EmployeeProject\EmployeeProject\obj\Debug\netcoreapp2.1\EmployeeProject.AssemblyInfoInputs.cache
+C:\Users\kritika.sachdeva\source\repos\EmployeeProject\EmployeeProject\obj\Debug\netcoreapp2.1\EmployeeProject.AssemblyInfo.cs
+C:\Users\kritika.sachdeva\source\repos\EmployeeProject\EmployeeProject\obj\Debug\netcoreapp2.1\EmployeeProject.RazorTargetAssemblyInfo.cache
+C:\Users\kritika.sachdeva\source\repos\EmployeeProject\EmployeeProject\obj\Debug\netcoreapp2.1\EmployeeProject.dll
+C:\Users\kritika.sachdeva\source\repos\EmployeeProject\EmployeeProject\obj\Debug\netcoreapp2.1\EmployeeProject.pdb
