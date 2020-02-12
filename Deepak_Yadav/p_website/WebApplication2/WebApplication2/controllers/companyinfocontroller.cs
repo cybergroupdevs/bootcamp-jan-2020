@@ -4,8 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace WebApplication2.controllers
 {
     [Route("api/[controller]")]
@@ -21,18 +19,17 @@ namespace WebApplication2.controllers
         [HttpGet]
         public ActionResult getStudent([FromBody]Custom_Models.tcompanycustom data)
         {
-            //DbModels.StudentInfo student = new DbModels.StudentInfo();
             List<Models.Tcompanydata> employees = _context.Tcompanydata.ToList();
             return Ok(employees);
         }
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ActionResult getspecificStudent(int id)
         {
-            return "value";
+            Models.Tcompanydata employees = _context.Tcompanydata.Where(x => x.CusId == id).FirstOrDefault();
+            return Ok(employees);
         }
-
         // POST api/<controller>
         [HttpPost]
         public ActionResult Post([FromBody]Custom_Models.tcompanycustom data)
@@ -49,12 +46,6 @@ namespace WebApplication2.controllers
             _context.Tcompanydata.Add(emp);
             _context.SaveChanges();
             return Ok("employees added");
-        }
-
-        // PUT api/<controller>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
         }
 
         [HttpDelete]

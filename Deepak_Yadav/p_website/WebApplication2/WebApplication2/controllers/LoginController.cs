@@ -50,8 +50,6 @@ namespace WebApplication2.controllers
 
             var claims = new[] {
                         new Claim(JwtRegisteredClaimNames.Sub, _configuration["Jwt:Issuer"]),
-                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                        new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
                         new Claim("Name", loginInfo.Name),
                         new Claim("Email", loginInfo.Email),
                         new Claim("PhoneNo", loginInfo.PhoneNo),
@@ -70,8 +68,6 @@ namespace WebApplication2.controllers
         {
             WebApplication2.Custom_Models.tcompanycustom user = null;
 
-            //Validate the User Credentials  
-            //Demo Purpose, I have Passed HardCoded User Information  
             Models.Tcompanydata employee = _cSharpTrainingContext.Tcompanydata.Where(x => x.Email == login.Email && x.Password == login.Password).FirstOrDefault();
             if (employee != null)
             {
