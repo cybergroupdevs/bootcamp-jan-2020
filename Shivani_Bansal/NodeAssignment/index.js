@@ -19,10 +19,10 @@ app.post('/login', async(req,res) =>
     user = await model.employee.search({ email, password})
 
     if(!user){
-        return res.status(400).send('Email or Password incorrect');
+        return res.send('Email or Password incorrect');
     }
 
-    console.log(user, 'Yahan hoon');
+   
     const token = jwt.sign({designation: user.designation, email: user.email}, 'cybergroup');
 
     res.header('x-auth-token', token).send('Login Successfully');    
