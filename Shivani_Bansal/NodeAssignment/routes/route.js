@@ -7,16 +7,5 @@ module.exports=(app) =>
     app.put("/employee",controller.employee.update)
     app.post("/employee",controller.employee.create)
 
-    // app.find("/employee/:parameter",controller.employee.search)
-    
-    //app.get("/employee",controller.employee.index)
-    // app.get("/",(req,res) =>
-    // {
-    //     res.send("welcome to bootcamp - NodeJS")
-    // })
-    // app.post("/bootcamp",(req,res)=>{
-    //     console.log(req.body)
-    //     res.send({session:`Bootcamp session:${req.body.year}`})
-    // })
 }
 

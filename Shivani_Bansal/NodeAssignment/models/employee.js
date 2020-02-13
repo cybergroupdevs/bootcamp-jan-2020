@@ -20,7 +20,10 @@ class Employee{
     }
 
     async search(employeeObj){
-        return this.model.find(employeeObj)
+        console.log(employeeObj);
+        const employee = await this.model.findOne(employeeObj)
+        console.log(employee);
+        return employee;
     }
 }
 module.exports =new Employee();

@@ -1,7 +1,7 @@
 
 function sendJSON()
 {
-    fetch('https://localhost:44371/api/signup')
+  fetch('https://localhost:44371/api/signup')
   .then(function (response) {
     return response.json();
   })
@@ -37,9 +37,7 @@ function appendData(data)
         document.getElementById(`tr${i}`).appendChild(td);
         k = k + 1;
       }
-      document.getElementById("myTable").appendChild(tr);
-        
-        
+      document.getElementById("myTable").appendChild(tr);        
     }
   }
   

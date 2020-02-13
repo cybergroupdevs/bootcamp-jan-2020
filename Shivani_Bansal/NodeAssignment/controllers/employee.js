@@ -6,17 +6,7 @@ class Employee{
             let employeeObj ={
                 name: req.body.name,
                 email: req.body.email,
-                // age: req.body.age,
                 designation: req.body.designation,
-                // technologies :req.body.technologies,
-                // phoneNo: req.body.phoneNo,
-                // address:{ 
-                //     city: req.body.address.city,
-                //     state: req.body.address.state,
-                //     country: req.body.address.country,
-                //     pin: req.body.address.pin
-                // }
-
                 password:req.body.password,
                 projectId:req.body.projectId,
                 _id:req.body._id
@@ -53,9 +43,5 @@ class Employee{
             const employeeList = await model.employee.get();
             res.send(employeeList)
         }
-        // async get(criteria ={}){
-        //     const employee = model.employee.find()
-        //     res.send(employee)
-        // }
     }
     module.exports = new Employee();

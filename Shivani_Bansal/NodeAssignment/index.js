@@ -7,73 +7,25 @@ app.use(bodyParser.json());
 var cors = require('cors')
 const model =require('./models');
 app.use(cors());
-
 app.use(express.json()); //Read
-
 require('./routes/route.js')(app);
 
+app.post('/login', async(req,res) => 
+{
+    // console.log(req.body.email)
+    email = req.body.email;
+    password = req.body.password;
+    console.log(email, password)
+    user = await model.employee.search({ email, password})
 
-app.post('/login', (req,res) => {
-
-    
-        // id :req.body._id,
-        email = req.body.email;
-        password = req.body.password;
-
-    user = model.employee.search({ email: "email", password:"password"})
-
-    if (user != null){
-        jwt.sign({user}, "secretkey", (err, token) => {
-            res.json({
-                token 
-            })
-        
-    })
-
+    if(!user){
+        return res.status(400).send('Email or Password incorrect');
     }
 
-    else{
-        console.log("error");
+    console.log(user, 'Yahan hoon');
+    const token = jwt.sign({designation: user.designation, email: user.email}, 'cybergroup');
 
-    }
-
-    // async find(req,res){
-    //     const employee = await model.employee.get({_id: req.params.parameter})
-    //     res.send(employee)
-    // }
-    
-//     if (user.username=="shivani" && user.password=="123" ){
-//     jwt.sign({user}, "secretkey", (err, token) => {
-//         res.json({
-//             token 
-//         })
-    
-// })
-//     }
-//     else{
-//         console.log("error")
-//     }
-
-// })
- 
-// app.get("/api",(req,res)=>{
-//     console.log("Hello, This is node")
-//     res.send({"text": "Welcome to api"});
-// });
-
-// app.get("/",(req,res)=>{
-//     console.log("Hello, This is node")
-//     res.send({"text": "Welcome to Node.js"})
-// })
-// app.post("/company",(req,res)=>{
-//     console.log(req.body)
-//     res.send({session: `users info:${req.body.year}`})
-// })
-// app.post("/info",(req,res)=>{
-//     console.log(req.body)
-//     res.send({name: `${req.body.name}`,age: `${req.body.age}`,address: `${req.body.address}`})
-// })
-
+    res.header('x-auth-token', token).send('Login Successfully');    
 })
 
 const port = process.env.PORT || 3000;

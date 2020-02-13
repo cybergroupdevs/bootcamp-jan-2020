@@ -6,7 +6,7 @@ function sendJSON(){
     //creating xhr request
     var xhr = new XMLHttpRequest();
     
-    let url  = "http://localhost:5000/login";
+    let url  = "http://localhost:3000/login";
 
     //open a connection 
     xhr.open("POST", url, true);
@@ -19,12 +19,11 @@ function sendJSON(){
     {
         mytoken = this.responseText;
         
-        // console.log(mytoken);
+        console.log(mytoken);
         
         if (XMLHttpRequest.DONE && xhr.status ===200)
         {
             window.open("./dashboard.html");
-           
         }
         else
         {
@@ -34,7 +33,7 @@ function sendJSON(){
     };
     
     let obj = {"email": email, "password": password};
-    
+    // console.log(obj);
     var data = JSON.stringify(obj)
 
     // console.log(data);

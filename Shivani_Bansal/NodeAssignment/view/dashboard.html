@@ -10,34 +10,34 @@
 </head>
 <body>
     <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="" role="tab" aria-controls="home" aria-selected="true">Home</a>
-        </li>
-        <li class="nav-item">
-          <a  class="nav-link" id="users-tab" data-toggle="tab" onclick="return sendJSON();",href="#myTabContent" role="tab" aria-controls="users" aria-selected="false">Users</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Register New User</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-        <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
-          <table id="myTable">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="" role="tab" aria-controls="home" aria-selected="true">Home</a>
+      </li>
+      <li class="nav-item">
+        <a  class="nav-link" id="users-tab" data-toggle="tab" onclick="return sendJSON();",href="#myTabContent" role="tab" aria-controls="users" aria-selected="false">Users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Register New User</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+      <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
+        <table id="myTable">
           <tr>
-          <td>EmpId</td>
-          <td>Name</td>
-          <td>Username</td>
-          <td>Email</td>
-          <td>Password</td>
-          <td>Role</td>
-          <td>ProjectId</td>
-        </tr>
-      </table>
-    </div>
-        <script src = ".\assets\scripts\dashboard.js"></script>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+            <td>EmpId</td>
+            <td>Name</td>
+            <td>Username</td>
+            <td>Email</td>
+            <td>Password</td>
+            <td>Role</td>
+            <td>ProjectId</td>
+          </tr>
+        </table>
       </div>
+      <script src = ".\assets\scripts\dashboard.js"></script>
+      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+    </div>
       
 </body>
 </html>
